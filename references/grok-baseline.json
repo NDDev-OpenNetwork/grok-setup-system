@@ -25,11 +25,11 @@
   },
   "release": {
     "npm_package": "@xai-official/grok",
-    "npm_version": "1.0.0",
-    "stable_channel_version": "1.0.0",
-    "npm_integrity": "sha512-71ZbT7qggTsgmqt3pBifamlv4HZ5BFliXUrtgNQDlj9NlQcZikYjxNYciXm5CzYI+ZDezM2tREWFuOdfZjVnXA==",
-    "npm_shasum": "8c3e78e8c6f7786f82e1385a48866207a2a8afcc",
-    "npm_tarball": "https://registry.npmjs.org/@xai-official/grok/-/grok-1.0.0.tgz",
+    "npm_version": "1.0.5",
+    "stable_channel_version": "1.0.5",
+    "npm_integrity": "sha512-kk5hez+Oz5CvWonDGkMNmL483CWRIGRF2ki8jQzpIXH56P0fhCgaX9lrr0IUoFCKh/rYAm5vfCPgQsdIIYLu8Q==",
+    "npm_shasum": "ceb86ba13935478692a29724e2b53f1396e8fe3f",
+    "npm_tarball": "https://registry.npmjs.org/@xai-official/grok/-/grok-1.0.5.tgz",
     "npm_bin": {
       "grok": "bin/grok"
     },
