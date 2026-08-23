@@ -92,6 +92,16 @@ dependencies = [
 name = "grok-setup-system"
 version = "0.1.0"
 dependencies = [
+ "harness-runtime",
+ "provider-v3",
+ "serde",
+ "serde_json",
+]
+
+[[package]]
+name = "harness-runtime"
+version = "0.1.0"
+dependencies = [
  "provider-v3",
  "serde",
  "serde_json",
