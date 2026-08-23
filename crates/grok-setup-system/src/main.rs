@@ -16,7 +16,8 @@ use provider_v3::{ComponentKind, ProjectionKind};
 
 /// Everything specific to Grok Build, verified against `grok-baseline.json`.
 pub const GROK: Harness = Harness {
-    harness_id: "grok",
+    // The consumer's closed harness enum spells this `grok-build`.
+    harness_id: "grok-build",
     provider_id: "grok-setup-system",
     version: env!("CARGO_PKG_VERSION"),
     product: "Grok Build",
@@ -35,8 +36,10 @@ pub const GROK: Harness = Harness {
         "sandbox.toml",
         "skills",
         "agents",
+        "commands",
         "plugins",
         "hooks",
+        ".mcp.json",
     ],
     // The product's own: credentials, session history and runtime caches. Never
     // read, never written, and never copied into a backup slot.
@@ -74,7 +77,7 @@ mod tests {
     fn the_declaration_is_valid_and_names_this_host() {
         let info = GROK.provider_info().unwrap();
         assert_eq!(info.provider_id, env!("CARGO_PKG_NAME"));
-        assert_eq!(info.harness_id, "grok");
+        assert_eq!(info.harness_id, "grok-build");
         assert_eq!(info.protocol_version, 3);
         assert!(info.supports_this_host());
     }
