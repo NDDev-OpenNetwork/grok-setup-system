@@ -1,5 +1,5 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "product": {
     "name": "Grok Build",
     "vendor": "xAI",
@@ -532,5 +532,43 @@
     "native_binary_delivery_by_plugins": false,
     "balanced_profile": false
   },
-  "verified_at": "2026-08-25T12:00:26+00:00"
+  "verified_at": "2026-08-25T13:05:55+00:00",
+  "software_artifacts": {
+    "command": "grok",
+    "shape": "raw",
+    "platforms": {
+      "linux/arm64": {
+        "url": "https://x.ai/cli/grok-1.0.5-linux-aarch64",
+        "bytes": 136259976,
+        "sha256": "sha256:1c1fe67d7c35497fb09f44a451f57acc3787add4c9aea2c56f5c7c75dc5ffcf1"
+      },
+      "linux/x86_64": {
+        "url": "https://x.ai/cli/grok-1.0.5-linux-x86_64",
+        "bytes": 166854368,
+        "sha256": "sha256:9ba87444e1819e8f6104adbbf4676a870c204380aa5c3e1c38a926c4ea677238"
+      },
+      "macos/arm64": {
+        "url": "https://x.ai/cli/grok-1.0.5-macos-aarch64",
+        "bytes": 134349648,
+        "sha256": "sha256:3dfa7f04fbb5427a8fbead286591543aaecb478b3a0ab222c4329eca1a3b2f86"
+      },
+      "macos/x86_64": {
+        "url": "https://x.ai/cli/grok-1.0.5-macos-x86_64",
+        "bytes": 150381856,
+        "sha256": "sha256:21cbb063c6167175ba00a67f64ac638af8f79a44aef816cfd5b4915c77528e60"
+      },
+      "windows/arm64": {
+        "url": "https://x.ai/cli/grok-1.0.5-windows-aarch64.exe",
+        "bytes": 123656008,
+        "sha256": "sha256:a987033f6c15c2b61a0f0ba80dd878160953e67d5e78d8c224e2743f01910f2f"
+      },
+      "windows/x86_64": {
+        "url": "https://x.ai/cli/grok-1.0.5-windows-x86_64.exe",
+        "bytes": 142651720,
+        "sha256": "sha256:4b924daa801663ea20e96382408b1f2b5ba39efad62c14d20d88618a9eb0be64"
+      }
+    },
+    "version": "1.0.5",
+    "verified_at": "2026-08-25T13:05:55+00:00"
+  }
 }
