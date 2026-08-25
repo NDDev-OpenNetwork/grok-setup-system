@@ -4,12 +4,14 @@
 //! [`harness_runtime`], shared with every other setup system, so a change to
 //! behaviour lands once and a change to Grok Build's surface lands here.
 //!
-//! The owner assigned this harness the program lifecycle as well. It is not
-//! declared yet: this runtime does not install the product, and declaring an
-//! operation it cannot perform would let a consumer call something that cannot
-//! be honoured.
+//! The owner assigned this harness the program lifecycle as well, and it is
+//! declared: `src/software.rs` carries the six artifacts xAI publishes, and
+//! grok is the one product whose bytes *are* the program -- its direct
+//! distribution needs no unpacking at all.
 
 use std::process::ExitCode;
+
+mod software;
 
 use harness_runtime::Harness;
 use provider_v3::{ComponentKind, ProjectionKind};
@@ -61,6 +63,7 @@ pub const GROK: Harness = Harness {
     max_files: 8192,
     max_bytes: 64 * 1024 * 1024,
     kit_identity: include_str!("../../../provider-kit/v3/KIT-IDENTITY.json"),
+    software: Some(software::SOFTWARE),
 };
 
 fn main() -> ExitCode {
