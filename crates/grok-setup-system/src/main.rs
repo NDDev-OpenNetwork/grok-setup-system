@@ -28,6 +28,7 @@ pub const GROK: Harness = Harness {
     config_home_env: "GROK_HOME",
     control_directory: ".grok-setup-system",
     state_file: "NDDEV-GROK-PROVIDER.json",
+    predecessor_state_file: "NDDEV-GROK-BUILD-SETUP.json",
     profile_id: "grok/native-and-plugins/1",
     // Everything outside this list is a sibling overlay preserved verbatim.
     native_namespaces: &[
