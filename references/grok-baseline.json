@@ -623,6 +623,16 @@
         "path": ".mcp.json",
         "reason": "A project-level compatibility file Grok merges below config.toml, beside ~/.claude.json and .cursor/mcp.json. Not a surface under the Grok home; the real one is config.toml [mcp_servers.<name>].",
         "source": "https://docs.x.ai/build/features/mcp-servers"
+      },
+      {
+        "path": "Agents.md",
+        "reason": "Grok Build accepts three spellings of its instruction file -- AGENTS.md, Agents.md and AGENT.md. This provider writes the first and owns only that one: on a case-insensitive filesystem the second is the same file, and on a case-sensitive one owning both would let a target hold two instruction documents that disagree with the product reading one and this provider reporting the other. Which of the three wins where several exist is not documented, so a target holding another spelling is reported rather than resolved.",
+        "source": "https://docs.x.ai/build/overview"
+      },
+      {
+        "path": "AGENT.md",
+        "reason": "The third spelling Grok Build accepts. Not owned, for the reason above.",
+        "source": "https://docs.x.ai/build/overview"
       }
     ]
   },
