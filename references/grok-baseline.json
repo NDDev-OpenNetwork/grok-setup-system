@@ -532,7 +532,100 @@
     "native_binary_delivery_by_plugins": false,
     "balanced_profile": false
   },
-  "verified_at": "2026-08-26T22:59:38+00:00",
+  "verified_at": "2026-08-27T15:01:04+00:00",
+  "native_surfaces": {
+    "verified_at": "2026-08-27",
+    "config_home": "~/.grok",
+    "surfaces": [
+      {
+        "path": "AGENTS.md",
+        "kinds": [
+          "instruction"
+        ],
+        "shape": "file",
+        "source": "https://docs.x.ai/build/overview"
+      },
+      {
+        "path": "config.toml",
+        "kinds": [
+          "setting"
+        ],
+        "shape": "file",
+        "source": "https://docs.x.ai/build/settings",
+        "note": "MCP servers live here under [mcp_servers.<name>]; a key inside a file is not a projection surface, so mcp is not declared"
+      },
+      {
+        "path": "managed_config.toml",
+        "kinds": [],
+        "shape": "file",
+        "source": "https://docs.x.ai/build/settings/reference"
+      },
+      {
+        "path": "requirements.toml",
+        "kinds": [],
+        "shape": "file",
+        "source": "https://docs.x.ai/build/settings/reference"
+      },
+      {
+        "path": "sandbox.toml",
+        "kinds": [],
+        "shape": "file",
+        "source": "https://docs.x.ai/build/settings/reference"
+      },
+      {
+        "path": "skills",
+        "kinds": [
+          "skill"
+        ],
+        "shape": "directory",
+        "source": "https://docs.x.ai/build/features/skills-plugins-marketplaces",
+        "note": "a user-invocable skill also surfaces as /<skill-name>, which is why this product has no commands directory"
+      },
+      {
+        "path": "agents",
+        "kinds": [
+          "agent"
+        ],
+        "shape": "directory",
+        "source": "https://docs.x.ai/build/features/skills-plugins-marketplaces"
+      },
+      {
+        "path": "plugins",
+        "kinds": [
+          "plugin"
+        ],
+        "shape": "directory",
+        "source": "https://docs.x.ai/build/features/skills-plugins-marketplaces"
+      },
+      {
+        "path": "hooks",
+        "kinds": [
+          "hook"
+        ],
+        "shape": "directory",
+        "source": "https://docs.x.ai/build/features/skills-plugins-marketplaces"
+      },
+      {
+        "path": "workflows",
+        "kinds": [],
+        "shape": "directory",
+        "source": "https://docs.x.ai/build/modes-and-commands",
+        "note": "$GROK_HOME/workflows/<name>.rhai -- a script the product runs, owned here so a setup can carry one; it is not a command component"
+      }
+    ],
+    "declined": [
+      {
+        "path": "commands",
+        "reason": "Grok Build has no commands directory. Its slash commands are skills: a user-invocable skill surfaces as /<skill-name>, qualified /local:<name> on collision. The consumer's rule command -> commands was claude-code's row copied one product down and was removed from ai-stp on 2026-08-27.",
+        "source": "https://docs.x.ai/build/modes-and-commands"
+      },
+      {
+        "path": ".mcp.json",
+        "reason": "A project-level compatibility file Grok merges below config.toml, beside ~/.claude.json and .cursor/mcp.json. Not a surface under the Grok home; the real one is config.toml [mcp_servers.<name>].",
+        "source": "https://docs.x.ai/build/features/mcp-servers"
+      }
+    ]
+  },
   "software_artifacts": {
     "command": "grok",
     "shape": "raw",
@@ -569,6 +662,6 @@
       }
     },
     "version": "1.0.5",
-    "verified_at": "2026-08-26T22:59:38+00:00"
+    "verified_at": "2026-08-27T15:01:04+00:00"
   }
 }

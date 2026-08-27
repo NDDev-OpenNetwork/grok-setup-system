@@ -31,6 +31,14 @@ pub const GROK: Harness = Harness {
     predecessor_state_file: "NDDEV-GROK-BUILD-SETUP.json",
     profile_id: "grok/native-and-plugins/1",
     // Everything outside this list is a sibling overlay preserved verbatim.
+    // Two entries here were not Grok's. `commands`, because Grok Build has no
+    // commands directory -- a user-invocable skill *is* a slash command,
+    // `/<skill-name>`, qualified `/local:<name>` on collision -- and
+    // `.mcp.json`, which is a project-level compatibility file Grok merges
+    // below `config.toml`, not a surface under this home.
+    //
+    // `workflows` is the one that was missing: `$GROK_HOME/workflows/<name>.rhai`
+    // is documented and real, and no component kind projects there.
     native_namespaces: &[
         "AGENTS.md",
         "config.toml",
@@ -39,10 +47,9 @@ pub const GROK: Harness = Harness {
         "sandbox.toml",
         "skills",
         "agents",
-        "commands",
         "plugins",
         "hooks",
-        ".mcp.json",
+        "workflows",
     ],
     // The product's own: credentials, session history and runtime caches. Never
     // read, never written, and never copied into a backup slot.
@@ -64,6 +71,11 @@ pub const GROK: Harness = Harness {
         ProjectionKind::Marketplace,
         ProjectionKind::Plugin,
     ],
+    // One scope. Grok Build's project surfaces live under `.grok/` in a workspace, which is
+    // a different root rather than a second scope of this target.
+    //
+    // Empty rather than absent: a harness that owns one target says so.
+    scoped_projections: &[],
     max_files: 8192,
     max_bytes: 64 * 1024 * 1024,
     kit_identity: include_str!("../../../provider-kit/v3/KIT-IDENTITY.json"),
@@ -180,15 +192,36 @@ mod tests {
         }
     }
 
+    /// Everything this harness claims to own, against the vendor page that
+    /// decided it.
+    ///
+    /// What this replaced only checked that the baseline parsed. The block it
+    /// reads now is hand-authored beside the rest of the baseline, and this is
+    /// what keeps that block from being decoration: a namespace no vendor
+    /// document names, or a declared kind no owned surface routes, is red here.
+    ///
+    /// Both directions, because the defect it was written for ran both ways --
+    /// `~/.cursor/rules` was owned and does not exist, `~/.pi/agent/prompts`
+    /// exists and was not owned. Conformance caught neither: its
+    /// `declared_native_route_is_compilable` case asks for **one** route, not
+    /// every one.
     #[test]
-    fn the_baseline_this_harness_cites_is_present_and_readable() {
-        // The facts above are transcribed from it; a build whose baseline is
-        // missing has no evidence for what it claims to own.
+    fn every_surface_this_harness_owns_is_one_the_vendor_documents() {
         let path = std::path::Path::new(env!("CARGO_MANIFEST_DIR"))
-            .join("../../references/grok-baseline.json");
-        let value: serde_json::Value =
-            serde_json::from_slice(&std::fs::read(path).unwrap()).unwrap();
-        assert!(value.is_object());
+            .join("../../references")
+            .join(format!("{TOOL}-baseline.json"));
+        let baseline: serde_json::Value =
+            serde_json::from_slice(&std::fs::read(&path).unwrap()).unwrap();
+        let problems = harness_runtime::surfaces::disagreements(&HARNESS, &baseline);
+        assert!(
+            problems.is_empty(),
+            "the declaration and {TOOL}-baseline.json disagree:
+  {}",
+            problems.join(
+                "
+  "
+            )
+        );
     }
 
     #[test]
@@ -196,5 +229,55 @@ mod tests {
         assert!(GROK.control_directory.contains("setup-system"));
         assert!(GROK.state_file.starts_with("NDDEV-"));
         assert!(!GROK.native_namespaces.contains(&GROK.state_file));
+    }
+    /// A setup that writes a configuration file says where its format came from.
+    ///
+    /// The release before this one made the *surfaces* sourced: a path this
+    /// provider owns cites the page that documents it. This is the same rule
+    /// one level down, and it was written because two of the seven failed it.
+    ///
+    /// opencode's baseline set `"permission": "ask"` where the product
+    /// documents an object of tool names, and antigravity's set
+    /// `toolPermissions` where the product reads `toolPermission` with four
+    /// values, none of them the one written. Both were valid JSON in the right
+    /// file at the right path. Both installed, verified and restored cleanly.
+    /// Neither changed anything about the product — a target that looks
+    /// configured and is not, which is the failure this estate refuses one
+    /// level up and had been shipping one level down.
+    #[test]
+    fn a_setup_that_writes_configuration_says_where_its_format_came_from() {
+        let manifest = std::path::Path::new(env!("CARGO_MANIFEST_DIR"));
+        let root = manifest.join("../../setups").join(TOOL);
+        let root = if root.is_dir() {
+            root
+        } else {
+            manifest.join("../../setups")
+        };
+        let catalog = harness_runtime::Catalog::at(&root);
+        let problems = harness_runtime::catalog::unsourced(&catalog.list().unwrap());
+        assert!(problems.is_empty(), "{}", problems.join("\n  "));
+    }
+    /// Three postures, on every one of the seven.
+    ///
+    /// `baseline` is a working floor, `minimal` is the product's own defaults,
+    /// and `full-auto` asks nothing and sandboxes nothing. A caller who learns
+    /// them on one product knows them on all seven, which is the whole reason
+    /// the names are the estate's rather than each harness's.
+    ///
+    /// The second half of the check is the one worth having: two setups with
+    /// the same bytes mean one of them is a posture in name only, and it would
+    /// still read as offered in `list`.
+    #[test]
+    fn the_three_postures_are_offered_and_are_actually_different() {
+        let manifest = std::path::Path::new(env!("CARGO_MANIFEST_DIR"));
+        let root = manifest.join("../../setups").join(TOOL);
+        let root = if root.is_dir() {
+            root
+        } else {
+            manifest.join("../../setups")
+        };
+        let catalog = harness_runtime::Catalog::at(&root);
+        let problems = harness_runtime::catalog::asymmetric(&catalog.list().unwrap());
+        assert!(problems.is_empty(), "{}", problems.join("\n  "));
     }
 }

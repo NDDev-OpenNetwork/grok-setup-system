@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "id": "full-auto",
+  "description": "Full auto: nothing is asked and nothing is sandboxed. `permission_mode` is always-approve and the sandbox profile is off.",
+  "sources": [
+    "https://docs.x.ai/build/settings/reference",
+    "https://docs.x.ai/build/features/permissions"
+  ]
+}
