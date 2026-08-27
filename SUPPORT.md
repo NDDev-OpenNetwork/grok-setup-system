@@ -171,6 +171,14 @@ other file beside a target.
 
 **`AGENT.md`** -- The third spelling Grok Build accepts. Not owned, for the reason above. ([source](https://docs.x.ai/build/overview))
 
+**`active_sessions.json`** -- Live session bookkeeping the product writes into its home, alongside a lock file it holds open. Measured 2026-08-28 by installing Grok through this provider's own software lifecycle and running `mcp add` through `launch`. Disclaimed: it churns while the product runs, and copying it into a slot would capture a lock's idea of a running process. ([source](measured through launch; no vendor page names it))
+
+**`active_sessions.lock`** -- The lock beside active_sessions.json, held while the product runs. Measured 2026-08-28. ([source](measured through launch; no vendor page names it))
+
+**`logs`** -- The product's own log directory, created on first run. Measured 2026-08-28. Never read and never copied. ([source](measured through launch; no vendor page names it))
+
+**`docs`** -- Written by the product into its home on first run. Measured 2026-08-28. Not owned: nothing here projects documentation into a product's home, and a directory the product regenerates is not a surface a setup can promise. ([source](measured through launch; no vendor page names it))
+
 ## Response
 
 One maintainer. Defects are triaged as time allows; security reports are
