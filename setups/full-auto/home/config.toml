@@ -1,0 +1,10 @@
+# Managed by grok-setup-system.
+#
+# Every table and key here is from docs.x.ai/build/settings/reference and
+# docs.x.ai/build/features/permissions. `permission_mode` is user-config only;
+# a project's own config.toml cannot set it.
+[ui]
+permission_mode = "always-approve"
+
+[sandbox]
+profile = "off"

@@ -1,5 +1,8 @@
 {
   "schema_version": 1,
   "id": "baseline",
-  "description": "A working floor: instructions plus conservative configuration."
+  "description": "A working floor: instructions plus conservative configuration.",
+  "sources": [
+    "https://docs.x.ai/build/settings/reference"
+  ]
 }

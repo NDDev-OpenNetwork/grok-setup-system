@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "id": "full-auto",
+  "description": "Full auto: nothing is asked and nothing is sandboxed. `permission_mode` is always-approve and the sandbox profile is off. This is a setup posture -- keys in this product's own configuration file. It is not an execution profile and it grants no environment: what it changes is what the product asks you, not what anyone is permitted to run.",
+  "sources": [
+    "https://docs.x.ai/build/settings/reference",
+    "https://docs.x.ai/build/features/permissions"
+  ]
+}
