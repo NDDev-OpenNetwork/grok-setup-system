@@ -710,5 +710,6 @@
     "active_sessions.json",
     "active_sessions.lock",
     "logs"
-  ]
+  ],
+  "setup_catalogue_digest": "sha256:747abea950ef207dae0bb594567725f8dc30c967a54feb9bd2b1624496d9faf8"
 }
