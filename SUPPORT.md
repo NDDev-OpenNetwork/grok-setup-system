@@ -170,6 +170,8 @@ Configuration home as the product documents it: `~/.grok`.
 | `plugins` | `plugin` | [source](https://docs.x.ai/build/features/skills-plugins-marketplaces) |
 | `hooks` | `hook` | [source](https://docs.x.ai/build/features/skills-plugins-marketplaces) |
 | `workflows` | -- | [source](https://docs.x.ai/build/modes-and-commands) |
+| `rules` | -- | [source](https://docs.x.ai/build/settings/reference; measured from the pinned 1.0.5 binary's own embedded reference text) |
+| `commands` | `command` | [source](https://docs.x.ai/build/settings/reference; measured from the pinned 1.0.5 binary's own embedded reference text) |
 
 A path routing no component kind is owned so a setup can carry it;
 nothing compiles a component to it.
@@ -178,8 +180,6 @@ nothing compiles a component to it.
 
 Everything named here is left exactly as it was found, like any
 other file beside a target.
-
-**`commands`** -- Grok Build has no commands directory. Its slash commands are skills: a user-invocable skill surfaces as /<skill-name>, qualified /local:<name> on collision. The consumer's rule command -> commands was claude-code's row copied one product down and was removed from ai-stp on 2026-08-27. ([source](https://docs.x.ai/build/modes-and-commands))
 
 **`.mcp.json`** -- A project-level compatibility file Grok merges below config.toml, beside ~/.claude.json and .cursor/mcp.json. Not a surface under the Grok home; the real one is config.toml [mcp_servers.<name>]. ([source](https://docs.x.ai/build/features/mcp-servers))
 
@@ -202,6 +202,14 @@ other file beside a target.
 **`$HOME/.agents/skills`** -- Grok reads the user-level convention root. Its own embedded reference, carried in the pinned 1.0.5 binary, says it scans `.agents/skills/` (and `commands/`) *at each tier* -- and the tier table names User as one of them. Not owned: the root belongs to the convention rather than to this product, and Codex already declares it under `user_root`. A namespace is removed whole, so a second declaration would make either provider's remove take the other's skills. ([source](measured from the pinned artifact, digest verified before reading (grok 1.0.5, the binary's own reference text)))
 
 **`$HOME/.claude/skills`** -- Grok scans Claude Code's own skills directory for compatibility. From the same embedded reference: `skills = true  # scan ~/.claude/skills/ and <cwd>/.claude/skills/`, and the tier table gives `~/.claude/skills/` as User tier, Lowest priority, configurable. It is another product's home and never this provider's to own -- but worth recording, because claude-setup-system owns `skills` there and a remove of the Claude setup changes what Grok sees. ([source](measured from the pinned artifact, digest verified before reading (grok 1.0.5, the binary's own reference text)))
+
+**`auth.json`** -- Authentication credentials. Grok's own embedded reference, carried in the pinned 1.0.5 binary, lists `~/.grok/auth.json` as *Authentication credentials (auto-managed)*, set by `grok login`. Never owned and never captured: a slot holding a product's credentials would put them on disk in a second place, which is a worse outcome than an incomplete restore of files this provider never wrote. Recorded here because the declaration's `never_touch` is checked against this block -- without a row, the check measures nothing. ([source](measured from the pinned 1.0.5 binary's own reference text))
+
+**`lsp.json`** -- *LSP server configuration (user-scoped)*, in the product's own reference. Real configuration and not owned: nothing in the closed set of component kinds describes a language-server list, and this provider does not declare kinds it cannot name. ([source](measured from the pinned 1.0.5 binary's own reference text))
+
+**`pager.toml`** -- *TUI appearance configuration*, in the product's own reference. Not owned for the same reason as `lsp.json` and claude's keymap: appearance is a real surface with no kind to route it. ([source](measured from the pinned 1.0.5 binary's own reference text))
+
+**`memory`** -- *Cross-session memory files and index*, holding a global `MEMORY.md`. What the product has learned across sessions -- a person's accumulated context rather than configuration, and a backup of it would put private text somewhere with a retention policy nobody chose. ([source](measured from the pinned 1.0.5 binary's own reference text))
 
 ## Response
 

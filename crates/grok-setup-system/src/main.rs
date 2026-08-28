@@ -50,10 +50,26 @@ pub const GROK: Harness = Harness {
         "plugins",
         "hooks",
         "workflows",
+        // Added 2026-08-28, both from the product's own embedded reference
+        // rather than from a page. `rules/` is listed as *Always scanned;
+        // applies to all projects*; `commands/` sits beside the already-owned
+        // `skills/` at User tier in the same row of the same table, so a
+        // consumer could route a skill here and not a command.
+        "rules",
+        "commands",
     ],
     // The product's own: credentials, session history and runtime caches. Never
     // read, never written, and never copied into a backup slot.
     never_touch: &[
+        // Credentials first, and it took a sweep across all seven to notice
+        // this one was missing. Grok's own embedded reference names
+        // `~/.grok/auth.json` as *Authentication credentials
+        // (auto-managed)*, and five of the seven providers already listed
+        // their equivalent. No live leak -- `capture` walks
+        // `native_namespaces` and this file is inside none of them -- but a
+        // safety list that depends on a namespace never widening is a safety
+        // list waiting for one declaration change.
+        "auth.json",
         "sessions",
         "active_sessions.json",
         "active_sessions.lock",
@@ -70,6 +86,9 @@ pub const GROK: Harness = Harness {
         ComponentKind::Hook,
         ComponentKind::Plugin,
         ComponentKind::Setting,
+        // Joined 2026-08-28 with the `commands` namespace: this build owned
+        // `workflows` and declared no command kind at all.
+        ComponentKind::Command,
     ],
     projection_kinds: &[
         ProjectionKind::NativeFiles,

@@ -558,19 +558,22 @@
         "path": "managed_config.toml",
         "kinds": [],
         "shape": "file",
-        "source": "https://docs.x.ai/build/settings/reference"
+        "source": "https://docs.x.ai/build/settings/reference",
+        "note": "Owned and routing no kind, and it must stay that way. This is an administrator's **signed** policy: the pinned 1.0.5 binary carries `xai_grok_config::signed_policy` and `managed_cache` around it, with `key_fingerprint`, `rollback_floor` and a neighbouring `managed_identity.sig.json`. A setup that wrote one would be forging a signature it cannot produce, and a component kind routing here would be an invitation to try. Owned so a backup returns it byte-exact after an operation touches the home -- which is the whole reason to own something no setup writes."
       },
       {
         "path": "requirements.toml",
         "kinds": [],
         "shape": "file",
-        "source": "https://docs.x.ai/build/settings/reference"
+        "source": "https://docs.x.ai/build/settings/reference",
+        "note": "Owned and routing no kind. A fail-closed policy file: the binary's own message is `requirements.toml unreadable; treating as fail_closed`, and `xai_grok_config::validation` reports `requirements fail_closed is present`. A malformed one does not degrade, it denies -- so a setup that wrote one badly would lock a person out of their own tool, and no kind routes here for that reason. Owned so a backup returns it."
       },
       {
         "path": "sandbox.toml",
         "kinds": [],
         "shape": "file",
-        "source": "https://docs.x.ai/build/settings/reference"
+        "source": "https://docs.x.ai/build/settings/reference",
+        "note": "Owned and routing no kind. The product's own reference calls it *Custom sandbox profiles* -- named profiles a person selects, not the posture keys the owned `config.toml` carries. `setting` routes to that file, and a profile library is a different axis from a posture: this provider's `full-auto` setup sets `[sandbox] profile = \"off\"` in `config.toml`, which selects, and never defines. Owned so a backup returns a person's own profiles."
       },
       {
         "path": "skills",
@@ -611,14 +614,25 @@
         "shape": "directory",
         "source": "https://docs.x.ai/build/modes-and-commands",
         "note": "$GROK_HOME/workflows/<name>.rhai -- a script the product runs, owned here so a setup can carry one; it is not a command component"
+      },
+      {
+        "path": "rules",
+        "kinds": [],
+        "shape": "directory",
+        "source": "https://docs.x.ai/build/settings/reference; measured from the pinned 1.0.5 binary's own embedded reference text",
+        "note": "The product's own reference lists `~/.grok/rules/` as *Always scanned; applies to all projects*. Owned from 2026-08-28, having been neither owned nor recorded -- so a backup captures it and a restore returns it.\n\n**Routing no kind, and the reason is a rule this repository enforces.** `instruction` already routes to the owned `AGENTS.md`, and one kind routed by two surfaces makes a consumer's route ambiguous -- the surfaces guard refuses it by name, which is how this row was written the first time and corrected. Both surfaces are real: `AGENTS.md` is the single global instruction document, `rules/` a directory of always-scanned rule files. Which of the two an `instruction` component should reach is a question for the per-kind route the consumer is building; until that exists there is no way to say it, and guessing would put a component in one of two places that both look right."
+      },
+      {
+        "path": "commands",
+        "kinds": [
+          "command"
+        ],
+        "shape": "directory",
+        "source": "https://docs.x.ai/build/settings/reference; measured from the pinned 1.0.5 binary's own embedded reference text",
+        "note": "The product's own tier table gives `~/.grok/skills/`, `~/.grok/commands/` at **User** tier, *Personal skills for all projects*. `skills` was owned and `commands` was not, so a consumer could route a `skill` component here and not a `command` -- the two halves of one row in the vendor's own table. Declared 2026-08-28, and `command` with it: this build declared no such kind at all despite owning `workflows`."
       }
     ],
     "declined": [
-      {
-        "path": "commands",
-        "reason": "Grok Build has no commands directory. Its slash commands are skills: a user-invocable skill surfaces as /<skill-name>, qualified /local:<name> on collision. The consumer's rule command -> commands was claude-code's row copied one product down and was removed from ai-stp on 2026-08-27.",
-        "source": "https://docs.x.ai/build/modes-and-commands"
-      },
       {
         "path": ".mcp.json",
         "reason": "A project-level compatibility file Grok merges below config.toml, beside ~/.claude.json and .cursor/mcp.json. Not a surface under the Grok home; the real one is config.toml [mcp_servers.<name>].",
@@ -673,6 +687,26 @@
         "path": "$HOME/.claude/skills",
         "reason": "Grok scans Claude Code's own skills directory for compatibility. From the same embedded reference: `skills = true  # scan ~/.claude/skills/ and <cwd>/.claude/skills/`, and the tier table gives `~/.claude/skills/` as User tier, Lowest priority, configurable. It is another product's home and never this provider's to own -- but worth recording, because claude-setup-system owns `skills` there and a remove of the Claude setup changes what Grok sees.",
         "source": "measured from the pinned artifact, digest verified before reading (grok 1.0.5, the binary's own reference text)"
+      },
+      {
+        "path": "auth.json",
+        "reason": "Authentication credentials. Grok's own embedded reference, carried in the pinned 1.0.5 binary, lists `~/.grok/auth.json` as *Authentication credentials (auto-managed)*, set by `grok login`. Never owned and never captured: a slot holding a product's credentials would put them on disk in a second place, which is a worse outcome than an incomplete restore of files this provider never wrote. Recorded here because the declaration's `never_touch` is checked against this block -- without a row, the check measures nothing.",
+        "source": "measured from the pinned 1.0.5 binary's own reference text"
+      },
+      {
+        "path": "lsp.json",
+        "reason": "*LSP server configuration (user-scoped)*, in the product's own reference. Real configuration and not owned: nothing in the closed set of component kinds describes a language-server list, and this provider does not declare kinds it cannot name.",
+        "source": "measured from the pinned 1.0.5 binary's own reference text"
+      },
+      {
+        "path": "pager.toml",
+        "reason": "*TUI appearance configuration*, in the product's own reference. Not owned for the same reason as `lsp.json` and claude's keymap: appearance is a real surface with no kind to route it.",
+        "source": "measured from the pinned 1.0.5 binary's own reference text"
+      },
+      {
+        "path": "memory",
+        "reason": "*Cross-session memory files and index*, holding a global `MEMORY.md`. What the product has learned across sessions -- a person's accumulated context rather than configuration, and a backup of it would put private text somewhere with a retention policy nobody chose.",
+        "source": "measured from the pinned 1.0.5 binary's own reference text"
       }
     ],
     "config_home_env": "GROK_HOME",
