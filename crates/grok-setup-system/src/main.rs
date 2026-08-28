@@ -70,6 +70,20 @@ pub const GROK: Harness = Harness {
         // consumer could route a skill here and not a command.
         "rules",
         "commands",
+        // Added 2026-08-28 from the product's own embedded reference in the
+        // pinned 1.0.5 binary, which names both directories in one sentence:
+        // *"Both are also discovered from `.grok/roles/*.toml` and
+        // `.grok/personas/*.toml` files respectively."* The user tier is
+        // spelled out beside it -- *"`~/.grok/personas/*.toml` (user)"*.
+        //
+        // Neither routes a kind. A persona is a behavioural overlay applied
+        // during subagent resolution, not an agent a consumer can install, and
+        // the closed kind set has no word for it -- so this is owned for the
+        // same reason as `workflows` and `rules`: a backup captures it and a
+        // restore returns it. Declaring a kind here would promise a rollback
+        // for a component nobody can route.
+        "personas",
+        "roles",
     ],
     // The product's own: credentials, session history and runtime caches. Never
     // read, never written, and never copied into a backup slot.

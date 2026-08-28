@@ -170,6 +170,8 @@ Configuration home as the product documents it: `~/.grok`.
 | `workflows` | -- | [source](https://docs.x.ai/build/modes-and-commands) |
 | `rules` | -- | [source](https://docs.x.ai/build/settings/reference; measured from the pinned 1.0.5 binary's own embedded reference text) |
 | `commands` | -- | [source](https://docs.x.ai/build/settings/reference; measured by running the pinned 1.0.5 binary in a contained HOME, 2026-08-28) |
+| `personas` | -- | [source](https://docs.x.ai/build/features/subagents; measured in the pinned 1.0.5 binary) |
+| `roles` | -- | [source](https://docs.x.ai/build/features/subagents; measured in the pinned 1.0.5 binary) |
 
 A path routing no component kind is owned so a setup can carry it;
 nothing compiles a component to it.
@@ -232,6 +234,8 @@ A file whose malformed state locks a person out of their own tool is not one to 
 **`GROK_CONFIG_PATH`** -- Not a path in the target -- an **environment overlay**, recorded here because it changes what the product reads and nothing else in this file would tell a reader so. The pinned binary carries `xai_grok_config::env_overlay` with its own refusals (*"GROK_CONFIG_PATH is unreadable; ignoring the overlay"*, *"...exceeds the max overlay size..."*), and the product's documentation places it: *"GROK_CONFIG / GROK_CONFIG_PATH (tier 4) are config overlays: a merged config layer, not direct-setting environment variables"*.
 
 So a person with it set has configuration this provider never sees, and `status` would report the target managed while the effective configuration differs. Nothing to own; worth knowing. ([source](measured from the pinned 1.0.5 binary, 2026-08-28))
+
+**`bundled`** -- The product's own content, shipped inside the install rather than written by a person: the pinned 1.0.5 binary carries `.grok/bundled/agents` and `.grok/bundled/skills`, and refuses to let anyone remove what is in it -- "Cannot delete bundled personas". Not owned for the same reason as `docs`: a directory the product ships and regenerates is not a surface a setup can promise, and a backup of it would copy the install into the slot. ([source](measured in the pinned 1.0.5 binary; no vendor page names the directory))
 
 ## Response
 

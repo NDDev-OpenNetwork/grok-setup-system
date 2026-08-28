@@ -33,6 +33,8 @@ TOML, `#` comments in the grammar. No JSON schema.
 | `workflows` | *(routes no kind)* | directory | <https://docs.x.ai/build/modes-and-commands> |
 | `rules` | *(routes no kind)* | directory | <https://docs.x.ai/build/settings/reference> |
 | `commands` | *(routes no kind)* | directory | <https://docs.x.ai/build/settings/reference> |
+| `personas` | *(routes no kind)* | directory | <https://docs.x.ai/build/features/subagents> |
+| `roles` | *(routes no kind)* | directory | <https://docs.x.ai/build/features/subagents> |
 
 A surface that routes no kind is owned deliberately: a backup captures
 it and a restore returns it, and no component is routed there because
@@ -42,7 +44,7 @@ surfaces makes a consumer's route ambiguous, and the guard in
 
 ## Considered and not owned
 
-20 rows. Each records what was searched, so the next reader does not repeat the search:
+21 rows. Each records what was searched, so the next reader does not repeat the search:
 
 - **`.mcp.json`** — A project-level compatibility file Grok merges below config.toml, beside ~/.claude.json and .cursor/mcp.json. Not a surface under the Grok home; the real one is config.toml [mcp_servers.<name>].
 - **`Agents.md`** — Grok Build accepts three spellings of its instruction file -- AGENTS.md, Agents.md and AGENT.md. This provider writes the first and owns only that one: on a case-insensitive filesystem the second is the same file, and on a case-sensitive one owning both would let a target hold two instruction documents that disagree with the product reading one and this provider reporting the other. Which of the three wins where several exist is not documented, so a target holding another spelling is reported rather than resolved.
@@ -64,3 +66,4 @@ surfaces makes a consumer's route ambiguous, and the guard in
 - **`managed_config.sig.json`** — The signature over `managed_config.toml`, beside `managed_identity.sig.json` and `managed_config_cache.json`. Unrecorded until 2026-08-28, which is what made the defect above possible: the policy was owned and its proof was not, so an install took one and left the other. All three are in `never_touch` with the policy they belong to.
 - **`leader.sock`** — A unix socket in the configuration home, named by the product's own help: `--leader-socket <PATH>  Use a custom leader socket path instead of the default ~/.grok/leader.sock`. Not a configuration surface and not capturable -- a socket is a special file, and this provider's `copy_tree` refuses those by kind. Recorded so the next reader of this home knows what it is rather than repeating the search.
 - **`GROK_CONFIG_PATH`** — Not a path in the target -- an **environment overlay**, recorded here because it changes what the product reads and nothing else in this file would tell a reader so. The pinned binary carries `xai_grok_config::env_overlay` with its own refusals (*"GROK_CONFIG_PATH is unreadable; ignoring the overlay"*, *"...exceeds the max overlay size..."*), and the product's documentation places it: *"GROK_CONFIG / GROK_CONFIG_PATH (tier 4) are config overlays: a merged config layer, not direct-setting environment variables"*.
+- **`bundled`** — The product's own content, shipped inside the install rather than written by a person: the pinned 1.0.5 binary carries `.grok/bundled/agents` and `.grok/bundled/skills`, and refuses to let anyone remove what is in it -- "Cannot delete bundled personas". Not owned for the same reason as `docs`: a directory the product ships and regenerates is not a surface a setup can promise, and a backup of it would copy the install into the slot.
