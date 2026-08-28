@@ -532,7 +532,7 @@
     "native_binary_delivery_by_plugins": false,
     "balanced_profile": false
   },
-  "verified_at": "2026-08-27T15:01:04+00:00",
+  "verified_at": "2026-08-27T23:46:13+00:00",
   "native_surfaces": {
     "verified_at": "2026-08-27",
     "config_home": "~/.grok",
@@ -704,7 +704,7 @@
       }
     },
     "version": "1.0.5",
-    "verified_at": "2026-08-27T15:01:04+00:00"
+    "verified_at": "2026-08-27T23:46:13+00:00"
   },
   "never_touch": [
     "active_sessions.json",
