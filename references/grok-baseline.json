@@ -543,7 +543,9 @@
           "instruction"
         ],
         "shape": "file",
-        "source": "https://docs.x.ai/build/overview"
+        "source": "https://docs.x.ai/build/overview; exercised against the pinned 1.0.5 binary",
+        "evidence": "ran",
+        "note": "Exercised 2026-08-28 by running `grok inspect` against a temporary GROK_HOME holding a marker component here; the product reports it back by name."
       },
       {
         "path": "config.toml",
@@ -551,14 +553,16 @@
           "setting"
         ],
         "shape": "file",
-        "source": "https://docs.x.ai/build/settings",
-        "note": "MCP servers live here under [mcp_servers.<name>]; a key inside a file is not a projection surface, so mcp is not declared"
+        "source": "https://docs.x.ai/build/settings; exercised against the pinned 1.0.5 binary",
+        "evidence": "ran",
+        "note": "MCP servers live here under [mcp_servers.<name>]; a key inside a file is not a projection surface, so mcp is not declared Exercised 2026-08-28 by running `grok inspect` against a temporary GROK_HOME holding a marker component here; the product reports it back by name."
       },
       {
         "path": "sandbox.toml",
         "kinds": [],
         "shape": "file",
         "source": "https://docs.x.ai/build/settings/reference",
+        "evidence": "page",
         "note": "Owned and routing no kind. The product's own reference calls it *Custom sandbox profiles* -- named profiles a person selects, not the posture keys the owned `config.toml` carries. `setting` routes to that file, and a profile library is a different axis from a posture: this provider's `full-auto` setup sets `[sandbox] profile = \"off\"` in `config.toml`, which selects, and never defines. Owned so a backup returns a person's own profiles."
       },
       {
@@ -567,8 +571,9 @@
           "skill"
         ],
         "shape": "directory",
-        "source": "https://docs.x.ai/build/features/skills-plugins-marketplaces",
-        "note": "a user-invocable skill also surfaces as /<skill-name>, which is why this product has no commands directory"
+        "source": "https://docs.x.ai/build/features/skills-plugins-marketplaces; exercised against the pinned 1.0.5 binary",
+        "evidence": "ran",
+        "note": "a user-invocable skill also surfaces as /<skill-name>, which is why this product has no commands directory Exercised 2026-08-28 by running `grok inspect` against a temporary GROK_HOME holding a marker component here; the product reports it back by name."
       },
       {
         "path": "agents",
@@ -576,7 +581,9 @@
           "agent"
         ],
         "shape": "directory",
-        "source": "https://docs.x.ai/build/features/skills-plugins-marketplaces"
+        "source": "https://docs.x.ai/build/features/skills-plugins-marketplaces; exercised against the pinned 1.0.5 binary",
+        "evidence": "ran",
+        "note": "Exercised 2026-08-28 by running `grok inspect` against a temporary GROK_HOME holding a marker component here; the product reports it back by name."
       },
       {
         "path": "plugins",
@@ -584,7 +591,9 @@
           "plugin"
         ],
         "shape": "directory",
-        "source": "https://docs.x.ai/build/features/skills-plugins-marketplaces"
+        "source": "https://docs.x.ai/build/features/skills-plugins-marketplaces; exercised against the pinned 1.0.5 binary",
+        "evidence": "ran",
+        "note": "Exercised 2026-08-28 by running `grok inspect` against a temporary GROK_HOME holding a marker component here; the product reports it back by name."
       },
       {
         "path": "hooks",
@@ -592,27 +601,32 @@
           "hook"
         ],
         "shape": "directory",
-        "source": "https://docs.x.ai/build/features/skills-plugins-marketplaces"
+        "source": "https://docs.x.ai/build/features/skills-plugins-marketplaces; exercised against the pinned 1.0.5 binary",
+        "evidence": "ran",
+        "note": "Exercised 2026-08-28 by running `grok inspect` against a temporary GROK_HOME holding a marker component here; the product reports it back by name."
       },
       {
         "path": "workflows",
         "kinds": [],
         "shape": "directory",
         "source": "https://docs.x.ai/build/modes-and-commands",
+        "evidence": "page",
         "note": "$GROK_HOME/workflows/<name>.rhai -- a script the product runs, owned here so a setup can carry one; it is not a command component"
       },
       {
         "path": "rules",
         "kinds": [],
         "shape": "directory",
-        "source": "https://docs.x.ai/build/settings/reference; measured from the pinned 1.0.5 binary's own embedded reference text",
-        "note": "The product's own reference lists `~/.grok/rules/` as *Always scanned; applies to all projects*. Owned from 2026-08-28, having been neither owned nor recorded -- so a backup captures it and a restore returns it.\n\n**Routing no kind, and the reason is a rule this repository enforces.** `instruction` already routes to the owned `AGENTS.md`, and one kind routed by two surfaces makes a consumer's route ambiguous -- the surfaces guard refuses it by name, which is how this row was written the first time and corrected. Both surfaces are real: `AGENTS.md` is the single global instruction document, `rules/` a directory of always-scanned rule files. Which of the two an `instruction` component should reach is a question for the per-kind route the consumer is building; until that exists there is no way to say it, and guessing would put a component in one of two places that both look right."
+        "source": "https://docs.x.ai/build/settings/reference; measured from the pinned 1.0.5 binary's own embedded reference text; exercised against the pinned 1.0.5 binary",
+        "evidence": "ran",
+        "note": "The product's own reference lists `~/.grok/rules/` as *Always scanned; applies to all projects*. Owned from 2026-08-28, having been neither owned nor recorded -- so a backup captures it and a restore returns it.\n\n**Routing no kind, and the reason is a rule this repository enforces.** `instruction` already routes to the owned `AGENTS.md`, and one kind routed by two surfaces makes a consumer's route ambiguous -- the surfaces guard refuses it by name, which is how this row was written the first time and corrected. Both surfaces are real: `AGENTS.md` is the single global instruction document, `rules/` a directory of always-scanned rule files. Which of the two an `instruction` component should reach is a question for the per-kind route the consumer is building; until that exists there is no way to say it, and guessing would put a component in one of two places that both look right. Exercised 2026-08-28 by running `grok inspect` against a temporary GROK_HOME holding a marker component here; the product reports it back by name."
       },
       {
         "path": "commands",
         "kinds": [],
         "shape": "directory",
         "source": "https://docs.x.ai/build/settings/reference; measured by running the pinned 1.0.5 binary in a contained HOME, 2026-08-28",
+        "evidence": "ran",
         "note": "The product's own tier table gives `~/.grok/skills/`, `~/.grok/commands/` at **User** tier, *Personal skills for all projects*, and calls the project-scope equivalent *legacy command markdown*. Owned from 2026-08-28: it is read, so backup, remove and identity must cover it.\n\n**Routing no kind, and a run is what decided that.** A file placed at `~/.grok/commands/<name>.md` with no plugin manifest is loaded, and `grok inspect` lists it under **Skills** at `user` tier, beside one placed in `skills/`. Two controls make the instrument trustworthy: a file under a directory nothing routes to is not listed, and removing this one removes the entry. So what this directory holds becomes a skill -- and `skill` already routes to `skills`, which the surfaces guard refuses to duplicate by name.\n\n`command` was declared here for one week on the strength of reading the directory rather than running the product, and withdrawn on the measurement. The consumer's own record had said so first, sourced to an earlier measurement from this side; both were right about the mechanism and this repository had lost track of which. Which of two skill surfaces a component should reach is the same question grok's `rules` and claude's `workflows` ask, and the same per-kind route answers all three."
       },
       {
@@ -620,6 +634,7 @@
         "kinds": [],
         "shape": "directory",
         "source": "https://docs.x.ai/build/features/subagents; measured in the pinned 1.0.5 binary",
+        "evidence": "bytes",
         "note": "$GROK_HOME/personas/*.toml -- behavioural overlays applied during subagent resolution. The product's own embedded reference names the user tier directly: \"`~/.grok/personas/*.toml` (user)\". Owned so a backup captures it and a restore returns it; it routes no kind because an overlay is not an agent, and the closed kind set has no word for it."
       },
       {
@@ -627,6 +642,7 @@
         "kinds": [],
         "shape": "directory",
         "source": "https://docs.x.ai/build/features/subagents; measured in the pinned 1.0.5 binary",
+        "evidence": "bytes",
         "note": "$GROK_HOME/roles/*.toml -- named in the same sentence as personas by the product's own embedded reference: \"Both are also discovered from `.grok/roles/*.toml` and `.grok/personas/*.toml` files respectively.\" Owned and routing no kind, for the same reason."
       }
     ],
@@ -790,5 +806,5 @@
     "active_sessions.lock",
     "logs"
   ],
-  "setup_catalogue_digest": "sha256:cbbc72419d03a26f48eff837f362654e78fa6b87792e6da181ac1be7fe3e385d"
+  "setup_catalogue_digest": "sha256:55dd6ab0fe09088b71443c4115d0c5b4ccc1721d1510a0421fbc96188a770038"
 }

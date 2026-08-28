@@ -21,20 +21,24 @@ TOML, `#` comments in the grammar. No JSON schema.
 
 ## Owned surfaces
 
-| path | kinds | shape | decided by |
-|---|---|---|---|
-| `AGENTS.md` | instruction | file | <https://docs.x.ai/build/overview> |
-| `config.toml` | setting | file | <https://docs.x.ai/build/settings> |
-| `sandbox.toml` | *(routes no kind)* | file | <https://docs.x.ai/build/settings/reference> |
-| `skills` | skill | directory | <https://docs.x.ai/build/features/skills-plugins-marketplaces> |
-| `agents` | agent | directory | <https://docs.x.ai/build/features/skills-plugins-marketplaces> |
-| `plugins` | plugin | directory | <https://docs.x.ai/build/features/skills-plugins-marketplaces> |
-| `hooks` | hook | directory | <https://docs.x.ai/build/features/skills-plugins-marketplaces> |
-| `workflows` | *(routes no kind)* | directory | <https://docs.x.ai/build/modes-and-commands> |
-| `rules` | *(routes no kind)* | directory | <https://docs.x.ai/build/settings/reference> |
-| `commands` | *(routes no kind)* | directory | <https://docs.x.ai/build/settings/reference> |
-| `personas` | *(routes no kind)* | directory | <https://docs.x.ai/build/features/subagents> |
-| `roles` | *(routes no kind)* | directory | <https://docs.x.ai/build/features/subagents> |
+| path | kinds | shape | decided by | exercised by |
+|---|---|---|---|---|
+| `AGENTS.md` | instruction | file | <https://docs.x.ai/build/overview> | **ran it** |
+| `config.toml` | setting | file | <https://docs.x.ai/build/settings> | **ran it** |
+| `sandbox.toml` | *(routes no kind)* | file | <https://docs.x.ai/build/settings/reference> | *nothing — a page* |
+| `skills` | skill | directory | <https://docs.x.ai/build/features/skills-plugins-marketplaces> | **ran it** |
+| `agents` | agent | directory | <https://docs.x.ai/build/features/skills-plugins-marketplaces> | **ran it** |
+| `plugins` | plugin | directory | <https://docs.x.ai/build/features/skills-plugins-marketplaces> | **ran it** |
+| `hooks` | hook | directory | <https://docs.x.ai/build/features/skills-plugins-marketplaces> | **ran it** |
+| `workflows` | *(routes no kind)* | directory | <https://docs.x.ai/build/modes-and-commands> | *nothing — a page* |
+| `rules` | *(routes no kind)* | directory | <https://docs.x.ai/build/settings/reference> | **ran it** |
+| `commands` | *(routes no kind)* | directory | <https://docs.x.ai/build/settings/reference> | **ran it** |
+| `personas` | *(routes no kind)* | directory | <https://docs.x.ai/build/features/subagents> | read its bytes |
+| `roles` | *(routes no kind)* | directory | <https://docs.x.ai/build/features/subagents> | read its bytes |
+
+**A citation is not a measurement.** `decided by` says where a row came from; `exercised by` says whether anybody made the product demonstrate it. Where a row records no method the answer is a page and nothing else, because absence of a record of measurement is not evidence of measurement.
+
+Here that is **8 run**, **2 read from the product's own bytes**, and **2 resting on a page alone**. The last number is the one worth acting on: a row in it is not wrong, it is untested, and the two are indistinguishable from here.
 
 A surface that routes no kind is owned deliberately: a backup captures
 it and a restore returns it, and no component is routed there because
