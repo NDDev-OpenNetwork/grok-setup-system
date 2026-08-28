@@ -57,4 +57,4 @@ jobs:
           suffix=""
           [ "$RUNNER_OS" = "Windows" ] && suffix=".exe"
           exe="target/release/grok-setup-system$suffix"
-          "$py" scripts/evidence.py --binary "$exe" --harness grok --writes "mcp add nddev-evidence -- echo hi"
+          "$py" scripts/evidence.py --binary "$exe" --harness grok --writes "mcp add nddev-evidence -- echo hi" --probe 'inspect' --probe-kind reads --probe-baseline 'AGENTS.md'
