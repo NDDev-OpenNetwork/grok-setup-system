@@ -199,6 +199,10 @@ other file beside a target.
 
 **`.grok-setup-system`** -- This provider's own control directory: the target lock, the backup slots and their payloads. Kept out of the declaration for the same reason as the state file, and recorded here because the declined list is where a reader looks before opening a file to find out what it is. ([source](this provider's own contract; no vendor page is involved))
 
+**`$HOME/.agents/skills`** -- Grok reads the user-level convention root. Its own embedded reference, carried in the pinned 1.0.5 binary, says it scans `.agents/skills/` (and `commands/`) *at each tier* -- and the tier table names User as one of them. Not owned: the root belongs to the convention rather than to this product, and Codex already declares it under `user_root`. A namespace is removed whole, so a second declaration would make either provider's remove take the other's skills. ([source](measured from the pinned artifact, digest verified before reading (grok 1.0.5, the binary's own reference text)))
+
+**`$HOME/.claude/skills`** -- Grok scans Claude Code's own skills directory for compatibility. From the same embedded reference: `skills = true  # scan ~/.claude/skills/ and <cwd>/.claude/skills/`, and the tier table gives `~/.claude/skills/` as User tier, Lowest priority, configurable. It is another product's home and never this provider's to own -- but worth recording, because claude-setup-system owns `skills` there and a remove of the Claude setup changes what Grok sees. ([source](measured from the pinned artifact, digest verified before reading (grok 1.0.5, the binary's own reference text)))
+
 ## Response
 
 One maintainer. Defects are triaged as time allows; security reports are
