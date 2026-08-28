@@ -719,7 +719,14 @@
       }
     ],
     "config_home_env": "GROK_HOME",
-    "config_home_env_note": "Measured 2026-08-28: `mcp add` under this variable reported `File modified: $GROK_HOME/config.toml`."
+    "config_home_env_note": "Measured 2026-08-28: `mcp add` under this variable reported `File modified: $GROK_HOME/config.toml`.",
+    "configuration_format": {
+      "file": "config.toml",
+      "grammar": "toml",
+      "accepts_comments": true,
+      "note": "TOML, `#` comments in the grammar. No JSON schema. Note the layering recorded elsewhere in this file: `requirements.toml` and the system `/etc/grok` pair clamp every key here, so a value written into this file is not necessarily the effective one.",
+      "measured_at": "2026-08-28"
+    }
   },
   "software_artifacts": {
     "command": "grok",
