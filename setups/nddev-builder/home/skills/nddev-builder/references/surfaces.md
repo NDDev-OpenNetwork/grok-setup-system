@@ -21,18 +21,18 @@ TOML, `#` comments in the grammar. No JSON schema.
 
 ## Owned surfaces
 
-| path | kinds | shape |
-|---|---|---|
-| `AGENTS.md` | instruction | file |
-| `config.toml` | setting | file |
-| `sandbox.toml` | *(routes no kind)* | file |
-| `skills` | skill | directory |
-| `agents` | agent | directory |
-| `plugins` | plugin | directory |
-| `hooks` | hook | directory |
-| `workflows` | *(routes no kind)* | directory |
-| `rules` | *(routes no kind)* | directory |
-| `commands` | *(routes no kind)* | directory |
+| path | kinds | shape | decided by |
+|---|---|---|---|
+| `AGENTS.md` | instruction | file | <https://docs.x.ai/build/overview> |
+| `config.toml` | setting | file | <https://docs.x.ai/build/settings> |
+| `sandbox.toml` | *(routes no kind)* | file | <https://docs.x.ai/build/settings/reference> |
+| `skills` | skill | directory | <https://docs.x.ai/build/features/skills-plugins-marketplaces> |
+| `agents` | agent | directory | <https://docs.x.ai/build/features/skills-plugins-marketplaces> |
+| `plugins` | plugin | directory | <https://docs.x.ai/build/features/skills-plugins-marketplaces> |
+| `hooks` | hook | directory | <https://docs.x.ai/build/features/skills-plugins-marketplaces> |
+| `workflows` | *(routes no kind)* | directory | <https://docs.x.ai/build/modes-and-commands> |
+| `rules` | *(routes no kind)* | directory | <https://docs.x.ai/build/settings/reference> |
+| `commands` | *(routes no kind)* | directory | <https://docs.x.ai/build/settings/reference> |
 
 A surface that routes no kind is owned deliberately: a backup captures
 it and a restore returns it, and no component is routed there because
