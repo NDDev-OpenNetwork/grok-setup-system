@@ -162,8 +162,6 @@ Configuration home as the product documents it: `~/.grok`.
 | --- | --- | --- |
 | `AGENTS.md` | `instruction` | [source](https://docs.x.ai/build/overview) |
 | `config.toml` | `setting` | [source](https://docs.x.ai/build/settings) |
-| `managed_config.toml` | -- | [source](https://docs.x.ai/build/settings/reference) |
-| `requirements.toml` | -- | [source](https://docs.x.ai/build/settings/reference) |
 | `sandbox.toml` | -- | [source](https://docs.x.ai/build/settings/reference) |
 | `skills` | `skill` | [source](https://docs.x.ai/build/features/skills-plugins-marketplaces) |
 | `agents` | `agent` | [source](https://docs.x.ai/build/features/skills-plugins-marketplaces) |
@@ -171,7 +169,7 @@ Configuration home as the product documents it: `~/.grok`.
 | `hooks` | `hook` | [source](https://docs.x.ai/build/features/skills-plugins-marketplaces) |
 | `workflows` | -- | [source](https://docs.x.ai/build/modes-and-commands) |
 | `rules` | -- | [source](https://docs.x.ai/build/settings/reference; measured from the pinned 1.0.5 binary's own embedded reference text) |
-| `commands` | `command` | [source](https://docs.x.ai/build/settings/reference; measured from the pinned 1.0.5 binary's own embedded reference text) |
+| `commands` | -- | [source](https://docs.x.ai/build/settings/reference; measured by running the pinned 1.0.5 binary in a contained HOME, 2026-08-28) |
 
 A path routing no component kind is owned so a setup can carry it;
 nothing compiles a component to it.
@@ -210,6 +208,30 @@ other file beside a target.
 **`pager.toml`** -- *TUI appearance configuration*, in the product's own reference. Not owned for the same reason as `lsp.json` and claude's keymap: appearance is a real surface with no kind to route it. ([source](measured from the pinned 1.0.5 binary's own reference text))
 
 **`memory`** -- *Cross-session memory files and index*, holding a global `MEMORY.md`. What the product has learned across sessions -- a person's accumulated context rather than configuration, and a backup of it would put private text somewhere with a retention policy nobody chose. ([source](measured from the pinned 1.0.5 binary's own reference text))
+
+**`managed_config.toml`** -- An administrator's **signed** policy, and this build owned it until 2026-08-28. Owning it deleted it.
+
+**Measured on the shipped 0.0.11 binary**, against a target holding a managed grok home: `install baseline` removed `managed_config.toml` and `requirements.toml` and **kept** `managed_config.sig.json`, `managed_identity.sig.json` and `managed_config_cache.json`. That is exactly the state the product's own gate refuses -- `xai_grok_config::managed_cache` carries *"refusing session -- the signed is-managed claim requires an authentic policy sidecar and none is present"* and *"refusing session on tamper evidence"*.
+
+The harm was the **split**: owning the policy and not its sidecars left a signature with nothing to verify. `grok setup` writes all of them, server-fetched and signature-checked -- its own `--json` help exists so the command "writes nothing to `~/.grok`".
+
+**The previous reason for owning it was circular.** It read *"owned so a backup returns it byte-exact after an operation touches the home"* -- and the only reason an operation touched it was that it was owned. `restore` does bring it back, measured; the person's next `grok` run happens before that and is refused. Now in `never_touch`: not deleted, not captured into a slot, not hashed into an identity.
+
+**And there is a system layer above this one, outside any target.** `/etc/grok/managed_config.toml` and `/etc/grok/requirements.toml` are path literals in the pinned binary. They get no row of their own because every recorded path here is relative to the target and those are relative to a root this provider never evaluates against -- the guard refused the row when it was tried, correctly. Recorded in this sentence instead, the same way antigravity's `~/.cache/ms-playwright-go` is.
+
+**It bears on the `full-auto` posture.** That setup writes `[ui] permission_mode = always-approve`; the product's own documentation puts the system layer at the top of the chain -- *"requirements.toml / MDM (org-enforced; clamps every config layer below, including the overlay)"*. So on a managed machine the setup installs, verifies and restores cleanly and changes nothing, which is the same defect class as a correct key under a wrong name. ([source](https://docs.x.ai/build/settings/reference; measured by running grok-setup-system 0.0.11 against a managed home, 2026-08-28))
+
+**`requirements.toml`** -- The org-enforced clamp, and it left the owned set with the signed policy above for the same measured reason. The product's own documentation places it at the top of the precedence chain: *"requirements.toml / MDM (org-enforced; clamps every config layer below, including the overlay)"*, and its failure mode is denial rather than degradation -- `requirements.toml unreadable; treating as fail_closed`.
+
+A file whose malformed state locks a person out of their own tool is not one to delete on the way to installing a setup. In `never_touch` now. ([source](https://docs.x.ai/build/settings/reference; measured by running grok-setup-system 0.0.11 against a managed home, 2026-08-28))
+
+**`managed_config.sig.json`** -- The signature over `managed_config.toml`, beside `managed_identity.sig.json` and `managed_config_cache.json`. Unrecorded until 2026-08-28, which is what made the defect above possible: the policy was owned and its proof was not, so an install took one and left the other. All three are in `never_touch` with the policy they belong to. ([source](measured from the pinned 1.0.5 binary: xai_grok_config::signed_policy and managed_cache, 2026-08-28))
+
+**`leader.sock`** -- A unix socket in the configuration home, named by the product's own help: `--leader-socket <PATH>  Use a custom leader socket path instead of the default ~/.grok/leader.sock`. Not a configuration surface and not capturable -- a socket is a special file, and this provider's `copy_tree` refuses those by kind. Recorded so the next reader of this home knows what it is rather than repeating the search. ([source](grok 1.0.5 `setup --help`, measured 2026-08-28))
+
+**`GROK_CONFIG_PATH`** -- Not a path in the target -- an **environment overlay**, recorded here because it changes what the product reads and nothing else in this file would tell a reader so. The pinned binary carries `xai_grok_config::env_overlay` with its own refusals (*"GROK_CONFIG_PATH is unreadable; ignoring the overlay"*, *"...exceeds the max overlay size..."*), and the product's documentation places it: *"GROK_CONFIG / GROK_CONFIG_PATH (tier 4) are config overlays: a merged config layer, not direct-setting environment variables"*.
+
+So a person with it set has configuration this provider never sees, and `status` would report the target managed while the effective configuration differs. Nothing to own; worth knowing. ([source](measured from the pinned 1.0.5 binary, 2026-08-28))
 
 ## Response
 
