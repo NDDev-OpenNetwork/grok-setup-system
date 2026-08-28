@@ -806,5 +806,5 @@
     "active_sessions.lock",
     "logs"
   ],
-  "setup_catalogue_digest": "sha256:55dd6ab0fe09088b71443c4115d0c5b4ccc1721d1510a0421fbc96188a770038"
+  "setup_catalogue_digest": "sha256:b4fdc7d8ff8ca8388224bb719281ed068c3717bd1f9505d0b4b5f9020a38044c"
 }

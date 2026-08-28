@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "id": "full-auto",
-  "description": "Full auto: nothing is asked and nothing is sandboxed. `permission_mode` is always-approve and the sandbox profile is off. This is a setup posture -- keys in this product's own configuration file. It is not an execution profile and it grants no environment: what it changes is what the product asks you, not what anyone is permitted to run.",
+  "description": "Full auto: nothing is asked, nothing is sandboxed, and every capability this build carries is switched on. `permission_mode` is always-approve, `ui.yolo` is set -- the product's own separate switch, not an alias of the approval mode -- and the sandbox profile is off. Beyond that it enables the six feature toggles this build names in its own table, plus subagents, cross-session memory and managed MCP servers, four of which are off by default. Telemetry and feedback are toggles too and are deliberately left alone: they send data outward rather than granting you a tool. The key names come from the pinned 1.0.5 binary's own feature table; that they take effect is not something anything here can demonstrate, and is not claimed. This is a setup posture -- keys in this product's own configuration file. It is not an execution profile and it grants no environment: what it changes is what the product asks you and which of its own tools exist, not what anyone is permitted to run.",
   "sources": [
     "https://docs.x.ai/build/settings/reference",
     "https://docs.x.ai/build/features/permissions"
