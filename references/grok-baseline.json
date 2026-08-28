@@ -724,7 +724,7 @@
       "file": "config.toml",
       "grammar": "toml",
       "accepts_comments": true,
-      "note": "TOML, `#` comments in the grammar. No JSON schema. Note the layering recorded elsewhere in this file: `requirements.toml` and the system `/etc/grok` pair clamp every key here, so a value written into this file is not necessarily the effective one.",
+      "note": "TOML, `#` comments in the grammar. No JSON schema.\n\n**A value written here is not necessarily the effective one.** `requirements.toml` and the system pair at `/etc/grok` clamp every key below them -- the product's own documentation puts them at the top of the chain: *\"requirements.toml / MDM (org-enforced; clamps every config layer below, including the overlay)\"*. So a `full-auto` posture can install, verify and restore cleanly on a managed machine and change nothing.",
       "measured_at": "2026-08-28"
     }
   },
@@ -771,5 +771,5 @@
     "active_sessions.lock",
     "logs"
   ],
-  "setup_catalogue_digest": "sha256:747abea950ef207dae0bb594567725f8dc30c967a54feb9bd2b1624496d9faf8"
+  "setup_catalogue_digest": "sha256:110d7558419b38f5771ba39161f5c864652d225b5d548e67480b235d8fb2a38d"
 }
