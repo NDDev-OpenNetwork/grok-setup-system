@@ -4,6 +4,7 @@
   "description": "A working floor plus the NDDev builder toolkit: what this harness owns, the lifecycle it performs, and the gate a change must pass.",
   "sources": [
     "https://docs.x.ai/build/features/skills-plugins-marketplaces",
+    "https://docs.x.ai/build/features/subagents",
     "https://docs.x.ai/build/modes-and-commands",
     "https://docs.x.ai/build/overview",
     "https://docs.x.ai/build/settings",
