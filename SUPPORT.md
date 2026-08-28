@@ -171,7 +171,7 @@ Configuration home as the product documents it: `~/.grok`.
 | `hooks` | `hook` | [source](https://docs.x.ai/build/features/skills-plugins-marketplaces) |
 | `workflows` | -- | [source](https://docs.x.ai/build/modes-and-commands) |
 | `rules` | -- | [source](https://docs.x.ai/build/settings/reference; measured from the pinned 1.0.5 binary's own embedded reference text) |
-| `commands` | `command` | [source](https://docs.x.ai/build/settings/reference; measured from the pinned 1.0.5 binary's own embedded reference text) |
+| `commands` | -- | [source](https://docs.x.ai/build/settings/reference; measured by running the pinned 1.0.5 binary in a contained HOME, 2026-08-28) |
 
 A path routing no component kind is owned so a setup can carry it;
 nothing compiles a component to it.

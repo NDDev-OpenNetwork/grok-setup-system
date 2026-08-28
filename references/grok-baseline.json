@@ -624,12 +624,10 @@
       },
       {
         "path": "commands",
-        "kinds": [
-          "command"
-        ],
+        "kinds": [],
         "shape": "directory",
-        "source": "https://docs.x.ai/build/settings/reference; measured from the pinned 1.0.5 binary's own embedded reference text",
-        "note": "The product's own tier table gives `~/.grok/skills/`, `~/.grok/commands/` at **User** tier, *Personal skills for all projects*. `skills` was owned and `commands` was not, so a consumer could route a `skill` component here and not a `command` -- the two halves of one row in the vendor's own table. Declared 2026-08-28, and `command` with it: this build declared no such kind at all despite owning `workflows`."
+        "source": "https://docs.x.ai/build/settings/reference; measured by running the pinned 1.0.5 binary in a contained HOME, 2026-08-28",
+        "note": "The product's own tier table gives `~/.grok/skills/`, `~/.grok/commands/` at **User** tier, *Personal skills for all projects*, and calls the project-scope equivalent *legacy command markdown*. Owned from 2026-08-28: it is read, so backup, remove and identity must cover it.\n\n**Routing no kind, and a run is what decided that.** A file placed at `~/.grok/commands/<name>.md` with no plugin manifest is loaded, and `grok inspect` lists it under **Skills** at `user` tier, beside one placed in `skills/`. Two controls make the instrument trustworthy: a file under a directory nothing routes to is not listed, and removing this one removes the entry. So what this directory holds becomes a skill -- and `skill` already routes to `skills`, which the surfaces guard refuses to duplicate by name.\n\n`command` was declared here for one week on the strength of reading the directory rather than running the product, and withdrawn on the measurement. The consumer's own record had said so first, sourced to an earlier measurement from this side; both were right about the mechanism and this repository had lost track of which. Which of two skill surfaces a component should reach is the same question grok's `rules` and claude's `workflows` ask, and the same per-kind route answers all three."
       }
     ],
     "declined": [

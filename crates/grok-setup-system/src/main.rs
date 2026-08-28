@@ -86,9 +86,28 @@ pub const GROK: Harness = Harness {
         ComponentKind::Hook,
         ComponentKind::Plugin,
         ComponentKind::Setting,
-        // Joined 2026-08-28 with the `commands` namespace: this build owned
-        // `workflows` and declared no command kind at all.
-        ComponentKind::Command,
+        // `Command` was declared here on 2026-08-28 beside the `commands`
+        // namespace and is **withdrawn the same week**, because running the
+        // product answered the question reading it could not.
+        //
+        // Measured on the pinned 1.0.5 binary in a contained HOME: a file at
+        // `~/.grok/commands/<name>.md` is loaded, and `grok inspect` lists it
+        // under **Skills**, `user` tier -- beside one placed in `skills/`.
+        // Two controls: a file under a directory nothing routes to is not
+        // listed, and removing the file removes the entry. So the directory is
+        // read, and what it holds becomes a skill.
+        //
+        // The product's own embedded reference says the same thing in a
+        // precedence table -- `~/.grok/skills/`, `~/.grok/commands/` share one
+        // row, *"Personal skills for all projects"*, and the project-scope rows
+        // call the directory *"legacy command markdown"*.
+        //
+        // The namespace above stays owned: it is read, so backup, remove and
+        // identity must cover it. What comes out is the promise that a
+        // `command` component routed there stays a command -- it would arrive
+        // as a skill, and `skill` already routes to `skills`. This is the third
+        // case in this estate for a per-kind route the wire cannot yet express,
+        // beside grok's own `rules` and claude's `workflows`.
     ],
     projection_kinds: &[
         ProjectionKind::NativeFiles,
