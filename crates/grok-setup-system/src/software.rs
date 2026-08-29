@@ -15,10 +15,64 @@
 //! field by field, so an edit here fails rather than silently installing bytes
 //! nobody measured.
 
-use harness_runtime::{Artifact, Delivery, Shape, Software};
+use harness_runtime::{Artifact, Delivery, Previous, Shape, Software};
 
 /// The artifacts grok is published as.
 pub(crate) const ARTIFACTS: &[Artifact] = &[
+    Artifact {
+        platform: "linux/arm64",
+        url: "https://x.ai/cli/grok-1.0.13-linux-aarch64",
+        bytes: 135_641_288,
+        sha256: "sha256:b926fc5308374396e260e7efbd6107231a8dae13c084ddaf0fe89b7ebb3edd25",
+        shape: Shape::Raw,
+        member: "",
+    },
+    Artifact {
+        platform: "linux/x86_64",
+        url: "https://x.ai/cli/grok-1.0.13-linux-x86_64",
+        bytes: 166_079_904,
+        sha256: "sha256:edf79521581bb5e6b95abef848491a6a742e860da3e237ebe86a280d30dce4c1",
+        shape: Shape::Raw,
+        member: "",
+    },
+    Artifact {
+        platform: "macos/arm64",
+        url: "https://x.ai/cli/grok-1.0.13-macos-aarch64",
+        bytes: 133_486_016,
+        sha256: "sha256:8669e0fdadceec25b8c159c355f427ffbd82583525d774b6ab1522197ea83b80",
+        shape: Shape::Raw,
+        member: "",
+    },
+    Artifact {
+        platform: "macos/x86_64",
+        url: "https://x.ai/cli/grok-1.0.13-macos-x86_64",
+        bytes: 149_694_528,
+        sha256: "sha256:8eacec87f5ecdb9259c6d812d12ce9e2d405b1526e36ae9d7fc81ec31dbd74d6",
+        shape: Shape::Raw,
+        member: "",
+    },
+    Artifact {
+        platform: "windows/arm64",
+        url: "https://x.ai/cli/grok-1.0.13-windows-aarch64.exe",
+        bytes: 122_000_712,
+        sha256: "sha256:b8881ea0a30874a94d1a3eaec9ba30c9648f597b8bf22454c334574f2f931e7b",
+        shape: Shape::Raw,
+        member: "",
+    },
+    Artifact {
+        platform: "windows/x86_64",
+        url: "https://x.ai/cli/grok-1.0.13-windows-x86_64.exe",
+        bytes: 140_810_568,
+        sha256: "sha256:bf43dc75f5478a106eab1e86d422c963e4dbe9666cf14dab363733d27bf1e672",
+        shape: Shape::Raw,
+        member: "",
+    },
+];
+
+/// The artifacts 1.0.5 was published as, kept so
+/// `software_update` has a version to move from and `rollback` a tree to
+/// return to. Measured from bytes when it was the current pin.
+pub(crate) const PREVIOUS_ARTIFACTS: &[Artifact] = &[
     Artifact {
         platform: "linux/arm64",
         url: "https://x.ai/cli/grok-1.0.5-linux-aarch64",
@@ -71,13 +125,14 @@ pub(crate) const ARTIFACTS: &[Artifact] = &[
 
 /// Grok Build's program, and where its bytes come from.
 pub(crate) const SOFTWARE: Software = Software {
-    version: "1.0.5",
+    version: "1.0.13",
     command: "grok",
     delivery: Delivery::Artifacts(ARTIFACTS),
     unsupported: &[],
-    // This harness has not been bumped since it was pinned, so there is
-    // no earlier release to move between. Absent rather than invented.
-    previous: None,
+    previous: Some(Previous {
+        version: "1.0.5",
+        artifacts: PREVIOUS_ARTIFACTS,
+    }),
 };
 
 #[cfg(test)]
