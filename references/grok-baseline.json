@@ -693,11 +693,6 @@
         "source": "this provider's own contract; no vendor page is involved"
       },
       {
-        "path": "$HOME/.agents/skills",
-        "reason": "Grok reads the user-level convention root. Its own embedded reference, carried in the pinned 1.0.5 binary, says it scans `.agents/skills/` (and `commands/`) *at each tier* -- and the tier table names User as one of them. Not owned: the root belongs to the convention rather than to this product, and Codex already declares it under `user_root`. A namespace is removed whole, so a second declaration would make either provider's remove take the other's skills.",
-        "source": "measured from the pinned artifact, digest verified before reading (grok 1.0.5, the binary's own reference text)"
-      },
-      {
         "path": "$HOME/.claude/skills",
         "reason": "Grok scans Claude Code's own skills directory for compatibility. From the same embedded reference: `skills = true  # scan ~/.claude/skills/ and <cwd>/.claude/skills/`, and the tier table gives `~/.claude/skills/` as User tier, Lowest priority, configurable. It is another product's home and never this provider's to own -- but worth recording, because claude-setup-system owns `skills` there and a remove of the Claude setup changes what Grok sees.",
         "source": "measured from the pinned artifact, digest verified before reading (grok 1.0.5, the binary's own reference text)"
@@ -761,7 +756,26 @@
       "accepts_comments": true,
       "note": "TOML, `#` comments in the grammar. No JSON schema.\n\n**A value written here is not necessarily the effective one.** `requirements.toml` and the system pair at `/etc/grok` clamp every key below them -- the product's own documentation puts them at the top of the chain: *\"requirements.toml / MDM (org-enforced; clamps every config layer below, including the overlay)\"*. So a `full-auto` posture can install, verify and restore cleanly on a managed machine and change nothing.",
       "measured_at": "2026-08-28"
-    }
+    },
+    "scoped": [
+      {
+        "target_scope": "user_root",
+        "root": "~/.agents",
+        "surfaces": [
+          {
+            "path": "skills",
+            "kinds": [
+              "skill"
+            ],
+            "shape": "directory",
+            "source": "measured by running the pinned 1.0.13 binary with `grok inspect` against a temporary HOME, 2026-08-29; and its own embedded reference text",
+            "evidence": "ran",
+            "note": "**Run, not read.** The pinned `grok-1.0.13-linux-x86_64` was fetched, its digest checked against the artifact table, and driven with `grok inspect` -- *Show the configuration Grok discovers for this directory*, which needs no credential. With a `SKILL.md` at `$HOME/.agents/skills/nddev-user-root-probe/` it reports:\n\n```\n  Skills (1)\n  └ nddev-user-root-probe  user\n```\n\n-- discovered, and at the **user** tier, which is the half the embedded reference's tier table asserted and a run confirms.\n\n**With a control.** A second skill at `$HOME/.agents-not-a-root/skills/` -- a sibling root no page names -- is absent: the count is 1, not 2. Without it, \"the probe was found\" could not be told from \"the product scans `$HOME`\".\n\nThe one root in this estate that belongs to a convention rather than to a product. `$HOME/.agents/skills` is a *sibling* of this product's configuration home, not a child, so nothing declared against this provider's own target can reach it -- that is what `user_root` exists for.\n\n**Owning a shared root, and the reason this record used to decline it.** Five of the seven products read this root, and the decline said: *a namespace is removed whole, so a second declaration would make either provider's remove take the other's skills.* That sentence was true when it was written and stopped being true when `written_paths` shipped -- `remove` under this scope takes the files this provider recorded writing and refuses rather than widening when it cannot read the record, and each harness carries its own state file, so they coexist under one root. The reason was not re-read when the thing it described changed.\n\nRelative to this scope's own root the path is `skills`, not `.agents/skills`: the root is what the scope names, and writing it into the path again would put the skills at `~/.agents/.agents/skills`."
+          }
+        ],
+        "declined": []
+      }
+    ]
   },
   "software_artifacts": {
     "command": "grok",
@@ -806,7 +820,7 @@
     "active_sessions.lock",
     "logs"
   ],
-  "setup_catalogue_digest": "sha256:d0a596118f19a295d805155c4d7c98a0f3e28fc36f8845ebdc6f0a24d843e019",
+  "setup_catalogue_digest": "sha256:3b0ec832a50e5797c5503b5732121c63adbf76c8b7ee104199ebefe52fd58f6c",
   "previous_software_artifacts": {
     "command": "grok",
     "shape": "raw",

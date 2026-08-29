@@ -46,9 +46,26 @@ the kind it would carry already routes somewhere else. One kind on two
 surfaces makes a consumer's route ambiguous, and the guard in
 `harness_runtime::surfaces` refuses it by name.
 
+## A second target: `target_scope: user_root`
+
+Rooted at `~/.agents`, which is **not** this product's configuration
+home. A consumer reaches it by naming the scope on the request, and
+every path below is relative to that root rather than to the home
+above -- writing the root into the path again would nest it twice.
+
+| path | routes | shape | decided by | exercised by |
+| --- | --- | --- | --- | --- |
+| `skills` | skill | directory | measured by running the pinned 1.0.13 binary with `grok inspect` against a temporary HOME, 2026-08-29 | **ran it** |
+
+**Under a scope the namespace is the permission and the recorded
+files are the inventory.** A root like this one is read by several
+products at once, so `remove`, the capture and a restore all act on
+the files this provider recorded writing -- never on the namespace
+whole, which would take or revert a neighbour's work.
+
 ## Considered and not owned
 
-21 rows. Each records what was searched, so the next reader does not repeat the search:
+20 rows. Each records what was searched, so the next reader does not repeat the search:
 
 - **`.mcp.json`** — A project-level compatibility file Grok merges below config.toml, beside ~/.claude.json and .cursor/mcp.json. Not a surface under the Grok home; the real one is config.toml [mcp_servers.<name>].
 - **`Agents.md`** — Grok Build accepts three spellings of its instruction file -- AGENTS.md, Agents.md and AGENT.md. This provider writes the first and owns only that one: on a case-insensitive filesystem the second is the same file, and on a case-sensitive one owning both would let a target hold two instruction documents that disagree with the product reading one and this provider reporting the other. Which of the three wins where several exist is not documented, so a target holding another spelling is reported rather than resolved.
@@ -59,7 +76,6 @@ surfaces makes a consumer's route ambiguous, and the guard in
 - **`docs`** — Written by the product into its home on first run. Measured 2026-08-28. Not owned: nothing here projects documentation into a product's home, and a directory the product regenerates is not a surface a setup can promise.
 - **`NDDEV-GROK-PROVIDER.json`** — This provider's own state file: which setup is applied, the identity it recorded, and which slot reverses the last operation. Written by every operation and excluded from target identity, because counting it would leave a target different from the identity the operation just wrote. Not a projection surface and never ownable as one.
 - **`.grok-setup-system`** — This provider's own control directory: the target lock, the backup slots and their payloads. Kept out of the declaration for the same reason as the state file, and recorded here because the declined list is where a reader looks before opening a file to find out what it is.
-- **`$HOME/.agents/skills`** — Grok reads the user-level convention root. Its own embedded reference, carried in the pinned 1.0.5 binary, says it scans `.agents/skills/` (and `commands/`) *at each tier* -- and the tier table names User as one of them. Not owned: the root belongs to the convention rather than to this product, and Codex already declares it under `user_root`. A namespace is removed whole, so a second declaration would make either provider's remove take the other's skills.
 - **`$HOME/.claude/skills`** — Grok scans Claude Code's own skills directory for compatibility. From the same embedded reference: `skills = true  # scan ~/.claude/skills/ and <cwd>/.claude/skills/`, and the tier table gives `~/.claude/skills/` as User tier, Lowest priority, configurable. It is another product's home and never this provider's to own -- but worth recording, because claude-setup-system owns `skills` there and a remove of the Claude setup changes what Grok sees.
 - **`auth.json`** — Authentication credentials. Grok's own embedded reference, carried in the pinned 1.0.5 binary, lists `~/.grok/auth.json` as *Authentication credentials (auto-managed)*, set by `grok login`. Never owned and never captured: a slot holding a product's credentials would put them on disk in a second place, which is a worse outcome than an incomplete restore of files this provider never wrote. Recorded here because the declaration's `never_touch` is checked against this block -- without a row, the check measures nothing.
 - **`lsp.json`** — *LSP server configuration (user-scoped)*, in the product's own reference. Real configuration and not owned: nothing in the closed set of component kinds describes a language-server list, and this provider does not declare kinds it cannot name.
