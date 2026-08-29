@@ -775,7 +775,11 @@
         ],
         "declined": []
       }
-    ]
+    ],
+    "projection_basis": {
+      "marketplace": "plugins",
+      "plugin": "plugins"
+    }
   },
   "software_artifacts": {
     "command": "grok",
