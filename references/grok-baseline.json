@@ -532,7 +532,7 @@
     "native_binary_delivery_by_plugins": false,
     "balanced_profile": false
   },
-  "verified_at": "2026-08-29T01:45:16+00:00",
+  "verified_at": "2026-08-29T08:25:54+00:00",
   "native_surfaces": {
     "verified_at": "2026-08-27",
     "config_home": "~/.grok",
@@ -813,14 +813,14 @@
       }
     },
     "version": "1.0.13",
-    "verified_at": "2026-08-29T01:45:16+00:00"
+    "verified_at": "2026-08-29T08:25:54+00:00"
   },
   "never_touch": [
     "active_sessions.json",
     "active_sessions.lock",
     "logs"
   ],
-  "setup_catalogue_digest": "sha256:3b0ec832a50e5797c5503b5732121c63adbf76c8b7ee104199ebefe52fd58f6c",
+  "setup_catalogue_digest": "sha256:31991551d58319d72ae47669da8d741075aaef9d2fa62ad95550367c5e53414b",
   "previous_software_artifacts": {
     "command": "grok",
     "shape": "raw",
