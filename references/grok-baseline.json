@@ -561,9 +561,9 @@
         "path": "sandbox.toml",
         "kinds": [],
         "shape": "file",
-        "source": "https://docs.x.ai/build/settings/reference",
-        "evidence": "page",
-        "note": "Owned and routing no kind. The product's own reference calls it *Custom sandbox profiles* -- named profiles a person selects, not the posture keys the owned `config.toml` carries. `setting` routes to that file, and a profile library is a different axis from a posture: this provider's `full-auto` setup sets `[sandbox] profile = \"off\"` in `config.toml`, which selects, and never defines. Owned so a backup returns a person's own profiles."
+        "source": "https://docs.x.ai/build/settings/reference; anchored literal measured in the pinned artifact by scripts/evidence.py",
+        "evidence": "bytes",
+        "note": "Owned and routing no kind. The product's own reference calls it *Custom sandbox profiles* -- named profiles a person selects, not the posture keys the owned `config.toml` carries. `setting` routes to that file, and a profile library is a different axis from a posture: this provider's `full-auto` setup sets `[sandbox] profile = \"off\"` in `config.toml`, which selects, and never defines. Owned so a backup returns a person's own profiles. Confirmed 2026-08-29 by `scripts/evidence.py`, which installs the pinned artifact into a temporary prefix and searches the installed bytes for each declared namespace joined to the configuration home the binary itself documents -- 8 occurrence(s) of `.grok/sandbox.toml`. A namespace no product can own is searched alongside the real ones in the same pass and was absent, which is what separates a reading from a search that matches everything."
       },
       {
         "path": "skills",
@@ -609,9 +609,9 @@
         "path": "workflows",
         "kinds": [],
         "shape": "directory",
-        "source": "https://docs.x.ai/build/modes-and-commands",
-        "evidence": "page",
-        "note": "$GROK_HOME/workflows/<name>.rhai -- a script the product runs, owned here so a setup can carry one; it is not a command component"
+        "source": "https://docs.x.ai/build/modes-and-commands; anchored literal measured in the pinned artifact by scripts/evidence.py",
+        "evidence": "bytes",
+        "note": "$GROK_HOME/workflows/<name>.rhai -- a script the product runs, owned here so a setup can carry one; it is not a command component Confirmed 2026-08-29 by `scripts/evidence.py`, which installs the pinned artifact into a temporary prefix and searches the installed bytes for each declared namespace joined to the configuration home the binary itself documents -- 10 occurrence(s) of `.grok/workflows`. A namespace no product can own is searched alongside the real ones in the same pass and was absent, which is what separates a reading from a search that matches everything."
       },
       {
         "path": "rules",
@@ -806,5 +806,5 @@
     "active_sessions.lock",
     "logs"
   ],
-  "setup_catalogue_digest": "sha256:b4fdc7d8ff8ca8388224bb719281ed068c3717bd1f9505d0b4b5f9020a38044c"
+  "setup_catalogue_digest": "sha256:d0a596118f19a295d805155c4d7c98a0f3e28fc36f8845ebdc6f0a24d843e019"
 }

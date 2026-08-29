@@ -162,12 +162,12 @@ Configuration home as the product documents it: `~/.grok`.
 | --- | --- | --- |
 | `AGENTS.md` | `instruction` | [source](https://docs.x.ai/build/overview; exercised against the pinned 1.0.5 binary) |
 | `config.toml` | `setting` | [source](https://docs.x.ai/build/settings; exercised against the pinned 1.0.5 binary) |
-| `sandbox.toml` | -- | [source](https://docs.x.ai/build/settings/reference) |
+| `sandbox.toml` | -- | [source](https://docs.x.ai/build/settings/reference; anchored literal measured in the pinned artifact by scripts/evidence.py) |
 | `skills` | `skill` | [source](https://docs.x.ai/build/features/skills-plugins-marketplaces; exercised against the pinned 1.0.5 binary) |
 | `agents` | `agent` | [source](https://docs.x.ai/build/features/skills-plugins-marketplaces; exercised against the pinned 1.0.5 binary) |
 | `plugins` | `plugin` | [source](https://docs.x.ai/build/features/skills-plugins-marketplaces; exercised against the pinned 1.0.5 binary) |
 | `hooks` | `hook` | [source](https://docs.x.ai/build/features/skills-plugins-marketplaces; exercised against the pinned 1.0.5 binary) |
-| `workflows` | -- | [source](https://docs.x.ai/build/modes-and-commands) |
+| `workflows` | -- | [source](https://docs.x.ai/build/modes-and-commands; anchored literal measured in the pinned artifact by scripts/evidence.py) |
 | `rules` | -- | [source](https://docs.x.ai/build/settings/reference; measured from the pinned 1.0.5 binary's own embedded reference text; exercised against the pinned 1.0.5 binary) |
 | `commands` | -- | [source](https://docs.x.ai/build/settings/reference; measured by running the pinned 1.0.5 binary in a contained HOME, 2026-08-28) |
 | `personas` | -- | [source](https://docs.x.ai/build/features/subagents; measured in the pinned 1.0.5 binary) |
