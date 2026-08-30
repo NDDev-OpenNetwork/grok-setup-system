@@ -14,7 +14,7 @@ set -eu
 
 REPO="NDDev-OpenNetwork/grok-setup-system"
 BINARY="grok-setup-system"
-VERSION="${1:-0.0.43}"
+VERSION="${1:-0.0.44}"
 PREFIX="${GROK_INSTALL_DIR:-$HOME/.local/bin}"
 
 case "$(uname -s)" in
