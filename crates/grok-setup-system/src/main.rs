@@ -13,7 +13,7 @@ use std::process::ExitCode;
 
 mod software;
 
-use harness_runtime::{Harness, Scoped};
+use harness_runtime::{Harness, LaunchBinding, Scoped};
 use provider_v3::{ComponentKind, ProjectionKind, TargetScope};
 
 /// Everything specific to Grok Build, verified against `grok-baseline.json`.
@@ -26,6 +26,11 @@ pub const GROK: Harness = Harness {
     vendor: "xAI",
     documented_config_home: "~/.grok",
     config_home_env: "GROK_HOME",
+    // Measured 2026-08-28 by making the product write: `mcp add` reported
+    // `File modified: $GROK_HOME/config.toml`.
+    launch_binding: LaunchBinding::Complete {
+        how: "measured by making the product write its own configuration into the target",
+    },
     // Not measured. The two artifacts this estate has read for this question are
     // claude's, which carries `DISABLE_UPDATES`, and codex's, which carries no
     // such literal. This product has been asked nothing, and an empty value here
