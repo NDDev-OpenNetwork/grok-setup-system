@@ -26,6 +26,12 @@ pub const GROK: Harness = Harness {
     vendor: "xAI",
     documented_config_home: "~/.grok",
     config_home_env: "GROK_HOME",
+    // Not measured. The two artifacts this estate has read for this question are
+    // claude's, which carries `DISABLE_UPDATES`, and codex's, which carries no
+    // such literal. This product has been asked nothing, and an empty value here
+    // says the launch environment is untouched rather than that the product
+    // leaves the bytes alone.
+    updates_off_env: "",
     // One home, one variable: nothing here is conditional.
     config_home_note: "",
     control_directory: ".grok-setup-system",
