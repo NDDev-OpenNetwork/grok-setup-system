@@ -555,7 +555,7 @@
         "shape": "file",
         "source": "https://docs.x.ai/build/settings; exercised against the pinned 1.0.5 binary",
         "evidence": "ran",
-        "note": "MCP servers live here under [mcp_servers.<name>]; a key inside a file is not a projection surface, so mcp is not declared Exercised 2026-08-28 by running `grok inspect` against a temporary GROK_HOME holding a marker component here; the product reports it back by name."
+        "note": "MCP servers live here under [mcp_servers.<name>]; a key inside a file is not a projection surface, so mcp is not declared. Exercised 2026-08-28 by running `grok inspect` against a temporary GROK_HOME holding a marker component here; the product reports it back by name. **The keys this estate's setups write, measured in the pinned artifact rather than read off a page, 2026-08-30.** The vendor's settings reference documents the file and its scopes and does not list these toggles, so the only source is the binary: `ui.permission_mode`, `ui.yolo`, `sandbox.profile`, `sandbox.auto_allow_bash`, `features.web_fetch`, `features.lsp_tools`, `features.session_search`, `features.session_recap`, `features.ask_user_question`, `features.write_file`, `subagents.enabled`, `memory.enabled`, `managed_mcps.enabled`. Read from grok-1.0.13-linux-x86_64, downloaded and verified byte-for-byte against this baseline's own sha256 before being searched. Searched with a control: an invented `nddev_invented_feature_key` appears zero times in the same bytes, so the search discriminates. Four of these appear on no vendor page at all (`session_search`, `session_recap`, `ask_user_question`, `managed_mcps`) and until now their only provenance was a sentence in a comment -- which named 1.0.5, three releases behind what this baseline pins."
       },
       {
         "path": "sandbox.toml",
@@ -824,7 +824,7 @@
     "active_sessions.lock",
     "logs"
   ],
-  "setup_catalogue_digest": "sha256:3cb9fc193b5db2df17424ae14b7138955c0750e82db7548a0ff077a8136d09ef",
+  "setup_catalogue_digest": "sha256:52197ceca8f73b6b810c048c7d3b4d347996a4c454ab7ae48e669f4d02c38625",
   "previous_software_artifacts": {
     "command": "grok",
     "shape": "raw",
