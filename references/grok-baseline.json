@@ -824,7 +824,7 @@
     "active_sessions.lock",
     "logs"
   ],
-  "setup_catalogue_digest": "sha256:9740d6e77e313f2fa66f6a189aea6f6b1fb9cfb4a8c0748a73ebecfd0f52717b",
+  "setup_catalogue_digest": "sha256:fcee05b48d6649697f74ebe6e63e99da97f0fb695b5aedfc77c81fca41371cdb",
   "previous_software_artifacts": {
     "command": "grok",
     "shape": "raw",
