@@ -543,7 +543,7 @@
           "instruction"
         ],
         "shape": "file",
-        "source": "https://docs.x.ai/build/overview; exercised against the pinned 1.0.5 binary",
+        "source": "https://docs.x.ai/build/overview; exercised against the 1.0.5 binary",
         "evidence": "ran",
         "note": "Exercised 2026-08-28 by running `grok inspect` against a temporary GROK_HOME holding a marker component here; the product reports it back by name."
       },
@@ -553,7 +553,7 @@
           "setting"
         ],
         "shape": "file",
-        "source": "https://docs.x.ai/build/settings; exercised against the pinned 1.0.5 binary",
+        "source": "https://docs.x.ai/build/settings; exercised against the 1.0.5 binary",
         "evidence": "ran",
         "note": "MCP servers live here under [mcp_servers.<name>]; a key inside a file is not a projection surface, so mcp is not declared. Exercised 2026-08-28 by running `grok inspect` against a temporary GROK_HOME holding a marker component here; the product reports it back by name. **The keys this estate's setups write, measured in the pinned artifact rather than read off a page, 2026-08-30.** The vendor's settings reference documents the file and its scopes and does not list these toggles, so the only source is the binary: `ui.permission_mode`, `ui.yolo`, `sandbox.profile`, `sandbox.auto_allow_bash`, `features.web_fetch`, `features.lsp_tools`, `features.session_search`, `features.session_recap`, `features.ask_user_question`, `features.write_file`, `subagents.enabled`, `memory.enabled`, `managed_mcps.enabled`. Read from grok-1.0.13-linux-x86_64, downloaded and verified byte-for-byte against this baseline's own sha256 before being searched. Searched with a control: an invented `nddev_invented_feature_key` appears zero times in the same bytes, so the search discriminates. Four of these appear on no vendor page at all (`session_search`, `session_recap`, `ask_user_question`, `managed_mcps`) and until now their only provenance was a sentence in a comment -- which named 1.0.5, three releases behind what this baseline pins."
       },
@@ -571,7 +571,7 @@
           "skill"
         ],
         "shape": "directory",
-        "source": "https://docs.x.ai/build/features/skills-plugins-marketplaces; exercised against the pinned 1.0.5 binary",
+        "source": "https://docs.x.ai/build/features/skills-plugins-marketplaces; exercised against the 1.0.5 binary",
         "evidence": "ran",
         "note": "a user-invocable skill also surfaces as /<skill-name>, which is why this product has no commands directory Exercised 2026-08-28 by running `grok inspect` against a temporary GROK_HOME holding a marker component here; the product reports it back by name."
       },
@@ -581,7 +581,7 @@
           "agent"
         ],
         "shape": "directory",
-        "source": "https://docs.x.ai/build/features/skills-plugins-marketplaces; exercised against the pinned 1.0.5 binary",
+        "source": "https://docs.x.ai/build/features/skills-plugins-marketplaces; exercised against the 1.0.5 binary",
         "evidence": "ran",
         "note": "Exercised 2026-08-28 by running `grok inspect` against a temporary GROK_HOME holding a marker component here; the product reports it back by name."
       },
@@ -591,7 +591,7 @@
           "plugin"
         ],
         "shape": "directory",
-        "source": "https://docs.x.ai/build/features/skills-plugins-marketplaces; exercised against the pinned 1.0.5 binary",
+        "source": "https://docs.x.ai/build/features/skills-plugins-marketplaces; exercised against the 1.0.5 binary",
         "evidence": "ran",
         "note": "Exercised 2026-08-28 by running `grok inspect` against a temporary GROK_HOME holding a marker component here; the product reports it back by name."
       },
@@ -601,7 +601,7 @@
           "hook"
         ],
         "shape": "directory",
-        "source": "https://docs.x.ai/build/features/skills-plugins-marketplaces; exercised against the pinned 1.0.5 binary",
+        "source": "https://docs.x.ai/build/features/skills-plugins-marketplaces; exercised against the 1.0.5 binary",
         "evidence": "ran",
         "note": "Exercised 2026-08-28 by running `grok inspect` against a temporary GROK_HOME holding a marker component here; the product reports it back by name."
       },
@@ -617,7 +617,7 @@
         "path": "rules",
         "kinds": [],
         "shape": "directory",
-        "source": "https://docs.x.ai/build/settings/reference; measured from the pinned 1.0.5 binary's own embedded reference text; exercised against the pinned 1.0.5 binary",
+        "source": "https://docs.x.ai/build/settings/reference; measured from the 1.0.5 binary's own embedded reference text; exercised against the 1.0.5 binary",
         "evidence": "ran",
         "note": "The product's own reference lists `~/.grok/rules/` as *Always scanned; applies to all projects*. Owned from 2026-08-28, having been neither owned nor recorded -- so a backup captures it and a restore returns it.\n\n**Routing no kind, and the reason is a rule this repository enforces.** `instruction` already routes to the owned `AGENTS.md`, and one kind routed by two surfaces makes a consumer's route ambiguous -- the surfaces guard refuses it by name, which is how this row was written the first time and corrected. Both surfaces are real: `AGENTS.md` is the single global instruction document, `rules/` a directory of always-scanned rule files. Which of the two an `instruction` component should reach is a question for the per-kind route the consumer is building; until that exists there is no way to say it, and guessing would put a component in one of two places that both look right. Exercised 2026-08-28 by running `grok inspect` against a temporary GROK_HOME holding a marker component here; the product reports it back by name."
       },
@@ -625,7 +625,7 @@
         "path": "commands",
         "kinds": [],
         "shape": "directory",
-        "source": "https://docs.x.ai/build/settings/reference; measured by running the pinned 1.0.5 binary in a contained HOME, 2026-08-28",
+        "source": "https://docs.x.ai/build/settings/reference; measured by running the 1.0.5 binary in a contained HOME, 2026-08-28",
         "evidence": "ran",
         "note": "The product's own tier table gives `~/.grok/skills/`, `~/.grok/commands/` at **User** tier, *Personal skills for all projects*, and calls the project-scope equivalent *legacy command markdown*. Owned from 2026-08-28: it is read, so backup, remove and identity must cover it.\n\n**Routing no kind, and a run is what decided that.** A file placed at `~/.grok/commands/<name>.md` with no plugin manifest is loaded, and `grok inspect` lists it under **Skills** at `user` tier, beside one placed in `skills/`. Two controls make the instrument trustworthy: a file under a directory nothing routes to is not listed, and removing this one removes the entry. So what this directory holds becomes a skill -- and `skill` already routes to `skills`, which the surfaces guard refuses to duplicate by name.\n\n`command` was declared here for one week on the strength of reading the directory rather than running the product, and withdrawn on the measurement. The consumer's own record had said so first, sourced to an earlier measurement from this side; both were right about the mechanism and this repository had lost track of which. Which of two skill surfaces a component should reach is the same question grok's `rules` and claude's `workflows` ask, and the same per-kind route answers all three."
       },
@@ -633,7 +633,7 @@
         "path": "personas",
         "kinds": [],
         "shape": "directory",
-        "source": "https://docs.x.ai/build/features/subagents; measured in the pinned 1.0.5 binary",
+        "source": "https://docs.x.ai/build/features/subagents; measured in the 1.0.5 binary",
         "evidence": "bytes",
         "note": "$GROK_HOME/personas/*.toml -- behavioural overlays applied during subagent resolution. The product's own embedded reference names the user tier directly: \"`~/.grok/personas/*.toml` (user)\". Owned so a backup captures it and a restore returns it; it routes no kind because an overlay is not an agent, and the closed kind set has no word for it."
       },
@@ -641,7 +641,7 @@
         "path": "roles",
         "kinds": [],
         "shape": "directory",
-        "source": "https://docs.x.ai/build/features/subagents; measured in the pinned 1.0.5 binary",
+        "source": "https://docs.x.ai/build/features/subagents; measured in the 1.0.5 binary",
         "evidence": "bytes",
         "note": "$GROK_HOME/roles/*.toml -- named in the same sentence as personas by the product's own embedded reference: \"Both are also discovered from `.grok/roles/*.toml` and `.grok/personas/*.toml` files respectively.\" Owned and routing no kind, for the same reason."
       }
@@ -699,23 +699,23 @@
       },
       {
         "path": "auth.json",
-        "reason": "Authentication credentials. Grok's own embedded reference, carried in the pinned 1.0.5 binary, lists `~/.grok/auth.json` as *Authentication credentials (auto-managed)*, set by `grok login`. Never owned and never captured: a slot holding a product's credentials would put them on disk in a second place, which is a worse outcome than an incomplete restore of files this provider never wrote. Recorded here because the declaration's `never_touch` is checked against this block -- without a row, the check measures nothing.",
-        "source": "measured from the pinned 1.0.5 binary's own reference text"
+        "reason": "Authentication credentials. Grok's own embedded reference, carried in the 1.0.5 binary, lists `~/.grok/auth.json` as *Authentication credentials (auto-managed)*, set by `grok login`. Never owned and never captured: a slot holding a product's credentials would put them on disk in a second place, which is a worse outcome than an incomplete restore of files this provider never wrote. Recorded here because the declaration's `never_touch` is checked against this block -- without a row, the check measures nothing.",
+        "source": "measured from the 1.0.5 binary's own reference text"
       },
       {
         "path": "lsp.json",
         "reason": "*LSP server configuration (user-scoped)*, in the product's own reference. Real configuration and not owned: nothing in the closed set of component kinds describes a language-server list, and this provider does not declare kinds it cannot name.",
-        "source": "measured from the pinned 1.0.5 binary's own reference text"
+        "source": "measured from the 1.0.5 binary's own reference text"
       },
       {
         "path": "pager.toml",
         "reason": "*TUI appearance configuration*, in the product's own reference. Not owned for the same reason as `lsp.json` and claude's keymap: appearance is a real surface with no kind to route it.",
-        "source": "measured from the pinned 1.0.5 binary's own reference text"
+        "source": "measured from the 1.0.5 binary's own reference text"
       },
       {
         "path": "memory",
         "reason": "*Cross-session memory files and index*, holding a global `MEMORY.md`. What the product has learned across sessions -- a person's accumulated context rather than configuration, and a backup of it would put private text somewhere with a retention policy nobody chose.",
-        "source": "measured from the pinned 1.0.5 binary's own reference text"
+        "source": "measured from the 1.0.5 binary's own reference text"
       },
       {
         "path": "managed_config.toml",
@@ -730,7 +730,7 @@
       {
         "path": "managed_config.sig.json",
         "reason": "The signature over `managed_config.toml`, beside `managed_identity.sig.json` and `managed_config_cache.json`. Unrecorded until 2026-08-28, which is what made the defect above possible: the policy was owned and its proof was not, so an install took one and left the other. All three are in `never_touch` with the policy they belong to.",
-        "source": "measured from the pinned 1.0.5 binary: xai_grok_config::signed_policy and managed_cache, 2026-08-28"
+        "source": "measured from the 1.0.5 binary: xai_grok_config::signed_policy and managed_cache, 2026-08-28"
       },
       {
         "path": "leader.sock",
@@ -740,12 +740,12 @@
       {
         "path": "GROK_CONFIG_PATH",
         "reason": "Not a path in the target -- an **environment overlay**, recorded here because it changes what the product reads and nothing else in this file would tell a reader so. The pinned binary carries `xai_grok_config::env_overlay` with its own refusals (*\"GROK_CONFIG_PATH is unreadable; ignoring the overlay\"*, *\"...exceeds the max overlay size...\"*), and the product's documentation places it: *\"GROK_CONFIG / GROK_CONFIG_PATH (tier 4) are config overlays: a merged config layer, not direct-setting environment variables\"*.\n\nSo a person with it set has configuration this provider never sees, and `status` would report the target managed while the effective configuration differs. Nothing to own; worth knowing.",
-        "source": "measured from the pinned 1.0.5 binary, 2026-08-28"
+        "source": "measured from the 1.0.5 binary, 2026-08-28"
       },
       {
         "path": "bundled",
-        "reason": "The product's own content, shipped inside the install rather than written by a person: the pinned 1.0.5 binary carries `.grok/bundled/agents` and `.grok/bundled/skills`, and refuses to let anyone remove what is in it -- \"Cannot delete bundled personas\". Not owned for the same reason as `docs`: a directory the product ships and regenerates is not a surface a setup can promise, and a backup of it would copy the install into the slot.",
-        "source": "measured in the pinned 1.0.5 binary; no vendor page names the directory"
+        "reason": "The product's own content, shipped inside the install rather than written by a person: the 1.0.5 binary carries `.grok/bundled/agents` and `.grok/bundled/skills`, and refuses to let anyone remove what is in it -- \"Cannot delete bundled personas\". Not owned for the same reason as `docs`: a directory the product ships and regenerates is not a surface a setup can promise, and a backup of it would copy the install into the slot.",
+        "source": "measured in the 1.0.5 binary; no vendor page names the directory"
       }
     ],
     "config_home_env": "GROK_HOME",
@@ -824,7 +824,7 @@
     "active_sessions.lock",
     "logs"
   ],
-  "setup_catalogue_digest": "sha256:52197ceca8f73b6b810c048c7d3b4d347996a4c454ab7ae48e669f4d02c38625",
+  "setup_catalogue_digest": "sha256:a3d96f74bc95af61520f45ebfc748ad1eabedca4d9057d39f3218571332d5d9c",
   "previous_software_artifacts": {
     "command": "grok",
     "shape": "raw",
