@@ -166,18 +166,18 @@ Configuration home as the product documents it: `~/.grok`.
 
 | Path | Component kinds routed here | Decided by |
 | --- | --- | --- |
-| `AGENTS.md` | `instruction` | [source](https://docs.x.ai/build/overview; exercised against the pinned 1.0.5 binary) |
-| `config.toml` | `setting` | [source](https://docs.x.ai/build/settings; exercised against the pinned 1.0.5 binary) |
+| `AGENTS.md` | `instruction` | [source](https://docs.x.ai/build/overview; exercised against the 1.0.5 binary) |
+| `config.toml` | `setting` | [source](https://docs.x.ai/build/settings; exercised against the 1.0.5 binary) |
 | `sandbox.toml` | -- | [source](https://docs.x.ai/build/settings/reference; anchored literal measured in the pinned artifact by scripts/evidence.py) |
-| `skills` | `skill` | [source](https://docs.x.ai/build/features/skills-plugins-marketplaces; exercised against the pinned 1.0.5 binary) |
-| `agents` | `agent` | [source](https://docs.x.ai/build/features/skills-plugins-marketplaces; exercised against the pinned 1.0.5 binary) |
-| `plugins` | `plugin` | [source](https://docs.x.ai/build/features/skills-plugins-marketplaces; exercised against the pinned 1.0.5 binary) |
-| `hooks` | `hook` | [source](https://docs.x.ai/build/features/skills-plugins-marketplaces; exercised against the pinned 1.0.5 binary) |
+| `skills` | `skill` | [source](https://docs.x.ai/build/features/skills-plugins-marketplaces; exercised against the 1.0.5 binary) |
+| `agents` | `agent` | [source](https://docs.x.ai/build/features/skills-plugins-marketplaces; exercised against the 1.0.5 binary) |
+| `plugins` | `plugin` | [source](https://docs.x.ai/build/features/skills-plugins-marketplaces; exercised against the 1.0.5 binary) |
+| `hooks` | `hook` | [source](https://docs.x.ai/build/features/skills-plugins-marketplaces; exercised against the 1.0.5 binary) |
 | `workflows` | -- | [source](https://docs.x.ai/build/modes-and-commands; anchored literal measured in the pinned artifact by scripts/evidence.py) |
-| `rules` | -- | [source](https://docs.x.ai/build/settings/reference; measured from the pinned 1.0.5 binary's own embedded reference text; exercised against the pinned 1.0.5 binary) |
-| `commands` | -- | [source](https://docs.x.ai/build/settings/reference; measured by running the pinned 1.0.5 binary in a contained HOME, 2026-08-28) |
-| `personas` | -- | [source](https://docs.x.ai/build/features/subagents; measured in the pinned 1.0.5 binary) |
-| `roles` | -- | [source](https://docs.x.ai/build/features/subagents; measured in the pinned 1.0.5 binary) |
+| `rules` | -- | [source](https://docs.x.ai/build/settings/reference; measured from the 1.0.5 binary's own embedded reference text; exercised against the 1.0.5 binary) |
+| `commands` | -- | [source](https://docs.x.ai/build/settings/reference; measured by running the 1.0.5 binary in a contained HOME, 2026-08-28) |
+| `personas` | -- | [source](https://docs.x.ai/build/features/subagents; measured in the 1.0.5 binary) |
+| `roles` | -- | [source](https://docs.x.ai/build/features/subagents; measured in the 1.0.5 binary) |
 
 A path routing no component kind is owned so a setup can carry it;
 nothing compiles a component to it.
@@ -223,13 +223,13 @@ other file beside a target.
 
 **`$HOME/.claude/skills`** -- Grok scans Claude Code's own skills directory for compatibility. From the same embedded reference: `skills = true  # scan ~/.claude/skills/ and <cwd>/.claude/skills/`, and the tier table gives `~/.claude/skills/` as User tier, Lowest priority, configurable. It is another product's home and never this provider's to own -- but worth recording, because claude-setup-system owns `skills` there and a remove of the Claude setup changes what Grok sees. ([source](measured from the pinned artifact, digest verified before reading (grok 1.0.5, the binary's own reference text)))
 
-**`auth.json`** -- Authentication credentials. Grok's own embedded reference, carried in the pinned 1.0.5 binary, lists `~/.grok/auth.json` as *Authentication credentials (auto-managed)*, set by `grok login`. Never owned and never captured: a slot holding a product's credentials would put them on disk in a second place, which is a worse outcome than an incomplete restore of files this provider never wrote. Recorded here because the declaration's `never_touch` is checked against this block -- without a row, the check measures nothing. ([source](measured from the pinned 1.0.5 binary's own reference text))
+**`auth.json`** -- Authentication credentials. Grok's own embedded reference, carried in the 1.0.5 binary, lists `~/.grok/auth.json` as *Authentication credentials (auto-managed)*, set by `grok login`. Never owned and never captured: a slot holding a product's credentials would put them on disk in a second place, which is a worse outcome than an incomplete restore of files this provider never wrote. Recorded here because the declaration's `never_touch` is checked against this block -- without a row, the check measures nothing. ([source](measured from the 1.0.5 binary's own reference text))
 
-**`lsp.json`** -- *LSP server configuration (user-scoped)*, in the product's own reference. Real configuration and not owned: nothing in the closed set of component kinds describes a language-server list, and this provider does not declare kinds it cannot name. ([source](measured from the pinned 1.0.5 binary's own reference text))
+**`lsp.json`** -- *LSP server configuration (user-scoped)*, in the product's own reference. Real configuration and not owned: nothing in the closed set of component kinds describes a language-server list, and this provider does not declare kinds it cannot name. ([source](measured from the 1.0.5 binary's own reference text))
 
-**`pager.toml`** -- *TUI appearance configuration*, in the product's own reference. Not owned for the same reason as `lsp.json` and claude's keymap: appearance is a real surface with no kind to route it. ([source](measured from the pinned 1.0.5 binary's own reference text))
+**`pager.toml`** -- *TUI appearance configuration*, in the product's own reference. Not owned for the same reason as `lsp.json` and claude's keymap: appearance is a real surface with no kind to route it. ([source](measured from the 1.0.5 binary's own reference text))
 
-**`memory`** -- *Cross-session memory files and index*, holding a global `MEMORY.md`. What the product has learned across sessions -- a person's accumulated context rather than configuration, and a backup of it would put private text somewhere with a retention policy nobody chose. ([source](measured from the pinned 1.0.5 binary's own reference text))
+**`memory`** -- *Cross-session memory files and index*, holding a global `MEMORY.md`. What the product has learned across sessions -- a person's accumulated context rather than configuration, and a backup of it would put private text somewhere with a retention policy nobody chose. ([source](measured from the 1.0.5 binary's own reference text))
 
 **`managed_config.toml`** -- An administrator's **signed** policy, and this build owned it until 2026-08-28. Owning it deleted it.
 
@@ -247,15 +247,15 @@ The harm was the **split**: owning the policy and not its sidecars left a signat
 
 A file whose malformed state locks a person out of their own tool is not one to delete on the way to installing a setup. In `never_touch` now. ([source](https://docs.x.ai/build/settings/reference; measured by running grok-setup-system 0.0.11 against a managed home, 2026-08-28))
 
-**`managed_config.sig.json`** -- The signature over `managed_config.toml`, beside `managed_identity.sig.json` and `managed_config_cache.json`. Unrecorded until 2026-08-28, which is what made the defect above possible: the policy was owned and its proof was not, so an install took one and left the other. All three are in `never_touch` with the policy they belong to. ([source](measured from the pinned 1.0.5 binary: xai_grok_config::signed_policy and managed_cache, 2026-08-28))
+**`managed_config.sig.json`** -- The signature over `managed_config.toml`, beside `managed_identity.sig.json` and `managed_config_cache.json`. Unrecorded until 2026-08-28, which is what made the defect above possible: the policy was owned and its proof was not, so an install took one and left the other. All three are in `never_touch` with the policy they belong to. ([source](measured from the 1.0.5 binary: xai_grok_config::signed_policy and managed_cache, 2026-08-28))
 
 **`leader.sock`** -- A unix socket in the configuration home, named by the product's own help: `--leader-socket <PATH>  Use a custom leader socket path instead of the default ~/.grok/leader.sock`. Not a configuration surface and not capturable -- a socket is a special file, and this provider's `copy_tree` refuses those by kind. Recorded so the next reader of this home knows what it is rather than repeating the search. ([source](grok 1.0.5 `setup --help`, measured 2026-08-28))
 
 **`GROK_CONFIG_PATH`** -- Not a path in the target -- an **environment overlay**, recorded here because it changes what the product reads and nothing else in this file would tell a reader so. The pinned binary carries `xai_grok_config::env_overlay` with its own refusals (*"GROK_CONFIG_PATH is unreadable; ignoring the overlay"*, *"...exceeds the max overlay size..."*), and the product's documentation places it: *"GROK_CONFIG / GROK_CONFIG_PATH (tier 4) are config overlays: a merged config layer, not direct-setting environment variables"*.
 
-So a person with it set has configuration this provider never sees, and `status` would report the target managed while the effective configuration differs. Nothing to own; worth knowing. ([source](measured from the pinned 1.0.5 binary, 2026-08-28))
+So a person with it set has configuration this provider never sees, and `status` would report the target managed while the effective configuration differs. Nothing to own; worth knowing. ([source](measured from the 1.0.5 binary, 2026-08-28))
 
-**`bundled`** -- The product's own content, shipped inside the install rather than written by a person: the pinned 1.0.5 binary carries `.grok/bundled/agents` and `.grok/bundled/skills`, and refuses to let anyone remove what is in it -- "Cannot delete bundled personas". Not owned for the same reason as `docs`: a directory the product ships and regenerates is not a surface a setup can promise, and a backup of it would copy the install into the slot. ([source](measured in the pinned 1.0.5 binary; no vendor page names the directory))
+**`bundled`** -- The product's own content, shipped inside the install rather than written by a person: the 1.0.5 binary carries `.grok/bundled/agents` and `.grok/bundled/skills`, and refuses to let anyone remove what is in it -- "Cannot delete bundled personas". Not owned for the same reason as `docs`: a directory the product ships and regenerates is not a surface a setup can promise, and a backup of it would copy the install into the slot. ([source](measured in the 1.0.5 binary; no vendor page names the directory))
 
 ## Response
 
