@@ -1,8 +1,9 @@
 {
   "schema_version": 1,
   "id": "nddev-builder",
-  "description": "A working floor plus the NDDev builder toolkit: what this harness owns, the lifecycle it performs, and the gate a change must pass.",
+  "description": "The harness-native full-auto posture plus the NDDev builder toolkit: autonomous implementation, exact product formats, lifecycle, verification and release handoff.",
   "sources": [
+    "https://docs.x.ai/build/features/permissions",
     "https://docs.x.ai/build/features/skills-plugins-marketplaces",
     "https://docs.x.ai/build/features/subagents",
     "https://docs.x.ai/build/modes-and-commands",

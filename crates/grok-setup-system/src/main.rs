@@ -36,7 +36,23 @@ pub const GROK: Harness = Harness {
     // such literal. This product has been asked nothing, and an empty value here
     // says the launch environment is untouched rather than that the product
     // leaves the bytes alone.
-    updates_off_env: "",
+    // Measured 2026-08-31 in the pinned 1.0.13 artifact, from the product's own
+    // embedded reference. It tabulates four ways to suppress an update check
+    // and their scopes: `--no-auto-update` (session), `GROK_DISABLE_AUTOUPDATER=1`
+    // (**process**), a non-TTY stderr (automatic), and `[cli] auto_update = false`
+    // (persistent). The variable is the one a launch can set without writing
+    // into a person's configuration, so it is the one set here.
+    //
+    // **A falsy value counts as not set** -- `0`, `false`, `off`, `no` or empty,
+    // any case -- which is why `launch_environment` sends `1` rather than
+    // anything shorter, and why inheriting somebody's `GROK_DISABLE_AUTOUPDATER=0`
+    // would have left updates on. Launch overwrites it.
+    //
+    // The same reference notes that the background update is skipped anyway
+    // unless the product runs from `$GROK_HOME/bin/grok`, which is not where
+    // this provider installs. That covers one path and not the manual one, so
+    // it is a reason to set the variable rather than a reason not to.
+    updates_off_env: "GROK_DISABLE_AUTOUPDATER",
     // One home, one variable: nothing here is conditional.
     config_home_note: "",
     control_directory: ".grok-setup-system",
@@ -102,6 +118,19 @@ pub const GROK: Harness = Harness {
     // any, have not been asked for -- empty here says nobody looked,
     // not that the product reads one name.
     shadowing_names: &[],
+    // Owned, and nothing this build can install ever lands here: no
+    // component kind routes to them and no setup in this catalogue
+    // carries files there. So a posture selecting itself must not empty
+    // them -- every posture agrees there is nothing, which makes the
+    // emptiness a statement none of them made.
+    custody_namespaces: &[
+        "commands",
+        "personas",
+        "roles",
+        "rules",
+        "sandbox.toml",
+        "workflows",
+    ],
     never_touch: &[
         // Credentials first, and it took a sweep across all seven to notice
         // this one was missing. Grok's own embedded reference names
@@ -112,6 +141,25 @@ pub const GROK: Harness = Harness {
         // safety list that depends on a namespace never widening is a safety
         // list waiting for one declaration change.
         "auth.json",
+        // A person's marketplace sources, written by the product's own
+        // `plugin marketplace` command, and it lives *inside* the owned
+        // `plugins` namespace rather than beside it. Measured 2026-08-31 with
+        // the released binary: a `select nddev-builder` then `select minimal`
+        // took it, because replacement removes a namespace whole.
+        //
+        // Listing it here is what stops that now: `remove_keeping` spares a
+        // `never_touch` path under a namespace being replaced, which is the
+        // effect this list always claimed and only had for capture and
+        // identity. `plugins` still routes the plugin kind, so it cannot be
+        // dropped the way cursor's redundant parent was.
+        "plugins/known_marketplaces.json",
+        // A person's installed plugins and the registry that records them.
+        // `grok plugin install <dir> --trust` writes both, measured at 1.0.13
+        // on 2026-08-31, and writes no `plugins/` at all -- the two are one
+        // unit, since the same manifest under `installed-plugins/` without the
+        // registry loads nothing. Same argument as `auth.json` above: outside
+        // every owned namespace today, and listed so it stays outside one.
+        "installed-plugins",
         "sessions",
         "active_sessions.json",
         "active_sessions.lock",
