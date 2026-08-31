@@ -635,7 +635,7 @@
         "shape": "directory",
         "source": "https://docs.x.ai/build/features/subagents; measured in the 1.0.5 binary",
         "evidence": "bytes",
-        "note": "$GROK_HOME/personas/*.toml -- behavioural overlays applied during subagent resolution. The product's own embedded reference names the user tier directly: \"`~/.grok/personas/*.toml` (user)\". Owned so a backup captures it and a restore returns it; it routes no kind because an overlay is not an agent, and the closed kind set has no word for it."
+        "note": "$GROK_HOME/personas/*.toml -- behavioural overlays applied during subagent resolution. The product's own embedded reference names the user tier directly: \"`~/.grok/personas/*.toml` (user)\". Owned so a backup captures it and a restore returns it; it routes no kind because an overlay is not an agent, and the closed kind set has no word for it.\n\n**Re-asked at 1.0.13 on 2026-08-31**: `~/.grok/personas/*.toml` still in the binary's own reference, `personas/*.toml` four times, in the digest-verified artifact and beside three controls that returned zero."
       },
       {
         "path": "roles",
@@ -643,7 +643,7 @@
         "shape": "directory",
         "source": "https://docs.x.ai/build/features/subagents; measured in the 1.0.5 binary",
         "evidence": "bytes",
-        "note": "$GROK_HOME/roles/*.toml -- named in the same sentence as personas by the product's own embedded reference: \"Both are also discovered from `.grok/roles/*.toml` and `.grok/personas/*.toml` files respectively.\" Owned and routing no kind, for the same reason."
+        "note": "$GROK_HOME/roles/*.toml -- named in the same sentence as personas by the product's own embedded reference: \"Both are also discovered from `.grok/roles/*.toml` and `.grok/personas/*.toml` files respectively.\" Owned and routing no kind, for the same reason.\n\n**Re-asked at 1.0.13 on 2026-08-31**: `roles/*.toml` twice, same artifact and same controls."
       }
     ],
     "declined": [
@@ -695,27 +695,32 @@
       {
         "path": "$HOME/.claude/skills",
         "reason": "Grok scans Claude Code's own skills directory for compatibility. From the same embedded reference: `skills = true  # scan ~/.claude/skills/ and <cwd>/.claude/skills/`, and the tier table gives `~/.claude/skills/` as User tier, Lowest priority, configurable. It is another product's home and never this provider's to own -- but worth recording, because claude-setup-system owns `skills` there and a remove of the Claude setup changes what Grok sees.",
-        "source": "measured from the pinned artifact, digest verified before reading (grok 1.0.5, the binary's own reference text)"
+        "source": "measured from the pinned artifact, digest verified before reading (grok 1.0.5, the binary's own reference text)",
+        "note": "**Re-asked at 1.0.13 on 2026-08-31.** The pinned `grok-1.0.13-linux-x86_64` was fetched and its sha256 checked against this baseline's own artifact table before a byte was read. The line still stands: `scan ~/.claude/skills/` once and `~/.claude/skills/` six times. Searched with three controls -- `nddev_invented_reference_line`, `~/.nddev-not-a-home/skills/` and `NDDEV_INVENTED_ENV_OVERLAY` -- each zero in the same bytes, so the search discriminates."
       },
       {
         "path": "auth.json",
         "reason": "Authentication credentials. Grok's own embedded reference, carried in the 1.0.5 binary, lists `~/.grok/auth.json` as *Authentication credentials (auto-managed)*, set by `grok login`. Never owned and never captured: a slot holding a product's credentials would put them on disk in a second place, which is a worse outcome than an incomplete restore of files this provider never wrote. Recorded here because the declaration's `never_touch` is checked against this block -- without a row, the check measures nothing.",
-        "source": "measured from the 1.0.5 binary's own reference text"
+        "source": "measured from the 1.0.5 binary's own reference text",
+        "note": "**Re-asked at 1.0.13 on 2026-08-31**, in the digest-verified artifact and with the same three controls at zero: `auth.json` 54 times and *Authentication credentials* twice. The decline holds."
       },
       {
         "path": "lsp.json",
         "reason": "*LSP server configuration (user-scoped)*, in the product's own reference. Real configuration and not owned: nothing in the closed set of component kinds describes a language-server list, and this provider does not declare kinds it cannot name.",
-        "source": "measured from the 1.0.5 binary's own reference text"
+        "source": "measured from the 1.0.5 binary's own reference text",
+        "note": "**Re-asked at 1.0.13 on 2026-08-31**, same artifact and controls: `lsp.json` 26 times and *LSP server configuration* five. The decline holds."
       },
       {
         "path": "pager.toml",
         "reason": "*TUI appearance configuration*, in the product's own reference. Not owned for the same reason as `lsp.json` and claude's keymap: appearance is a real surface with no kind to route it.",
-        "source": "measured from the 1.0.5 binary's own reference text"
+        "source": "measured from the 1.0.5 binary's own reference text",
+        "note": "**Re-asked at 1.0.13 on 2026-08-31**, same artifact and controls: `pager.toml` 20 times and *TUI appearance configuration* once. The decline holds."
       },
       {
         "path": "memory",
         "reason": "*Cross-session memory files and index*, holding a global `MEMORY.md`. What the product has learned across sessions -- a person's accumulated context rather than configuration, and a backup of it would put private text somewhere with a retention policy nobody chose.",
-        "source": "measured from the 1.0.5 binary's own reference text"
+        "source": "measured from the 1.0.5 binary's own reference text",
+        "note": "**Re-asked at 1.0.13 on 2026-08-31**, same artifact and controls: *Cross-session memory files* twice and `MEMORY.md` 36 times. The decline holds."
       },
       {
         "path": "managed_config.toml",
@@ -730,22 +735,26 @@
       {
         "path": "managed_config.sig.json",
         "reason": "The signature over `managed_config.toml`, beside `managed_identity.sig.json` and `managed_config_cache.json`. Unrecorded until 2026-08-28, which is what made the defect above possible: the policy was owned and its proof was not, so an install took one and left the other. All three are in `never_touch` with the policy they belong to.",
-        "source": "measured from the 1.0.5 binary: xai_grok_config::signed_policy and managed_cache, 2026-08-28"
+        "source": "measured from the 1.0.5 binary: xai_grok_config::signed_policy and managed_cache, 2026-08-28",
+        "note": "**Re-asked at 1.0.13 on 2026-08-31**, same artifact and controls: all three of `managed_config.sig.json`, `managed_identity.sig.json` and `managed_config_cache.json` appear twice each. The half-set that caused the 2026-08-28 defect is still the shape this row exists to prevent."
       },
       {
         "path": "leader.sock",
         "reason": "A unix socket in the configuration home, named by the product's own help: `--leader-socket <PATH>  Use a custom leader socket path instead of the default ~/.grok/leader.sock`. Not a configuration surface and not capturable -- a socket is a special file, and this provider's `copy_tree` refuses those by kind. Recorded so the next reader of this home knows what it is rather than repeating the search.",
-        "source": "grok 1.0.5 `setup --help`, measured 2026-08-28"
+        "source": "grok 1.0.5 `setup --help`, measured 2026-08-28",
+        "note": "**Re-asked at 1.0.13 on 2026-08-31, and the first needle was wrong rather than the fact.** Searching the digest-verified artifact for `--leader-socket` returned zero, which reads exactly like *the flag is gone*. It is not: the binary stores a long option without its dashes, and both `leader-socket` and the sentence *Use a custom leader socket path instead of the default `~/.grok/leader.sock`* are present. A re-ask that had stopped at the zero would have withdrawn a true row -- which is the same failure as trusting a control that could not fail, arriving from the other side."
       },
       {
         "path": "GROK_CONFIG_PATH",
         "reason": "Not a path in the target -- an **environment overlay**, recorded here because it changes what the product reads and nothing else in this file would tell a reader so. The pinned binary carries `xai_grok_config::env_overlay` with its own refusals (*\"GROK_CONFIG_PATH is unreadable; ignoring the overlay\"*, *\"...exceeds the max overlay size...\"*), and the product's documentation places it: *\"GROK_CONFIG / GROK_CONFIG_PATH (tier 4) are config overlays: a merged config layer, not direct-setting environment variables\"*.\n\nSo a person with it set has configuration this provider never sees, and `status` would report the target managed while the effective configuration differs. Nothing to own; worth knowing.",
-        "source": "measured from the 1.0.5 binary, 2026-08-28"
+        "source": "measured from the 1.0.5 binary, 2026-08-28",
+        "note": "**Re-asked at 1.0.13 on 2026-08-31**, same artifact and controls: `GROK_CONFIG_PATH` nine times, `env_overlay` 17, and the refusal *is unreadable; ignoring the overlay* once. The overlay still changes what the product reads."
       },
       {
         "path": "bundled",
         "reason": "The product's own content, shipped inside the install rather than written by a person: the 1.0.5 binary carries `.grok/bundled/agents` and `.grok/bundled/skills`, and refuses to let anyone remove what is in it -- \"Cannot delete bundled personas\". Not owned for the same reason as `docs`: a directory the product ships and regenerates is not a surface a setup can promise, and a backup of it would copy the install into the slot.",
-        "source": "measured in the 1.0.5 binary; no vendor page names the directory"
+        "source": "measured in the 1.0.5 binary; no vendor page names the directory",
+        "note": "**Re-asked at 1.0.13 on 2026-08-31**, same artifact and controls: `.grok/bundled/agents`, `.grok/bundled/skills` and *Cannot delete bundled personas* each once. The decline holds."
       }
     ],
     "config_home_env": "GROK_HOME",
@@ -779,7 +788,8 @@
     "projection_basis": {
       "marketplace": "plugins",
       "plugin": "plugins"
-    }
+    },
+    "configuration_schema_note": "**No machine-readable configuration schema is published, measured rather than assumed.** Every schema-looking url in the pinned `grok-1.0.13-linux-x86_64` resolves to `json-schema.org` meta-schemas and vocabularies -- the validator library's own, not a description of `config.toml`. 37 distinct urls, none of them xAI's. So the keys this estate writes are sourced from the binary and the settings reference, and there is nothing to validate them against. Surveyed 2026-08-31 across all seven; three publish one and use it, cursor publishes one it must not name, and these three publish none."
   },
   "software_artifacts": {
     "command": "grok",
