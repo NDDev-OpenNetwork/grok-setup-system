@@ -13,6 +13,8 @@ Decided by: https://docs.x.ai/build/overview
 
 Exercised 2026-08-28 by running `grok inspect` against a temporary GROK_HOME holding a marker component here; the product reports it back by name.
 
+**Re-asked at 1.0.13 on 2026-08-31**, because the record rested on 1.0.5 and this product moved eight releases in a few hours. The pinned `grok-1.0.13-linux-x86_64` was fetched, its digest checked against the artifact table, and `grok inspect` run against a temporary home holding one marker here -- with a control root, `$HOME/.grok-not-a-root/skills/`, which the same run does not list. The product still reports this surface by name.
+
 ## Where the other harnesses keep theirs
 
 | harness | path | shape |
