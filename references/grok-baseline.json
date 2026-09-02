@@ -876,5 +876,17 @@
   "source_verified_runtime_flags": [
     "GROK_DISABLE_AUTOUPDATER"
   ],
-  "source_verified_runtime_flags_note": "Read out of the pinned 1.0.13 binary on 2026-08-31. `GROK_DISABLE_AUTOUPDATER` is documented by the product's own embedded reference, in a table of four suppression methods and their scopes, and it is the only one a launch can set without writing into a person's configuration file. A falsy value counts as not set, so launch overwrites rather than leaves an inherited `0` in place. `native_declaration_names_the_switch_it_sets` ties `updates_off_env` to this list."
+  "source_verified_runtime_flags_note": "Read out of the pinned 1.0.13 binary on 2026-08-31. `GROK_DISABLE_AUTOUPDATER` is documented by the product's own embedded reference, in a table of four suppression methods and their scopes, and it is the only one a launch can set without writing into a person's configuration file. A falsy value counts as not set, so launch overwrites rather than leaves an inherited `0` in place. `native_declaration_names_the_switch_it_sets` ties `updates_off_env` to this list.",
+  "surface_presence": {
+    "measured_at": "2026-09-02",
+    "artifact": "https://x.ai/cli/grok-1.0.13-linux-x86_64",
+    "artifact_sha256": "sha256:edf79521581bb5e6b95abef848491a6a742e860da3e237ebe86a280d30dce4c1",
+    "product_version": "1.0.13",
+    "declared_surfaces": 13,
+    "present": 13,
+    "absent": [],
+    "control": "zzq-invented-surface-nobody-ships",
+    "control_hits": 0,
+    "method": "Every namespace this harness declares, global and scoped, searched as a fixed string in the artifact the current pin names, digest verified before reading; both the declared path and its last segment counted, because a product that composes a path by joining segments never spells the whole of it. A count here is a lower bound and not a routing proof -- what it answers is whether a surface vanished from the product. This pin did not move on 2026-09-02 when five others did; the sweep covers all seven so the next bump has something to differ from. The invented control was searched in the same run and found nowhere, so the search discriminates. The artifact is a single executable, so the search reads its bytes directly: unpacking it yields nothing, and a search of nothing answers absent for every name -- which is what the first run of this sweep reported for this harness before the subject was named explicitly."
+  }
 }
