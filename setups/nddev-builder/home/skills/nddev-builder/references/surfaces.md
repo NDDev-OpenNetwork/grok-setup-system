@@ -56,6 +56,10 @@ above -- writing the root into the path again would nest it twice.
 | path | routes | shape | decided by | exercised by |
 | --- | --- | --- | --- | --- |
 | `skills` | skill | directory | measured by running the 1.0.13 binary with `grok inspect` against a temporary HOME, 2026-08-29 | **ran it** |
+Considered under this scope and not owned:
+
+- **`commands`** — Grok 1.0.18 discovers `~/.agents/commands/<name>.md` as a **skill**, in the same `skills` array as `~/.agents/skills/<name>/SKILL.md`. Measured with `grok inspect --json` against a temporary HOME on the digest-verified `grok-1.0.18-linux-x86_64`: `nddev-agents-command.md` appeared as `skills[].name=nddev-agents-command` with `source.type=user`; a control file under `$HOME/.agents-not-a-root/commands/` did not. The owned `skills` surface already routes the skill kind under this scope. Owning `commands` too would put one kind on two surfaces, which `harness_runtime::surfaces` refuses. This provider writes user-root skills only under `skills/`. The vendor page names both directories; the run is what decided they are one kind.
+
 
 **Under a scope the namespace is the permission and the recorded
 files are the inventory.** A root like this one is read by several

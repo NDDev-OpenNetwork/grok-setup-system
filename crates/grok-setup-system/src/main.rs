@@ -248,6 +248,9 @@ pub const GROK: Harness = Harness {
         // the root into the path would put the skills at
         // `~/.agents/.agents/skills`.
         native_namespaces: &["skills"],
+        // `~/.agents/commands/*.md` is discovered as a skill (grok 1.0.18
+        // `inspect --json`) and is declined in the baseline so this kind is
+        // not declared on two surfaces.
     }],
     max_files: 8192,
     max_bytes: 64 * 1024 * 1024,
