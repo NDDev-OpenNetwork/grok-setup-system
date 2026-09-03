@@ -30,6 +30,13 @@ The one root in this estate that belongs to a convention rather than to a produc
 
 Relative to this scope's own root the path is `skills`, not `.agents/skills`: the root is what the scope names, and writing it into the path again would put the skills at `~/.agents/.agents/skills`.
 
+**Re-asked at 1.0.18 on 2026-09-04.** Digest-verified `grok-1.0.18-linux-x86_64` (`sha256:42f6efb4…`), `grok inspect --json` in a temporary HOME: the same `skills/` probe is still `source.type=user`.
+
+
+Considered under this scope and not owned:
+
+- **`commands`** — Grok 1.0.18 discovers `~/.agents/commands/<name>.md` as a **skill**, in the same `skills` array as `~/.agents/skills/<name>/SKILL.md`. Measured with `grok inspect --json` against a temporary HOME on the digest-verified `grok-1.0.18-linux-x86_64`: `nddev-agents-command.md` appeared as `skills[].name=nddev-agents-command` with `source.type=user`; a control file under `$HOME/.agents-not-a-root/commands/` did not. The owned `skills` surface already routes the skill kind under this scope. Owning `commands` too would put one kind on two surfaces, which `harness_runtime::surfaces` refuses. This provider writes user-root skills only under `skills/`. The vendor page names both directories; the run is what decided they are one kind.
+
 
 **A setup cannot carry one of these.** A setup is installed into one
 target and its payload is relative to that target, so a component
