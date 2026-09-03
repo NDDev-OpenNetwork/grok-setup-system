@@ -25,11 +25,12 @@
   },
   "release": {
     "npm_package": "@xai-official/grok",
-    "npm_version": "1.0.13",
+    "npm_version": "1.0.18",
     "stable_channel_version": "1.0.13",
-    "npm_integrity": "sha512-rBMEx/7ND5DaBRGwzi6fEyf4ZWy4yStPnZ38UaIM2smZzg4E0fieDfLKPK8eRF4l2Xe4+5kSdCAVop99+whG4A==",
-    "npm_shasum": "7b60da75c5b79a98ef412af4243c9c248f99eb93",
-    "npm_tarball": "https://registry.npmjs.org/@xai-official/grok/-/grok-1.0.13.tgz",
+    "selected_dist_tag": "alpha",
+    "npm_integrity": "sha512-s90QT5h8d5SeV18K/KMPeT5FUHy8uZD4slx9MiGKcGJFuVt9lJC4HoZCiCJH6oL7iBLep6832kFyNr3Mr9gDYA==",
+    "npm_shasum": "3852e95428c53271dea71e42377f0ab003462161",
+    "npm_tarball": "https://registry.npmjs.org/@xai-official/grok/-/grok-1.0.18.tgz",
     "npm_bin": {
       "grok": "bin/grok"
     },
@@ -39,7 +40,7 @@
     "official_installer": "https://x.ai/cli/install.sh",
     "official_installer_sha256": "7fd6fdc75d9418b2e58356726fcbf1ae849416f773925da07d0ccc7a60d3e791",
     "official_installer_channel": "stable",
-    "official_installer_exact_version_arg": "1.0.13",
+    "official_installer_exact_version_arg": "1.0.18",
     "module_install_mechanism": "verified-npm-tarball",
     "module_npm_install_supported": false,
     "published_binary_checksum": null,
@@ -48,12 +49,12 @@
     "npm_file_count": 4,
     "native_npm_packages": {
       "@xai-official/grok-darwin-arm64": {
-        "version": "1.0.13",
+        "version": "1.0.18",
         "package": "@xai-official/grok-darwin-arm64",
-        "integrity": "sha512-Nctnwkzj550E512RZ+n+IUuhqGPZ2L7z/ZTIlZdVn0KqZHfzC58vIZPMBzdcOkoK42IrJlLD6GS7Eo6c1y+VGw==",
-        "shasum": "1da22c03bd828189662ed0ebc22788669e74bdc3",
-        "tarball": "https://registry.npmjs.org/@xai-official/grok-darwin-arm64/-/grok-darwin-arm64-1.0.13.tgz",
-        "unpacked_size": 38395621,
+        "integrity": "sha512-PHLPzrI6Jb6N6IYjbQdUbeF9hadGR0ALh87Wns0C0A1X7THDuu8vmbIdduGQFOsEDVxHNXZSO8+nCvZHgsLemg==",
+        "shasum": "7ddc6f87034c389d0c7287bc8b16a6a3815e9f11",
+        "tarball": "https://registry.npmjs.org/@xai-official/grok-darwin-arm64/-/grok-darwin-arm64-1.0.18.tgz",
+        "unpacked_size": 39891347,
         "file_count": 4,
         "os": "darwin",
         "cpu": "arm64",
@@ -61,12 +62,12 @@
         "product_supported": true
       },
       "@xai-official/grok-darwin-x64": {
-        "version": "1.0.13",
+        "version": "1.0.18",
         "package": "@xai-official/grok-darwin-x64",
-        "integrity": "sha512-trI+fm4ZY/2skF05XLfCYCMQgk/NUj6jYVV1stL4jPafhYj41yDYxu0PHgLxEy6f8UtA8XCfZN084/KxgiYDKw==",
-        "shasum": "b9bebcc0b18b28a8b28efdd18d20d5c1a8287231",
-        "tarball": "https://registry.npmjs.org/@xai-official/grok-darwin-x64/-/grok-darwin-x64-1.0.13.tgz",
-        "unpacked_size": 44873513,
+        "integrity": "sha512-xjZuoi3bAiv8aGVOA4jsivOMWi8N7aS3gP5+K1uLSw38D1HHM8v3DFCa49hWVviXpyM3hn4yTbdl2KCUIyRqnQ==",
+        "shasum": "c994481b3c72939c1ff314cc006985522c4e0a14",
+        "tarball": "https://registry.npmjs.org/@xai-official/grok-darwin-x64/-/grok-darwin-x64-1.0.18.tgz",
+        "unpacked_size": 46571212,
         "file_count": 4,
         "os": "darwin",
         "cpu": "x64",
@@ -74,12 +75,12 @@
         "product_supported": true
       },
       "@xai-official/grok-linux-arm64": {
-        "version": "1.0.13",
+        "version": "1.0.18",
         "package": "@xai-official/grok-linux-arm64",
-        "integrity": "sha512-hUfACShilnR5am+KVFyigNYSmL3FEVcRnXBRNKX2xz5eQ68ZoUMLt9IxNtZn27vogYS8NxsWiFkEsGI1rPeQ0w==",
-        "shasum": "642a88e8139372582adef32641ff3671df76e1c2",
-        "tarball": "https://registry.npmjs.org/@xai-official/grok-linux-arm64/-/grok-linux-arm64-1.0.13.tgz",
-        "unpacked_size": 41066714,
+        "integrity": "sha512-b9gD43YQiiCyc3/ZIudD639EUjBoZuX42xZYqO18ps3kRgb+6/JYUj1E6IEtc8tNNNIVAB9Stox5axs3bW8Usw==",
+        "shasum": "777b8dc2353e472df06ec54bb68c738721ba6b13",
+        "tarball": "https://registry.npmjs.org/@xai-official/grok-linux-arm64/-/grok-linux-arm64-1.0.18.tgz",
+        "unpacked_size": 41615735,
         "file_count": 4,
         "os": "linux",
         "cpu": "arm64",
@@ -87,12 +88,12 @@
         "product_supported": true
       },
       "@xai-official/grok-linux-x64": {
-        "version": "1.0.13",
+        "version": "1.0.18",
         "package": "@xai-official/grok-linux-x64",
-        "integrity": "sha512-t0TpPmsEZwwS0utHq07L1oPX7tMgufAazIziccGn8IdTpo8ihqZ7KjaI6wikROXExfjvwTh83m4B0PL2ErPeiw==",
-        "shasum": "2b761311accd7f6280348a0604aa0e24246c0745",
-        "tarball": "https://registry.npmjs.org/@xai-official/grok-linux-x64/-/grok-linux-x64-1.0.13.tgz",
-        "unpacked_size": 46411335,
+        "integrity": "sha512-FVN9+Ex/zAdHLI8PtEpVIYqnrpQ0hZaxp2OVhcFOj+9e/65DK585TUK9LSVFeN/1gYt04AUMIA3vOKnoYnjnOw==",
+        "shasum": "5a300da0218c858d70f976e37b05f36303771a7d",
+        "tarball": "https://registry.npmjs.org/@xai-official/grok-linux-x64/-/grok-linux-x64-1.0.18.tgz",
+        "unpacked_size": 46284973,
         "file_count": 4,
         "os": "linux",
         "cpu": "x64",
@@ -173,7 +174,7 @@
       ]
     },
     "format_observation": {
-      "observed_version": "1.0.0",
+      "observed_version": "1.0.18",
       "wrapper_layout_compatible": true,
       "native_layout_compatible": true,
       "command_flag_inventory_compatible": true,
@@ -186,8 +187,37 @@
         "sandbox globs reject empty, dot, and dot-dot segments and mask matched symlinks plus resolved targets on Linux",
         "permission paths are lexically normalized relative to cwd and shell checks also resolve symlinks",
         "remote restore-code requires worktree while resume without restore-code restores conversation only",
-        "headless prompt mode does not create a worktree"
-      ]
+        "headless prompt mode does not create a worktree",
+        "background commands and subagents are first-class task IDs with bounded multi-task waits",
+        "the monitor tool streams line events and filters them without blocking the conversation",
+        "the dashboard shows top-level sessions, subagents and background tasks",
+        "active-agent messaging and subagent worktree snapshots are independently configurable"
+      ],
+      "embedded_guides_measured": [
+        "16-subagents.md",
+        "20-background-tasks.md",
+        "23-dashboard.md",
+        "24-monitoring-usage.md",
+        "26-config-reference.md"
+      ],
+      "full_auto_keys_measured": [
+        "default_auto_mode",
+        "features.active_agent_messages",
+        "features.codebase_indexing",
+        "features.subagent_worktree_snapshot",
+        "features.image_gen",
+        "features.video_gen",
+        "features.mcp_auto_restart",
+        "features.mcp_liveness_watchers",
+        "features.mcp_push_server_status",
+        "features.mcp_recursive_config_watch",
+        "features.support_permission",
+        "features.non_git_warning",
+        "dashboard.enabled",
+        "goal.enabled",
+        "tools.respect_gitignore"
+      ],
+      "full_auto_probe": "grok 1.0.18 inspect --json loaded the exact config as a user layer with zero stderr bytes"
     },
     "module_npm_cli_install_supported": false,
     "module_npm_archive_materialization": true,
@@ -532,7 +562,7 @@
     "native_binary_delivery_by_plugins": false,
     "balanced_profile": false
   },
-  "verified_at": "2026-09-02T00:34:43+00:00",
+  "verified_at": "2026-09-03T14:07:36+00:00",
   "native_surfaces": {
     "verified_at": "2026-08-31",
     "config_home": "~/.grok",
@@ -777,7 +807,7 @@
               "skill"
             ],
             "shape": "directory",
-            "source": "measured by running the pinned 1.0.13 binary with `grok inspect` against a temporary HOME, 2026-08-29; and its own embedded reference text",
+            "source": "measured by running the 1.0.13 binary with `grok inspect` against a temporary HOME, 2026-08-29; and its own embedded reference text",
             "evidence": "ran",
             "note": "**Run, not read.** The pinned `grok-1.0.13-linux-x86_64` was fetched, its digest checked against the artifact table, and driven with `grok inspect` -- *Show the configuration Grok discovers for this directory*, which needs no credential. With a `SKILL.md` at `$HOME/.agents/skills/nddev-user-root-probe/` it reports:\n\n```\n  Skills (1)\n  └ nddev-user-root-probe  user\n```\n\n-- discovered, and at the **user** tier, which is the half the embedded reference's tier table asserted and a run confirms.\n\n**With a control.** A second skill at `$HOME/.agents-not-a-root/skills/` -- a sibling root no page names -- is absent: the count is 1, not 2. Without it, \"the probe was found\" could not be told from \"the product scans `$HOME`\".\n\nThe one root in this estate that belongs to a convention rather than to a product. `$HOME/.agents/skills` is a *sibling* of this product's configuration home, not a child, so nothing declared against this provider's own target can reach it -- that is what `user_root` exists for.\n\n**Owning a shared root, and the reason this record used to decline it.** Five of the seven products read this root, and the decline said: *a namespace is removed whole, so a second declaration would make either provider's remove take the other's skills.* That sentence was true when it was written and stopped being true when `written_paths` shipped -- `remove` under this scope takes the files this provider recorded writing and refuses rather than widening when it cannot read the record, and each harness carries its own state file, so they coexist under one root. The reason was not re-read when the thing it described changed.\n\nRelative to this scope's own root the path is `skills`, not `.agents/skills`: the root is what the scope names, and writing it into the path again would put the skills at `~/.agents/.agents/skills`."
           }
@@ -792,6 +822,50 @@
     "configuration_schema_note": "**No machine-readable configuration schema is published, measured rather than assumed.** Every schema-looking url in the pinned `grok-1.0.13-linux-x86_64` resolves to `json-schema.org` meta-schemas and vocabularies -- the validator library's own, not a description of `config.toml`. 37 distinct urls, none of them xAI's. So the keys this estate writes are sourced from the binary and the settings reference, and there is nothing to validate them against. Surveyed 2026-08-31 across all seven; three publish one and use it, cursor publishes one it must not name, and these three publish none."
   },
   "software_artifacts": {
+    "command": "grok",
+    "shape": "raw",
+    "platforms": {
+      "linux/arm64": {
+        "url": "https://x.ai/cli/grok-1.0.18-linux-aarch64",
+        "bytes": 129675416,
+        "sha256": "sha256:e5c96058b6f88b2e9ae7d61401e80ac6bcbcaf1be5681eae19e36a2b8aff121d"
+      },
+      "linux/x86_64": {
+        "url": "https://x.ai/cli/grok-1.0.18-linux-x86_64",
+        "bytes": 155510304,
+        "sha256": "sha256:42f6efb496feafea3e8807b75852cc1f792cba0bd0be8ecbd1c9f7ed5816a7f0"
+      },
+      "macos/arm64": {
+        "url": "https://x.ai/cli/grok-1.0.18-macos-aarch64",
+        "bytes": 135828368,
+        "sha256": "sha256:99b77202286face91f27f97caca0590377b36300ccca99ff18e730228f7a5ca3"
+      },
+      "macos/x86_64": {
+        "url": "https://x.ai/cli/grok-1.0.18-macos-x86_64",
+        "bytes": 152347968,
+        "sha256": "sha256:b6b682eb551e503dfb80368e46c2129a74ba51af598692ba8f4c59202653fd2a"
+      },
+      "windows/arm64": {
+        "url": "https://x.ai/cli/grok-1.0.18-windows-aarch64.exe",
+        "bytes": 123747656,
+        "sha256": "sha256:d4d38c41e7a18979ca0c591244c03d4c0909001d4a288f67d6e9e92d5ac0eca9"
+      },
+      "windows/x86_64": {
+        "url": "https://x.ai/cli/grok-1.0.18-windows-x86_64.exe",
+        "bytes": 143124808,
+        "sha256": "sha256:c407a08a5b987c528c8c515394ce839319cbe69a7c0f73e322348038754387eb"
+      }
+    },
+    "version": "1.0.18",
+    "verified_at": "2026-09-03T14:07:36+00:00"
+  },
+  "never_touch": [
+    "active_sessions.json",
+    "active_sessions.lock",
+    "logs"
+  ],
+  "setup_catalogue_digest": "sha256:22319bb888acc123b98e92abf95b3a448b464b7cb3cbbcd1e2a89cbf49c91125",
+  "previous_software_artifacts": {
     "command": "grok",
     "shape": "raw",
     "platforms": {
@@ -829,54 +903,10 @@
     "version": "1.0.13",
     "verified_at": "2026-09-02T00:34:43+00:00"
   },
-  "never_touch": [
-    "active_sessions.json",
-    "active_sessions.lock",
-    "logs"
-  ],
-  "setup_catalogue_digest": "sha256:cad85ba3a1fa3fd6d99ffabbfba7940f140f20ce230b379f4cc7d76a7f5e4721",
-  "previous_software_artifacts": {
-    "command": "grok",
-    "shape": "raw",
-    "platforms": {
-      "linux/arm64": {
-        "url": "https://x.ai/cli/grok-1.0.5-linux-aarch64",
-        "bytes": 136259976,
-        "sha256": "sha256:1c1fe67d7c35497fb09f44a451f57acc3787add4c9aea2c56f5c7c75dc5ffcf1"
-      },
-      "linux/x86_64": {
-        "url": "https://x.ai/cli/grok-1.0.5-linux-x86_64",
-        "bytes": 166854368,
-        "sha256": "sha256:9ba87444e1819e8f6104adbbf4676a870c204380aa5c3e1c38a926c4ea677238"
-      },
-      "macos/arm64": {
-        "url": "https://x.ai/cli/grok-1.0.5-macos-aarch64",
-        "bytes": 134349648,
-        "sha256": "sha256:3dfa7f04fbb5427a8fbead286591543aaecb478b3a0ab222c4329eca1a3b2f86"
-      },
-      "macos/x86_64": {
-        "url": "https://x.ai/cli/grok-1.0.5-macos-x86_64",
-        "bytes": 150381856,
-        "sha256": "sha256:21cbb063c6167175ba00a67f64ac638af8f79a44aef816cfd5b4915c77528e60"
-      },
-      "windows/arm64": {
-        "url": "https://x.ai/cli/grok-1.0.5-windows-aarch64.exe",
-        "bytes": 123656008,
-        "sha256": "sha256:a987033f6c15c2b61a0f0ba80dd878160953e67d5e78d8c224e2743f01910f2f"
-      },
-      "windows/x86_64": {
-        "url": "https://x.ai/cli/grok-1.0.5-windows-x86_64.exe",
-        "bytes": 142651720,
-        "sha256": "sha256:4b924daa801663ea20e96382408b1f2b5ba39efad62c14d20d88618a9eb0be64"
-      }
-    },
-    "version": "1.0.5",
-    "verified_at": "2026-08-28T04:43:32+00:00"
-  },
   "source_verified_runtime_flags": [
     "GROK_DISABLE_AUTOUPDATER"
   ],
-  "source_verified_runtime_flags_note": "Read out of the pinned 1.0.13 binary on 2026-08-31. `GROK_DISABLE_AUTOUPDATER` is documented by the product's own embedded reference, in a table of four suppression methods and their scopes, and it is the only one a launch can set without writing into a person's configuration file. A falsy value counts as not set, so launch overwrites rather than leaves an inherited `0` in place. `native_declaration_names_the_switch_it_sets` ties `updates_off_env` to this list.",
+  "source_verified_runtime_flags_note": "Read out of the 1.0.13 binary on 2026-08-31. `GROK_DISABLE_AUTOUPDATER` is documented by the product's own embedded reference, in a table of four suppression methods and their scopes, and it is the only one a launch can set without writing into a person's configuration file. A falsy value counts as not set, so launch overwrites rather than leaves an inherited `0` in place. `native_declaration_names_the_switch_it_sets` ties `updates_off_env` to this list.",
   "surface_presence": {
     "measured_at": "2026-09-02",
     "artifact": "https://x.ai/cli/grok-1.0.13-linux-x86_64",

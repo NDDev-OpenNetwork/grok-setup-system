@@ -190,7 +190,7 @@ every path below is relative to that root.
 
 | Path | Component kinds routed here | Decided by |
 | --- | --- | --- |
-| `skills` | `skill` | measured by running the pinned 1.0.13 binary with `grok inspect` against a temporary HOME, 2026-08-29; and its own embedded reference text |
+| `skills` | `skill` | measured by running the 1.0.13 binary with `grok inspect` against a temporary HOME, 2026-08-29; and its own embedded reference text |
 
 This root is read by several products at once, so under this scope
 `remove`, the backup and a restore act on the files this program

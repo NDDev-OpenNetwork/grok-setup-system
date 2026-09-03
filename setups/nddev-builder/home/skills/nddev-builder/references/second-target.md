@@ -10,7 +10,7 @@ twice, which is a mistake this estate has made and shipped.
 
 | path | routes | decided by | exercised by |
 |---|---|---|---|
-| `skills` | skill | measured by running the pinned 1.0.13 binary with `grok inspect` against a temporary HOME | **ran it** |
+| `skills` | skill | measured by running the 1.0.13 binary with `grok inspect` against a temporary HOME | **ran it** |
 ### `skills`, as measured
 
 **Run, not read.** The pinned `grok-1.0.13-linux-x86_64` was fetched, its digest checked against the artifact table, and driven with `grok inspect` -- *Show the configuration Grok discovers for this directory*, which needs no credential. With a `SKILL.md` at `$HOME/.agents/skills/nddev-user-root-probe/` it reports:

@@ -34,6 +34,7 @@ target-explicit, reversible, and backed by the repository's own gate.
 - **Writing this harness's configuration file** — `references/authoring-settings.md`
 - **Writing this harness's instruction file** — `references/authoring-instructions.md`
 - **The second target this harness declares, and how a component reaches it** — `references/second-target.md`
+- **Background tasks, subagents, monitors and the dashboard** — `references/background-monitoring.md`
 - **Writing a skill this harness will actually load** — `references/authoring-skills.md`
 - **Writing an agent this harness will actually load** — `references/authoring-agents.md`
 - **Writing a hook this harness will actually load** — `references/authoring-hooks.md`

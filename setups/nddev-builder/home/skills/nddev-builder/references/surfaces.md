@@ -55,7 +55,7 @@ above -- writing the root into the path again would nest it twice.
 
 | path | routes | shape | decided by | exercised by |
 | --- | --- | --- | --- | --- |
-| `skills` | skill | directory | measured by running the pinned 1.0.13 binary with `grok inspect` against a temporary HOME, 2026-08-29 | **ran it** |
+| `skills` | skill | directory | measured by running the 1.0.13 binary with `grok inspect` against a temporary HOME, 2026-08-29 | **ran it** |
 
 **Under a scope the namespace is the permission and the recorded
 files are the inventory.** A root like this one is read by several
