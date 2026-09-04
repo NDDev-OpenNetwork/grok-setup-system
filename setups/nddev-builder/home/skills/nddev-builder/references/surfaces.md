@@ -1,8 +1,8 @@
 # What This Harness Owns
 
-Generated from `references/grok-baseline.json` by
-`tools/build_nddev_builder.py`. Do not edit: the next render overwrites
-it, and the baseline is where a correction belongs.
+Generated from `references/grok-baseline.json`. Do not edit:
+the next render overwrites it, and the baseline is where a correction
+belongs.
 
 Every row below was decided by a source, and the source is named. Where
 this file and the binary disagree, the binary is right -- ask it with
