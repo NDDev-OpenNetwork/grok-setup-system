@@ -552,10 +552,10 @@ mod tests {
             &harness_runtime::Catalog::at(&root).list().unwrap(),
         );
         assert!(found.problems.is_empty(), "{}", found.problems.join("\n  "));
-        // grok carries 11 file(s) inside its skill. Stated so that a layout change emptying the skill fails here rather than passing a guard with nothing left to walk.
+        // grok carries 12 file(s) inside its skill. Stated so that a layout change emptying the skill fails here rather than passing a guard with nothing left to walk.
         assert_eq!(
-            found.entry_points, 11,
-            "the stranded-file guard walked {} files inside skills, not 11",
+            found.entry_points, 12,
+            "the stranded-file guard walked {} files inside skills, not 12",
             found.entry_points
         );
     }
