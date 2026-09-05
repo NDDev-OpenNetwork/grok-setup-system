@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "id": "baseline",
-  "description": "A working floor: instructions plus conservative configuration.",
+  "description": "A working floor: the same autonomous permission and sandbox posture as the other standard variants, with extra capabilities left off.",
   "sources": [
     "https://docs.x.ai/build/settings/reference"
   ]
