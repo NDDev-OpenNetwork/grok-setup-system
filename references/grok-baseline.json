@@ -870,7 +870,7 @@
     "active_sessions.lock",
     "logs"
   ],
-  "setup_catalogue_digest": "sha256:a8718b6478c44e6bbbdb4ae6e0f12498d75dedf35a69243463cb026afc8ece50",
+  "setup_catalogue_digest": "sha256:5fa6e539b4b5de06028235deaa1a8d3bb3465cb67a95f90993320ca65e756e89",
   "previous_software_artifacts": {
     "command": "grok",
     "shape": "raw",
