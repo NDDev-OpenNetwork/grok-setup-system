@@ -4,5 +4,22 @@
   "description": "A working floor: the same autonomous permission and sandbox posture as the other standard variants, with extra capabilities left off.",
   "sources": [
     "https://docs.x.ai/build/settings/reference"
+  ],
+  "setup_stable_id": "setup_01M18ZSCSN1FTGQZW9NKTX006J",
+  "setup_version": "1.2",
+  "setup_passport_digest": "sha256:8fffccd766aac62629f554aa8252a713b84950d7c6530c4c81f4a99e505b567a",
+  "component_refs": [
+    {
+      "stable_id": "component_01M18ZSCSN1FTGQZW9NKTX006K",
+      "version": "1.2",
+      "passport_digest": "sha256:9e9c4eaec9ea69f6fbaf773ceaa235040180f580ffd2d357bb1bd66f1e5fba10",
+      "adaptation_id": "adaptation_f5e44becfabee27ff04a7097e38c2238d66d1fbaabab17a7319edceb233d2c50"
+    },
+    {
+      "stable_id": "component_01M18ZSDH0GY5WKJ8W5DEHBZAV",
+      "version": "1.2",
+      "passport_digest": "sha256:adc3061626525b68aee73ef8b401c4be7467e9b0a93319202f6936ecb0dd10d1",
+      "adaptation_id": "adaptation_95e1f1d209247b372a7b0c16b0099f8bba075803148af822d0e5b5ccbc4cb0c2"
+    }
   ]
 }
