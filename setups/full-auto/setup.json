@@ -5,5 +5,22 @@
   "sources": [
     "https://docs.x.ai/build/settings/reference",
     "https://docs.x.ai/build/features/permissions"
+  ],
+  "setup_stable_id": "setup_01M18ZSENZZNJ06RZ3C04B4PE2",
+  "setup_version": "1.5",
+  "setup_passport_digest": "sha256:aad2a4426be03fd35b3c7328057b3a48e7f54f6e9f3c4912f64919c9dfdd0774",
+  "component_refs": [
+    {
+      "stable_id": "component_01M18ZSENZZNJ06RZ3C04B4PE3",
+      "version": "1.4",
+      "passport_digest": "sha256:dfecb05595893f5d0c1ddc8ebacbc5e6fb01d987a06b411b856a53797eb30fa7",
+      "adaptation_id": "adaptation_9f67a27dcb2cd201ad3dcc9fc489697e6a6ea02e6532f51087d73600f8217b0d"
+    },
+    {
+      "stable_id": "component_01M18ZSF8EBZ0S92S8VVAFJK4W",
+      "version": "1.3",
+      "passport_digest": "sha256:3f0d13f4d1ccdfe9343ace63499fcee96d5cc7caeb38f5f59e8b9631e177e6f1",
+      "adaptation_id": "adaptation_0999dd2138644baf88f746387281414b92d3a151ed5870093b13fdfa72e1d90b"
+    }
   ]
 }

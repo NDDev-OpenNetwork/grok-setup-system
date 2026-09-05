@@ -10,5 +10,34 @@
     "https://docs.x.ai/build/overview",
     "https://docs.x.ai/build/settings",
     "https://docs.x.ai/build/settings/reference"
+  ],
+  "setup_stable_id": "setup_01M15EP1E2STXXY3PC5H7RAQAZ",
+  "setup_version": "1.5",
+  "setup_passport_digest": "sha256:d3cd97545d5134a434253ccb77d74463042de06754f693347e03586325f8181d",
+  "component_refs": [
+    {
+      "stable_id": "component_01M15ENV9E5P94WFRJW82SPPDT",
+      "version": "1.5",
+      "passport_digest": "sha256:1bad551916236c79bcbd581396398704d44b35544381b032eeb58389334dab77",
+      "adaptation_id": "adaptation_9f67a27dcb2cd201ad3dcc9fc489697e6a6ea02e6532f51087d73600f8217b0d"
+    },
+    {
+      "stable_id": "component_01M15ENVTZTT4QKZ997PTH0TXV",
+      "version": "1.4",
+      "passport_digest": "sha256:31b5129d0293b3d8d412071ad737220890d4810feaab4ff5020fbd013697a983",
+      "adaptation_id": "adaptation_0999dd2138644baf88f746387281414b92d3a151ed5870093b13fdfa72e1d90b"
+    },
+    {
+      "stable_id": "component_01M15ENWDEC13S07RNQ2GGCXF4",
+      "version": "1.5",
+      "passport_digest": "sha256:fd3d748671f7ea02ae7f216d29d37f20c9c90ae5ad1ea27cc885d362c9780fa1",
+      "adaptation_id": "adaptation_0a48c6162559c87ae2f99fe1919b822662e3cd110417e8c68d3164ace30a29e7"
+    },
+    {
+      "stable_id": "component_01M15EP0WYCCX6DF4B0WP6S6JP",
+      "version": "1.4",
+      "passport_digest": "sha256:7f36a3790b9d876ac74e10255b57de181991a651a3884bf73dd83e1cd672ba54",
+      "adaptation_id": "adaptation_2bd354cb560227a54f676229679f445936343f63ee1a3d617f395d7f97f4ef0c"
+    }
   ]
 }

@@ -4,5 +4,16 @@
   "description": "Instructions plus the same autonomous permission and sandbox posture as the other standard variants; no extra tools.",
   "sources": [
     "https://docs.x.ai/build/settings/reference"
+  ],
+  "setup_stable_id": "setup_01M18ZSBNA7RYS9ZESFCPCVZPM",
+  "setup_version": "1.2",
+  "setup_passport_digest": "sha256:0b6f29b650dfd0ff26aeebb76dba058c3b145dd4f863d430181d4873147183ce",
+  "component_refs": [
+    {
+      "stable_id": "component_01M18ZSBNA7RYS9ZESFCPCVZPN",
+      "version": "1.2",
+      "passport_digest": "sha256:3dfe12ec78ee0f9bda3aa51eaba92f3196e25804f8580571464b428eb4776100",
+      "adaptation_id": "adaptation_f09e4589241879c3a26a966a5f61c9c03691cfb9fc29b37689e33867be92e855"
+    }
   ]
 }
