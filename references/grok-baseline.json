@@ -25,12 +25,12 @@
   },
   "release": {
     "npm_package": "@xai-official/grok",
-    "npm_version": "1.0.18",
+    "npm_version": "1.0.21",
     "stable_channel_version": "1.0.13",
     "selected_dist_tag": "alpha",
-    "npm_integrity": "sha512-s90QT5h8d5SeV18K/KMPeT5FUHy8uZD4slx9MiGKcGJFuVt9lJC4HoZCiCJH6oL7iBLep6832kFyNr3Mr9gDYA==",
-    "npm_shasum": "3852e95428c53271dea71e42377f0ab003462161",
-    "npm_tarball": "https://registry.npmjs.org/@xai-official/grok/-/grok-1.0.18.tgz",
+    "npm_integrity": "sha512-6yQqC+h1o+ObaqCxImK23dhkrOX1DEBMOKaH6fCK+B4gX0/8XIKZp0n7iKyBdK8KZa5vhMn7pS45kjX49Tps5g==",
+    "npm_shasum": "5957e16a52b373aecf217901e522bd6f68ad8da1",
+    "npm_tarball": "https://registry.npmjs.org/@xai-official/grok/-/grok-1.0.21.tgz",
     "npm_bin": {
       "grok": "bin/grok"
     },
@@ -40,7 +40,7 @@
     "official_installer": "https://x.ai/cli/install.sh",
     "official_installer_sha256": "7fd6fdc75d9418b2e58356726fcbf1ae849416f773925da07d0ccc7a60d3e791",
     "official_installer_channel": "stable",
-    "official_installer_exact_version_arg": "1.0.18",
+    "official_installer_exact_version_arg": "1.0.21",
     "module_install_mechanism": "verified-npm-tarball",
     "module_npm_install_supported": false,
     "published_binary_checksum": null,
@@ -49,12 +49,12 @@
     "npm_file_count": 4,
     "native_npm_packages": {
       "@xai-official/grok-darwin-arm64": {
-        "version": "1.0.18",
+        "version": "1.0.21",
         "package": "@xai-official/grok-darwin-arm64",
-        "integrity": "sha512-PHLPzrI6Jb6N6IYjbQdUbeF9hadGR0ALh87Wns0C0A1X7THDuu8vmbIdduGQFOsEDVxHNXZSO8+nCvZHgsLemg==",
-        "shasum": "7ddc6f87034c389d0c7287bc8b16a6a3815e9f11",
-        "tarball": "https://registry.npmjs.org/@xai-official/grok-darwin-arm64/-/grok-darwin-arm64-1.0.18.tgz",
-        "unpacked_size": 39891347,
+        "integrity": "sha512-I4pKZGnR6Mv4MJOJsB9B/i2o0ODF4eZtp4jHN5feoTqKIeAUVg38OzBtE8aN/wZa7Xg+qhnf6Jd1tcAFvMoFtQ==",
+        "shasum": "98f5b2f8ad944b3e2ac68187128f29b8f0261dc9",
+        "tarball": "https://registry.npmjs.org/@xai-official/grok-darwin-arm64/-/grok-darwin-arm64-1.0.21.tgz",
+        "unpacked_size": 40071710,
         "file_count": 4,
         "os": "darwin",
         "cpu": "arm64",
@@ -62,12 +62,12 @@
         "product_supported": true
       },
       "@xai-official/grok-darwin-x64": {
-        "version": "1.0.18",
+        "version": "1.0.21",
         "package": "@xai-official/grok-darwin-x64",
-        "integrity": "sha512-xjZuoi3bAiv8aGVOA4jsivOMWi8N7aS3gP5+K1uLSw38D1HHM8v3DFCa49hWVviXpyM3hn4yTbdl2KCUIyRqnQ==",
-        "shasum": "c994481b3c72939c1ff314cc006985522c4e0a14",
-        "tarball": "https://registry.npmjs.org/@xai-official/grok-darwin-x64/-/grok-darwin-x64-1.0.18.tgz",
-        "unpacked_size": 46571212,
+        "integrity": "sha512-h0nFj3NZ9Kz8w6fQ6UDxxeSIhC1WjwwoRE92iNbG//tZy6YGkppR3s7oRVtt4Xl0CJANKUt0EusyIYnnAvKLzw==",
+        "shasum": "d45a2b8b14c22111de2c86638e8b11596b19ae19",
+        "tarball": "https://registry.npmjs.org/@xai-official/grok-darwin-x64/-/grok-darwin-x64-1.0.21.tgz",
+        "unpacked_size": 46782316,
         "file_count": 4,
         "os": "darwin",
         "cpu": "x64",
@@ -75,12 +75,12 @@
         "product_supported": true
       },
       "@xai-official/grok-linux-arm64": {
-        "version": "1.0.18",
+        "version": "1.0.21",
         "package": "@xai-official/grok-linux-arm64",
-        "integrity": "sha512-b9gD43YQiiCyc3/ZIudD639EUjBoZuX42xZYqO18ps3kRgb+6/JYUj1E6IEtc8tNNNIVAB9Stox5axs3bW8Usw==",
-        "shasum": "777b8dc2353e472df06ec54bb68c738721ba6b13",
-        "tarball": "https://registry.npmjs.org/@xai-official/grok-linux-arm64/-/grok-linux-arm64-1.0.18.tgz",
-        "unpacked_size": 41615735,
+        "integrity": "sha512-Jlwz9XtZPNKz/V/ydifC8OVu3hIZz7pmoStt8c4KCqkSWjWiZ/PBIC0iJiq8rvByhx5Z0EdSyq8ZXVwtocceGA==",
+        "shasum": "cea5db512399bf943e2484973f80e1ad145d54c3",
+        "tarball": "https://registry.npmjs.org/@xai-official/grok-linux-arm64/-/grok-linux-arm64-1.0.21.tgz",
+        "unpacked_size": 41781702,
         "file_count": 4,
         "os": "linux",
         "cpu": "arm64",
@@ -88,12 +88,12 @@
         "product_supported": true
       },
       "@xai-official/grok-linux-x64": {
-        "version": "1.0.18",
+        "version": "1.0.21",
         "package": "@xai-official/grok-linux-x64",
-        "integrity": "sha512-FVN9+Ex/zAdHLI8PtEpVIYqnrpQ0hZaxp2OVhcFOj+9e/65DK585TUK9LSVFeN/1gYt04AUMIA3vOKnoYnjnOw==",
-        "shasum": "5a300da0218c858d70f976e37b05f36303771a7d",
-        "tarball": "https://registry.npmjs.org/@xai-official/grok-linux-x64/-/grok-linux-x64-1.0.18.tgz",
-        "unpacked_size": 46284973,
+        "integrity": "sha512-AjDV5ifEz5LFG2Jt5IlhAeEkJati/wOvCchVbR4eIj2ogjvmXoXlzBrYRXuAJpXBy5q0se/Yuez5FxDU9Ju81w==",
+        "shasum": "db95be43f1a11ff08f1fc3ecbe5e1e537715c5cc",
+        "tarball": "https://registry.npmjs.org/@xai-official/grok-linux-x64/-/grok-linux-x64-1.0.21.tgz",
+        "unpacked_size": 46483354,
         "file_count": 4,
         "os": "linux",
         "cpu": "x64",
@@ -562,7 +562,7 @@
     "native_binary_delivery_by_plugins": false,
     "balanced_profile": false
   },
-  "verified_at": "2026-09-03T14:07:36+00:00",
+  "verified_at": "2026-09-07T03:13:56+00:00",
   "native_surfaces": {
     "verified_at": "2026-08-31",
     "config_home": "~/.grok",
@@ -832,6 +832,50 @@
     "shape": "raw",
     "platforms": {
       "linux/arm64": {
+        "url": "https://x.ai/cli/grok-1.0.21-linux-aarch64",
+        "bytes": 130274504,
+        "sha256": "sha256:8a629e703cb08856fe7d837446bc225bcbb51c85f86fff0b0e0628cd89138582"
+      },
+      "linux/x86_64": {
+        "url": "https://x.ai/cli/grok-1.0.21-linux-x86_64",
+        "bytes": 156218560,
+        "sha256": "sha256:3a0bd1111628768b91c4ac550034565448309fe9ec2cb13b71dea90910dc9d98"
+      },
+      "macos/arm64": {
+        "url": "https://x.ai/cli/grok-1.0.21-macos-aarch64",
+        "bytes": 136467248,
+        "sha256": "sha256:daac3e1cc56771b94605c39cc091b7d3c3d4ef0aea3a45658250200aa22e936b"
+      },
+      "macos/x86_64": {
+        "url": "https://x.ai/cli/grok-1.0.21-macos-x86_64",
+        "bytes": 153044752,
+        "sha256": "sha256:bc275df8242ad530f88c0f110f14ff70535e2ad0ed64610b72d4d60c18183f3d"
+      },
+      "windows/arm64": {
+        "url": "https://x.ai/cli/grok-1.0.21-windows-aarch64.exe",
+        "bytes": 124267336,
+        "sha256": "sha256:1063015fab6cc43a8a4f3a4264e8f04477211cc6c507d3272d837f03a0543f41"
+      },
+      "windows/x86_64": {
+        "url": "https://x.ai/cli/grok-1.0.21-windows-x86_64.exe",
+        "bytes": 143703880,
+        "sha256": "sha256:59488238420820f455c59de3dab038a6561bc34af7cb7d961ffcd269f4d7d4e4"
+      }
+    },
+    "version": "1.0.21",
+    "verified_at": "2026-09-07T03:13:56+00:00"
+  },
+  "never_touch": [
+    "active_sessions.json",
+    "active_sessions.lock",
+    "logs"
+  ],
+  "setup_catalogue_digest": "sha256:a0fefee01bb006651be5540a35cd39e26802cf9e3a0320a1256aee2508544514",
+  "previous_software_artifacts": {
+    "command": "grok",
+    "shape": "raw",
+    "platforms": {
+      "linux/arm64": {
         "url": "https://x.ai/cli/grok-1.0.18-linux-aarch64",
         "bytes": 129675416,
         "sha256": "sha256:e5c96058b6f88b2e9ae7d61401e80ac6bcbcaf1be5681eae19e36a2b8aff121d"
@@ -864,50 +908,6 @@
     },
     "version": "1.0.18",
     "verified_at": "2026-09-03T14:07:36+00:00"
-  },
-  "never_touch": [
-    "active_sessions.json",
-    "active_sessions.lock",
-    "logs"
-  ],
-  "setup_catalogue_digest": "sha256:5fa6e539b4b5de06028235deaa1a8d3bb3465cb67a95f90993320ca65e756e89",
-  "previous_software_artifacts": {
-    "command": "grok",
-    "shape": "raw",
-    "platforms": {
-      "linux/arm64": {
-        "url": "https://x.ai/cli/grok-1.0.13-linux-aarch64",
-        "bytes": 135641288,
-        "sha256": "sha256:b926fc5308374396e260e7efbd6107231a8dae13c084ddaf0fe89b7ebb3edd25"
-      },
-      "linux/x86_64": {
-        "url": "https://x.ai/cli/grok-1.0.13-linux-x86_64",
-        "bytes": 166079904,
-        "sha256": "sha256:edf79521581bb5e6b95abef848491a6a742e860da3e237ebe86a280d30dce4c1"
-      },
-      "macos/arm64": {
-        "url": "https://x.ai/cli/grok-1.0.13-macos-aarch64",
-        "bytes": 133486016,
-        "sha256": "sha256:8669e0fdadceec25b8c159c355f427ffbd82583525d774b6ab1522197ea83b80"
-      },
-      "macos/x86_64": {
-        "url": "https://x.ai/cli/grok-1.0.13-macos-x86_64",
-        "bytes": 149694528,
-        "sha256": "sha256:8eacec87f5ecdb9259c6d812d12ce9e2d405b1526e36ae9d7fc81ec31dbd74d6"
-      },
-      "windows/arm64": {
-        "url": "https://x.ai/cli/grok-1.0.13-windows-aarch64.exe",
-        "bytes": 122000712,
-        "sha256": "sha256:b8881ea0a30874a94d1a3eaec9ba30c9648f597b8bf22454c334574f2f931e7b"
-      },
-      "windows/x86_64": {
-        "url": "https://x.ai/cli/grok-1.0.13-windows-x86_64.exe",
-        "bytes": 140810568,
-        "sha256": "sha256:bf43dc75f5478a106eab1e86d422c963e4dbe9666cf14dab363733d27bf1e672"
-      }
-    },
-    "version": "1.0.13",
-    "verified_at": "2026-09-02T00:34:43+00:00"
   },
   "source_verified_runtime_flags": [
     "GROK_DISABLE_AUTOUPDATER"

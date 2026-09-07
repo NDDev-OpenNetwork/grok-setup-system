@@ -38,12 +38,13 @@ Considered under this scope and not owned:
 - **`commands`** — Grok 1.0.18 discovers `~/.agents/commands/<name>.md` as a **skill**, in the same `skills` array as `~/.agents/skills/<name>/SKILL.md`. Measured with `grok inspect --json` against a temporary HOME on the digest-verified `grok-1.0.18-linux-x86_64`: `nddev-agents-command.md` appeared as `skills[].name=nddev-agents-command` with `source.type=user`; a control file under `$HOME/.agents-not-a-root/commands/` did not. The owned `skills` surface already routes the skill kind under this scope. Owning `commands` too would put one kind on two surfaces, which `harness_runtime::surfaces` refuses. This provider writes user-root skills only under `skills/`. The vendor page names both directories; the run is what decided they are one kind.
 
 
-**A setup cannot carry one of these.** A setup is installed into one
-target and its payload is relative to that target, so a component
-for this scope is installed by the consumer against that root -- not
-by a setup aimed at the configuration home. If you are looking for
-where to put one by hand, it is the path above joined to the root
-above, and nowhere under the home.
+**A complete setup may include these scoped components.** Each
+provider request still reaches one root. The consumer coordinates
+the roots with `ai-stp install transaction plan`, exact digest
+approval, apply and recovery. A shipped configuration-home preset
+cannot reach this root by nesting a path inside its home payload.
+Declare the component's actual scope and bind the matching root
+explicitly in the transaction.
 
 **The root is shared, and that changes what removal means.** Several
 products read it. Under this scope `remove`, the backup and a
