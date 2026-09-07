@@ -13,7 +13,7 @@ use std::process::ExitCode;
 
 mod software;
 
-use harness_runtime::{Harness, LaunchBinding, Scoped};
+use harness_runtime::{Harness, LaunchBinding, PreservationSurface, Scoped};
 use provider_v3::{ComponentKind, ProjectionKind, TargetScope};
 
 /// Everything specific to Grok Build, verified against `grok-baseline.json`.
@@ -130,6 +130,35 @@ pub const GROK: Harness = Harness {
         "rules",
         "sandbox.toml",
         "workflows",
+    ],
+    preservation_surfaces: &[
+        PreservationSurface {
+            scope: None,
+            roots: &[
+                "Agents.md",
+                "AGENT.md",
+                "lsp.json",
+                "pager.toml",
+                "installed-plugins",
+            ],
+            excluded: &[
+                "auth.json",
+                "sessions",
+                "active_sessions.json",
+                "active_sessions.lock",
+                "logs",
+                "managed_config.toml",
+                "requirements.toml",
+                "managed_config.sig.json",
+                "managed_identity.sig.json",
+                "managed_config_cache.json",
+            ],
+        },
+        PreservationSurface {
+            scope: Some(TargetScope::UserRoot),
+            roots: &["commands"],
+            excluded: &[],
+        },
     ],
     never_touch: &[
         // Credentials first, and it took a sweep across all seven to notice
