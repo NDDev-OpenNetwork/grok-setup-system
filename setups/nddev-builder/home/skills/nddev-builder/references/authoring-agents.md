@@ -4,7 +4,7 @@ Generated from the vendor's own reference and the pinned binary. Do not edit: th
 
 **Where it goes**: `~/.grok/agents/<name>.md`
 
-**Decided by**: measured in the 1.0.5 binary's own embedded reference
+**Decided by**: https://docs.x.ai/build/features/subagents; frontmatter measured in the 1.0.5 binary's own embedded reference
 
 **How it runs**: Grok resolves the agent by name; plugin agents are `plugin-name:agent-name`.
 
@@ -21,7 +21,8 @@ Generated from the vendor's own reference and the pinned binary. Do not edit: th
 
 ## What bites
 
-- The vendor's subagents page names the directories and does not list the frontmatter, so the fields above are measured rather than specified. Ask the binary before relying on one that is not here.
+- The vendor's subagents page is now live and documents the directories, the three built-in types (`general-purpose`, `explore`, `plan`) and `/config-agents` (alias `/agents`) -- and it still does not list the frontmatter, so the fields above remain measured rather than specified. Ask the binary before relying on one that is not here.
+- Subagents are **enabled by default when the setting is unset**; `GROK_SUBAGENTS=0` or `[subagents].enabled = false` turns them off. Project-scope agents live in `.grok/agents/` beside the owned `~/.grok/agents/`, and personas can also be declared under `[subagents.personas]` in `config.toml` as well as in the owned `personas/` directory.
 - **A plugin's agent is not allowed the same frontmatter as yours.** The product's own reference: plugin agent frontmatter cannot declare `mcpServers` or hooks, and cannot set `permissionMode: bypassPermissions`. A component that works from `agents/` can be refused once it ships inside a plugin.
 - Personas are a second, separate mechanism: `.toml` files under `personas/`, applied during subagent resolution, and behavioural only. They are owned by this provider and route no kind -- there is no word for a behavioural overlay in the kind set, and declaring one would promise a rollback for something no consumer can install. `roles/` sits beside it on the same footing.
 
@@ -51,11 +52,16 @@ Generated from the same rows as the section above, for every harness in this est
 | `mode` | — | — | yes | — |
 | `temperature` | — | — | yes | — |
 | `top_p` | — | — | yes | — |
+| `steps` | — | — | yes | — |
+| `prompt` | — | — | yes | — |
+| `hidden` | — | — | yes | yes |
 | `permission` | — | — | yes | — |
 | `disable` | — | — | yes | — |
 | `mainAgent` | — | — | — | yes |
 | `subagent` | — | — | — | yes |
 | `commandExecutionPolicy` | — | — | — | yes |
+| `inheritMcp` | — | — | — | yes |
+| `inheritCustomizations` | — | — | — | yes |
 
 **The part that does not, and says nothing when it does not**: a field absent from a column is not rejected there -- it is read past. Nothing warns, no run fails, and the component behaves differently with the same bytes. Where the field was carrying a restriction, the restriction is simply gone. Check the column before relying on one.
 
