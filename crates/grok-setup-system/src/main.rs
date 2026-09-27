@@ -143,10 +143,14 @@ pub const GROK: Harness = Harness {
             ],
             excluded: &[
                 "auth.json",
+                "auth.json.lock",
                 "sessions",
                 "active_sessions.json",
                 "active_sessions.lock",
                 "logs",
+                "memory-v2",
+                "trusted_folders.toml",
+                "trusted-plugins",
                 "managed_config.toml",
                 "requirements.toml",
                 "managed_config.sig.json",
@@ -193,6 +197,20 @@ pub const GROK: Harness = Harness {
         "active_sessions.json",
         "active_sessions.lock",
         "logs",
+        // A person's accumulated cross-session context, GA shape since 1.0.34:
+        // `global/`, `workspaces/`, `topics/`, `observations/`, sqlite indexes.
+        // Capturing it into a slot or deleting it under a replaced namespace is
+        // a privacy decision, not a configuration write -- the same argument as
+        // `auth.json`, and the reason the `memory` decline row exists.
+        "memory-v2",
+        // The credential's lock file: deleting it mid-write corrupts the store
+        // it guards.
+        "auth.json.lock",
+        // User-granted security state -- which folders and plugins are trusted.
+        // Not this provider's to delete, capture, or hash into an identity,
+        // for the same reason as the managed policy files below.
+        "trusted_folders.toml",
+        "trusted-plugins",
         // An administrator's policy and everything that proves it. Not this
         // provider's to delete, to capture into a slot, or to hash into an
         // identity -- an org's signed policy in a backup slot is the same

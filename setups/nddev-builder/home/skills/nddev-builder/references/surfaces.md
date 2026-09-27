@@ -69,7 +69,7 @@ whole, which would take or revert a neighbour's work.
 
 ## Considered and not owned
 
-20 rows. Each records what was searched, so the next reader does not repeat the search:
+30 rows. Each records what was searched, so the next reader does not repeat the search:
 
 - **`.mcp.json`** — A project-level compatibility file Grok merges below config.toml, beside ~/.claude.json and .cursor/mcp.json. Not a surface under the Grok home; the real one is config.toml [mcp_servers.<name>].
 - **`Agents.md`** — Grok Build accepts three spellings of its instruction file -- AGENTS.md, Agents.md and AGENT.md. This provider writes the first and owns only that one: on a case-insensitive filesystem the second is the same file, and on a case-sensitive one owning both would let a target hold two instruction documents that disagree with the product reading one and this provider reporting the other. Which of the three wins where several exist is not documented, so a target holding another spelling is reported rather than resolved.
@@ -91,3 +91,13 @@ whole, which would take or revert a neighbour's work.
 - **`leader.sock`** — A unix socket in the configuration home, named by the product's own help: `--leader-socket <PATH>  Use a custom leader socket path instead of the default ~/.grok/leader.sock`. Not a configuration surface and not capturable -- a socket is a special file, and this provider's `copy_tree` refuses those by kind. Recorded so the next reader of this home knows what it is rather than repeating the search.
 - **`GROK_CONFIG_PATH`** — Not a path in the target -- an **environment overlay**, recorded here because it changes what the product reads and nothing else in this file would tell a reader so. The pinned binary carries `xai_grok_config::env_overlay` with its own refusals (*"GROK_CONFIG_PATH is unreadable; ignoring the overlay"*, *"...exceeds the max overlay size..."*), and the product's documentation places it: *"GROK_CONFIG / GROK_CONFIG_PATH (tier 4) are config overlays: a merged config layer, not direct-setting environment variables"*.
 - **`bundled`** — The product's own content, shipped inside the install rather than written by a person: the 1.0.5 binary carries `.grok/bundled/agents` and `.grok/bundled/skills`, and refuses to let anyone remove what is in it -- "Cannot delete bundled personas". Not owned for the same reason as `docs`: a directory the product ships and regenerates is not a surface a setup can promise, and a backup of it would copy the install into the slot.
+- **`memory-v2`** — *Cross-session memory, GA shape since 1.0.34*: `global/`, `workspaces/<slug>-<hash>/`, `topics/`, `observations/`, `archive/dream_*`, `index.sqlite`, `memory_state.sqlite` under the Grok home. A person's accumulated context rather than configuration; a backup of it would put private text somewhere with a retention policy nobody chose. Same argument as the `memory` row it replaces.
+- **`trusted_folders.toml`** — Per-user folder-trust store gating project hooks/MCP/LSP. Security-meaningful user-granted state -- capturing or deleting it is a security decision, not configuration.
+- **`trusted-plugins`** — Per-plugin TrustStore records which plugins the user has trusted. Security-grant state, not configuration; same argument as `trusted_folders.toml`.
+- **`auth.json.lock`** — Lock file beside the credential store `auth.json`. Credential-adjacent; the `auth.json` never_touch entry names the credential itself, this covers its lock.
+- **`.metadata_version`** — Product-written marker carrying the version that last initialized the home (e.g. `1.0.34`). Product state, not user configuration.
+- **`.config-init.lock`** — Product-written initialization lock. Runtime state, not user configuration.
+- **`README.md`** — Product-written ~2690-line user guide landed at the home root by current builds. Product documentation, not user configuration.
+- **`CHANGELOG.md`** — Product-written changelog at the home root. Product state, not user configuration.
+- **`CHANGELOG.json`** — Machine-readable companion to `CHANGELOG.md`. Product state, not user configuration.
+- **`agent_id`** — Product-written stable agent identifier for the local install. Runtime identity, not user configuration.

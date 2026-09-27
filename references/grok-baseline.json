@@ -25,12 +25,12 @@
   },
   "release": {
     "npm_package": "@xai-official/grok",
-    "npm_version": "1.0.41",
+    "npm_version": "1.0.42",
     "stable_channel_version": "1.0.41",
-    "selected_dist_tag": "latest",
-    "npm_integrity": "sha512-eRAK7JzMb/sHVfj8VtLJ26LFqVwiI+PPp6lIMxtN/Ys+/AU5XvE20liO2iDitVw4kAlC5iziomgnemGuy/QAPw==",
-    "npm_shasum": "480515a8e3edbaef9a5c9a9eb162b35cc4e57fc8",
-    "npm_tarball": "https://registry.npmjs.org/@xai-official/grok/-/grok-1.0.41.tgz",
+    "selected_dist_tag": "alpha",
+    "npm_integrity": "sha512-6yKtCaoa+I2q6yGugJ5DAt7zsWKCw/z54znaZh2CNbzdQ3c72M5V6UetTPzyOiqIPugWZRcl+PpnsInA0JoqAg==",
+    "npm_shasum": "87c6cf979c51f01203a43898718304fc4d7acc5a",
+    "npm_tarball": "https://registry.npmjs.org/@xai-official/grok/-/grok-1.0.42.tgz",
     "npm_bin": {
       "grok": "bin/grok"
     },
@@ -40,7 +40,7 @@
     "official_installer": "https://x.ai/cli/install.sh",
     "official_installer_sha256": "7fd6fdc75d9418b2e58356726fcbf1ae849416f773925da07d0ccc7a60d3e791",
     "official_installer_channel": "stable",
-    "official_installer_exact_version_arg": "1.0.41",
+    "official_installer_exact_version_arg": "1.0.42",
     "module_install_mechanism": "verified-npm-tarball",
     "module_npm_install_supported": false,
     "published_binary_checksum": null,
@@ -49,12 +49,12 @@
     "npm_file_count": 4,
     "native_npm_packages": {
       "@xai-official/grok-darwin-arm64": {
-        "version": "1.0.41",
+        "version": "1.0.42",
         "package": "@xai-official/grok-darwin-arm64",
-        "integrity": "sha512-EVyCWTOe1ZDdURiK8EvRUw9Q8BPU2Upnc6o+ECwXYXSCtRmlR9/MxqNt6beZtOujjyAsAWE7VRBvjZrtyCTFWw==",
-        "shasum": "193f94408c15c09b885d3b57dc0a322b379a5393",
-        "tarball": "https://registry.npmjs.org/@xai-official/grok-darwin-arm64/-/grok-darwin-arm64-1.0.41.tgz",
-        "unpacked_size": 42526252,
+        "integrity": "sha512-oTWxS12Ha0XW5d/luBrFJ4lqRaPGssL2OGcmbAkMrIy+TGefJl551tpQJh+5/ncZ5IlfOT8I10ykqanpdS9KHQ==",
+        "shasum": "267bff332bf08f0dabb60dbe469558130f4b1db8",
+        "tarball": "https://registry.npmjs.org/@xai-official/grok-darwin-arm64/-/grok-darwin-arm64-1.0.42.tgz",
+        "unpacked_size": 43005503,
         "file_count": 4,
         "os": "darwin",
         "cpu": "arm64",
@@ -62,12 +62,12 @@
         "product_supported": true
       },
       "@xai-official/grok-darwin-x64": {
-        "version": "1.0.41",
+        "version": "1.0.42",
         "package": "@xai-official/grok-darwin-x64",
-        "integrity": "sha512-f7BK6JwObPuDwkV6T5H7HuH46Txa522k1F+mKIxdcgu9C+mPGTiSZSzcGXFShifJ4IZuh4Tq7vqOQacQNEEWWA==",
-        "shasum": "3393f84b5f60cc27ecb14937b40c6e05803d9c37",
-        "tarball": "https://registry.npmjs.org/@xai-official/grok-darwin-x64/-/grok-darwin-x64-1.0.41.tgz",
-        "unpacked_size": 49629397,
+        "integrity": "sha512-0MrhKa75KVw0oiYLtVyxDsayZhjah46yhUK8rGCI8knjCry+0RNIeVrfUlNDvnI6/PoKe6nPyYoh23nwNbcZzA==",
+        "shasum": "4fb1c4af0484d6da5264408485ee3f78bda69c6f",
+        "tarball": "https://registry.npmjs.org/@xai-official/grok-darwin-x64/-/grok-darwin-x64-1.0.42.tgz",
+        "unpacked_size": 50106017,
         "file_count": 4,
         "os": "darwin",
         "cpu": "x64",
@@ -75,12 +75,12 @@
         "product_supported": true
       },
       "@xai-official/grok-linux-arm64": {
-        "version": "1.0.41",
+        "version": "1.0.42",
         "package": "@xai-official/grok-linux-arm64",
-        "integrity": "sha512-6g8fHFwKb/jdo3XTGXMiA5FrzzUi6q5nKtT3+eXNbNKGtMOmN4t7NNh+IK3S6FlWcG+slL1Po2YDaNgMZ6swqg==",
-        "shasum": "2be40ecb640372f5fb2e4ca8bcb609895f209381",
-        "tarball": "https://registry.npmjs.org/@xai-official/grok-linux-arm64/-/grok-linux-arm64-1.0.41.tgz",
-        "unpacked_size": 44241484,
+        "integrity": "sha512-EVj9yjGZG+Db2U7Ob0Z0JnwZRarC2esx6lrGf5hRt4EbGKH+H5lkvHamlFl8mQwCZbhBXSg0UMnYuG5SJEHWsQ==",
+        "shasum": "d72b0dfd8a4a33fc63ff1dd4cb14faeb066027ac",
+        "tarball": "https://registry.npmjs.org/@xai-official/grok-linux-arm64/-/grok-linux-arm64-1.0.42.tgz",
+        "unpacked_size": 44714217,
         "file_count": 4,
         "os": "linux",
         "cpu": "arm64",
@@ -88,12 +88,12 @@
         "product_supported": true
       },
       "@xai-official/grok-linux-x64": {
-        "version": "1.0.41",
+        "version": "1.0.42",
         "package": "@xai-official/grok-linux-x64",
-        "integrity": "sha512-5KS0AMeGYQh3++0EEZPKVjAcalFQma8K5SKMhBu1k1OVNpA/lO+fRgecS1/kOsLaGaPDPfQm611Z+a5J9dLfAg==",
-        "shasum": "b6bc679c334d5903b777e550838f378a6dc7397a",
-        "tarball": "https://registry.npmjs.org/@xai-official/grok-linux-x64/-/grok-linux-x64-1.0.41.tgz",
-        "unpacked_size": 49183777,
+        "integrity": "sha512-pgiWPZzJ9L1UrLyTEY5IoRa1qtes1B24nxJ7ld76jbG3X8FhEaZrV9XWgRUX4kvbeLbAfifja00mhPFo8GXEuQ==",
+        "shasum": "8bb25eb33d760a813c8a97fd5849d92dbd41a6d3",
+        "tarball": "https://registry.npmjs.org/@xai-official/grok-linux-x64/-/grok-linux-x64-1.0.42.tgz",
+        "unpacked_size": 49692132,
         "file_count": 4,
         "os": "linux",
         "cpu": "x64",
@@ -236,7 +236,8 @@
     "permission_modes": [
       "ask",
       "auto",
-      "always-approve"
+      "always-approve",
+      "default"
     ],
     "agent_permission_modes": [
       "default",
@@ -296,6 +297,7 @@
       "$GROK_HOME/plugins/known_marketplaces.json"
     ],
     "hooks": [
+      "$GROK_HOME/hooks-paths",
       "$GROK_HOME/hooks/*.json",
       ".grok/hooks/*.json",
       "enabled plugin hooks"
@@ -562,7 +564,7 @@
     "native_binary_delivery_by_plugins": false,
     "balanced_profile": false
   },
-  "verified_at": "2026-09-25T11:47:38+00:00",
+  "verified_at": "2026-09-27T07:41:40+00:00",
   "native_surfaces": {
     "verified_at": "2026-08-31",
     "config_home": "~/.grok",
@@ -750,7 +752,7 @@
         "path": "memory",
         "reason": "*Cross-session memory files and index*, holding a global `MEMORY.md`. What the product has learned across sessions -- a person's accumulated context rather than configuration, and a backup of it would put private text somewhere with a retention policy nobody chose.",
         "source": "measured from the 1.0.5 binary's own reference text",
-        "note": "**Re-asked at 1.0.13 on 2026-08-31**, same artifact and controls: *Cross-session memory files* twice and `MEMORY.md` 36 times. The decline holds."
+        "note": "**Re-asked at 1.0.13 on 2026-08-31**, same artifact and controls: *Cross-session memory files* twice and `MEMORY.md` 36 times. The decline holds.\n\n**Superseded path, 2026-09-27:** memory went GA at 1.0.34 and the product now writes `memory-v2/` (global/, workspaces/, topics/, observations/, index.sqlite) instead of `memory/` -- a live `~/.grok` at 1.0.34 carries `memory-v2/` and no `memory/` at all. The same decline argument applies to the new path, recorded in its own row."
       },
       {
         "path": "managed_config.toml",
@@ -785,6 +787,66 @@
         "reason": "The product's own content, shipped inside the install rather than written by a person: the 1.0.5 binary carries `.grok/bundled/agents` and `.grok/bundled/skills`, and refuses to let anyone remove what is in it -- \"Cannot delete bundled personas\". Not owned for the same reason as `docs`: a directory the product ships and regenerates is not a surface a setup can promise, and a backup of it would copy the install into the slot.",
         "source": "measured in the 1.0.5 binary; no vendor page names the directory",
         "note": "**Re-asked at 1.0.13 on 2026-08-31**, same artifact and controls: `.grok/bundled/agents`, `.grok/bundled/skills` and *Cannot delete bundled personas* each once. The decline holds."
+      },
+      {
+        "path": "memory-v2",
+        "reason": "*Cross-session memory, GA shape since 1.0.34*: `global/`, `workspaces/<slug>-<hash>/`, `topics/`, `observations/`, `archive/dream_*`, `index.sqlite`, `memory_state.sqlite` under the Grok home. A person's accumulated context rather than configuration; a backup of it would put private text somewhere with a retention policy nobody chose. Same argument as the `memory` row it replaces.",
+        "source": "live ~/.grok tree at 1.0.34 (metadata_version marker) + https://x.ai/news/grok-build-memory + [memory_v2] config section in docs.x.ai settings reference",
+        "note": "Observed 2026-09-27 on a managed host: `memory-v2/` present, `memory/` absent. Under `[memory_v2] enabled`/`rollout` upstream controls."
+      },
+      {
+        "path": "trusted_folders.toml",
+        "reason": "Per-user folder-trust store gating project hooks/MCP/LSP. Security-meaningful user-granted state -- capturing or deleting it is a security decision, not configuration.",
+        "source": "https://docs.x.ai/build/features/hooks + GROK_FOLDER_TRUST / [folder_trust] enabled upstream",
+        "note": "Recorded 2026-09-27 during the currency sweep; not owned, not touched."
+      },
+      {
+        "path": "trusted-plugins",
+        "reason": "Per-plugin TrustStore records which plugins the user has trusted. Security-grant state, not configuration; same argument as `trusted_folders.toml`.",
+        "source": "upstream grok-build source `util/hooks.rs` TrustStore + live ~/.grok",
+        "note": "Recorded 2026-09-27."
+      },
+      {
+        "path": "auth.json.lock",
+        "reason": "Lock file beside the credential store `auth.json`. Credential-adjacent; the `auth.json` never_touch entry names the credential itself, this covers its lock.",
+        "source": "live ~/.grok listing",
+        "note": "Recorded 2026-09-27."
+      },
+      {
+        "path": ".metadata_version",
+        "reason": "Product-written marker carrying the version that last initialized the home (e.g. `1.0.34`). Product state, not user configuration.",
+        "source": "live ~/.grok listing",
+        "note": "Recorded 2026-09-27."
+      },
+      {
+        "path": ".config-init.lock",
+        "reason": "Product-written initialization lock. Runtime state, not user configuration.",
+        "source": "live ~/.grok listing",
+        "note": "Recorded 2026-09-27."
+      },
+      {
+        "path": "README.md",
+        "reason": "Product-written ~2690-line user guide landed at the home root by current builds. Product documentation, not user configuration.",
+        "source": "live ~/.grok listing at 1.0.34; upstream extracts docs on launch",
+        "note": "Recorded 2026-09-27. Supersedes part of the `docs` row's claim that the product writes `docs/` on first run -- this home carries none."
+      },
+      {
+        "path": "CHANGELOG.md",
+        "reason": "Product-written changelog at the home root. Product state, not user configuration.",
+        "source": "live ~/.grok listing",
+        "note": "Recorded 2026-09-27."
+      },
+      {
+        "path": "CHANGELOG.json",
+        "reason": "Machine-readable companion to `CHANGELOG.md`. Product state, not user configuration.",
+        "source": "live ~/.grok listing",
+        "note": "Recorded 2026-09-27."
+      },
+      {
+        "path": "agent_id",
+        "reason": "Product-written stable agent identifier for the local install. Runtime identity, not user configuration.",
+        "source": "live ~/.grok listing",
+        "note": "Recorded 2026-09-27."
       }
     ],
     "config_home_env": "GROK_HOME",
@@ -832,6 +894,54 @@
     "shape": "raw",
     "platforms": {
       "linux/arm64": {
+        "url": "https://x.ai/cli/grok-1.0.42-linux-aarch64",
+        "bytes": 139960328,
+        "sha256": "sha256:3e30d9e36aeb38111c76794bcef87e7b8a81f0f3d1474c7c9df28d8452f06518"
+      },
+      "linux/x86_64": {
+        "url": "https://x.ai/cli/grok-1.0.42-linux-x86_64",
+        "bytes": 167665184,
+        "sha256": "sha256:779d4e5c03d321638ccef9656d0ee53a19e54758400590f6df22822f18cbc022"
+      },
+      "macos/arm64": {
+        "url": "https://x.ai/cli/grok-1.0.42-macos-aarch64",
+        "bytes": 147167808,
+        "sha256": "sha256:01ff85ca48e3805981dad9e548ca19412c0407d6d1c0b43b7d058c9fd6362853"
+      },
+      "macos/x86_64": {
+        "url": "https://x.ai/cli/grok-1.0.42-macos-x86_64",
+        "bytes": 164743632,
+        "sha256": "sha256:cda4651a1837492242e9c10b7d180c526e559155446941861e242e124f9dd0cd"
+      },
+      "windows/arm64": {
+        "url": "https://x.ai/cli/grok-1.0.42-windows-aarch64.exe",
+        "bytes": 134627144,
+        "sha256": "sha256:2b283d6dfb34fb3f29aac542c37f59469f8153bb5e8a8eda9cd704ced14acef1"
+      },
+      "windows/x86_64": {
+        "url": "https://x.ai/cli/grok-1.0.42-windows-x86_64.exe",
+        "bytes": 155754312,
+        "sha256": "sha256:4844f008f759d3f052dc15de9ba978d4a4e2bce3f5d1b22f60179d052de88acf"
+      }
+    },
+    "version": "1.0.42",
+    "verified_at": "2026-09-27T07:41:40+00:00"
+  },
+  "never_touch": [
+    "active_sessions.json",
+    "active_sessions.lock",
+    "logs",
+    "memory-v2",
+    "auth.json.lock",
+    "trusted_folders.toml",
+    "trusted-plugins"
+  ],
+  "setup_catalogue_digest": "sha256:1eb9a108e21a2fc2224ada48fad514a698f2c851f97380b1109a159cc3227128",
+  "previous_software_artifacts": {
+    "command": "grok",
+    "shape": "raw",
+    "platforms": {
+      "linux/arm64": {
         "url": "https://x.ai/cli/grok-1.0.41-linux-aarch64",
         "bytes": 138577144,
         "sha256": "sha256:7c0b8c973af6a78e2037f19ed93033471b8c5e722f9ff04b86b092e066e60d74"
@@ -864,50 +974,6 @@
     },
     "version": "1.0.41",
     "verified_at": "2026-09-25T11:47:38+00:00"
-  },
-  "never_touch": [
-    "active_sessions.json",
-    "active_sessions.lock",
-    "logs"
-  ],
-  "setup_catalogue_digest": "sha256:448ef8ff827e49dcaad9fe3bfd316f3421b8ba750756cbe3cbae6a8751940fa0",
-  "previous_software_artifacts": {
-    "command": "grok",
-    "shape": "raw",
-    "platforms": {
-      "linux/arm64": {
-        "url": "https://x.ai/cli/grok-1.0.38-linux-aarch64",
-        "bytes": 137404712,
-        "sha256": "sha256:d19211b4d22421c622ceefce62a12e8954f3495f45378e0b315f4e80dd358f96"
-      },
-      "linux/x86_64": {
-        "url": "https://x.ai/cli/grok-1.0.38-linux-x86_64",
-        "bytes": 164567296,
-        "sha256": "sha256:d09092c50f1bf1cd686a0ecd3489aedd83ec2d16b27a821ca9f0994a4b605ef9"
-      },
-      "macos/arm64": {
-        "url": "https://x.ai/cli/grok-1.0.38-macos-aarch64",
-        "bytes": 144397280,
-        "sha256": "sha256:a3c5c279339a1294cc99b4d105fe7c67a9f64d20647f2edf131ee72d70f94ed1"
-      },
-      "macos/x86_64": {
-        "url": "https://x.ai/cli/grok-1.0.38-macos-x86_64",
-        "bytes": 161685856,
-        "sha256": "sha256:1aa859cf7fc6f407a3d3a11c4a1e56b0bed5bf9ca9a5605a8728a25afd938187"
-      },
-      "windows/arm64": {
-        "url": "https://x.ai/cli/grok-1.0.38-windows-aarch64.exe",
-        "bytes": 132134728,
-        "sha256": "sha256:c63d47ddc3cee388ee4c9069467adc5a521d3d14721534fec0b1a29a2c5f6ee1"
-      },
-      "windows/x86_64": {
-        "url": "https://x.ai/cli/grok-1.0.38-windows-x86_64.exe",
-        "bytes": 152750920,
-        "sha256": "sha256:a716c252c209629dc315a425c0fd8564c1bedabbdf42034e32e901f4a460c4cb"
-      }
-    },
-    "version": "1.0.38",
-    "verified_at": "2026-09-19T14:51:37+00:00"
   },
   "source_verified_runtime_flags": [
     "GROK_DISABLE_AUTOUPDATER"
