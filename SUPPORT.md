@@ -257,6 +257,26 @@ So a person with it set has configuration this provider never sees, and `status`
 
 **`bundled`** -- The product's own content, shipped inside the install rather than written by a person: the 1.0.5 binary carries `.grok/bundled/agents` and `.grok/bundled/skills`, and refuses to let anyone remove what is in it -- "Cannot delete bundled personas". Not owned for the same reason as `docs`: a directory the product ships and regenerates is not a surface a setup can promise, and a backup of it would copy the install into the slot. (measured in the 1.0.5 binary; no vendor page names the directory)
 
+**`memory-v2`** -- *Cross-session memory, GA shape since 1.0.34*: `global/`, `workspaces/<slug>-<hash>/`, `topics/`, `observations/`, `archive/dream_*`, `index.sqlite`, `memory_state.sqlite` under the Grok home. A person's accumulated context rather than configuration; a backup of it would put private text somewhere with a retention policy nobody chose. Same argument as the `memory` row it replaces. (live ~/.grok tree at 1.0.34 (metadata_version marker) + https://x.ai/news/grok-build-memory + [memory_v2] config section in docs.x.ai settings reference)
+
+**`trusted_folders.toml`** -- Per-user folder-trust store gating project hooks/MCP/LSP. Security-meaningful user-granted state -- capturing or deleting it is a security decision, not configuration. ([source](https://docs.x.ai/build/features/hooks) -- + GROK_FOLDER_TRUST / [folder_trust] enabled upstream)
+
+**`trusted-plugins`** -- Per-plugin TrustStore records which plugins the user has trusted. Security-grant state, not configuration; same argument as `trusted_folders.toml`. (upstream grok-build source `util/hooks.rs` TrustStore + live ~/.grok)
+
+**`auth.json.lock`** -- Lock file beside the credential store `auth.json`. Credential-adjacent; the `auth.json` never_touch entry names the credential itself, this covers its lock. (live ~/.grok listing)
+
+**`.metadata_version`** -- Product-written marker carrying the version that last initialized the home (e.g. `1.0.34`). Product state, not user configuration. (live ~/.grok listing)
+
+**`.config-init.lock`** -- Product-written initialization lock. Runtime state, not user configuration. (live ~/.grok listing)
+
+**`README.md`** -- Product-written ~2690-line user guide landed at the home root by current builds. Product documentation, not user configuration. (live ~/.grok listing at 1.0.34; upstream extracts docs on launch)
+
+**`CHANGELOG.md`** -- Product-written changelog at the home root. Product state, not user configuration. (live ~/.grok listing)
+
+**`CHANGELOG.json`** -- Machine-readable companion to `CHANGELOG.md`. Product state, not user configuration. (live ~/.grok listing)
+
+**`agent_id`** -- Product-written stable agent identifier for the local install. Runtime identity, not user configuration. (live ~/.grok listing)
+
 ## Response
 
 One maintainer. Defects are triaged as time allows; security reports are
