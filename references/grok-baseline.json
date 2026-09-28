@@ -936,7 +936,7 @@
     "trusted_folders.toml",
     "trusted-plugins"
   ],
-  "setup_catalogue_digest": "sha256:1eb9a108e21a2fc2224ada48fad514a698f2c851f97380b1109a159cc3227128",
+  "setup_catalogue_digest": "sha256:c77b8a282f4899513a4d3fb3b43e376cac66051ab27318d996ac7ea45a703d92",
   "previous_software_artifacts": {
     "command": "grok",
     "shape": "raw",
