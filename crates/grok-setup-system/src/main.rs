@@ -13,7 +13,7 @@ use std::process::ExitCode;
 
 mod software;
 
-use harness_runtime::{Harness, LaunchBinding, PreservationSurface, Scoped};
+use harness_runtime::{Harness, LaunchBinding, PreservationSurface, Scoped, Shadow};
 use provider_v3::{ComponentKind, ProjectionKind, TargetScope};
 
 /// Everything specific to Grok Build, verified against `grok-baseline.json`.
@@ -114,10 +114,33 @@ pub const GROK: Harness = Harness {
     ],
     // The product's own: credentials, session history and runtime caches. Never
     // read, never written, and never copied into a backup slot.
-    // Nothing measured. This product's alternate spellings, if it has
-    // any, have not been asked for -- empty here says nobody looked,
-    // not that the product reads one name.
-    shadowing_names: &[],
+    // Two spellings of the instruction file the product accepts and this
+    // provider does not own, measured for this baseline. Grok Build reads
+    // `AGENTS.md`, `Agents.md` and `AGENT.md`; this provider writes the
+    // first only -- on a case-insensitive filesystem the second is the
+    // same file, and on a case-sensitive one owning all three would let a
+    // target hold two instruction documents that disagree while the
+    // product reads one and this provider reports the other. Which wins
+    // where several exist is not documented, so a target holding another
+    // spelling is reported rather than resolved.
+    shadowing_names: &[
+        Shadow {
+            name: "Agents.md",
+            over: "AGENTS.md",
+            effect: "an accepted spelling of the instruction file; which \
+                     of the three the product reads when several exist \
+                     is not documented, so its presence is reported, \
+                     not resolved",
+        },
+        Shadow {
+            name: "AGENT.md",
+            over: "AGENTS.md",
+            effect: "an accepted spelling of the instruction file; which \
+                     of the three the product reads when several exist \
+                     is not documented, so its presence is reported, \
+                     not resolved",
+        },
+    ],
     // Owned, and nothing this build can install ever lands here: no
     // component kind routes to them and no setup in this catalogue
     // carries files there. So a posture selecting itself must not empty
@@ -706,5 +729,23 @@ mod tests {
         let problems =
             harness_runtime::catalog::misdirecting(HARNESS.provider_id, &catalog.list().unwrap());
         assert!(problems.is_empty(), "{}", problems.join("\n  "));
+    }
+
+    /// The instruction-file spellings the baseline measured are declared, so
+    /// `status` can report a target running a file this provider never wrote
+    /// instead of answering `managed` beside nothing.
+    #[test]
+    fn the_measured_instruction_shadows_are_declared() {
+        let names: Vec<&str> = GROK
+            .shadowing_names
+            .iter()
+            .map(|shadow| shadow.name)
+            .collect();
+        for expected in &["Agents.md", "AGENT.md"] {
+            assert!(
+                names.contains(expected),
+                "{expected} is measured in the baseline and not declared"
+            );
+        }
     }
 }
