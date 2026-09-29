@@ -7,7 +7,7 @@
 #   powershell -ExecutionPolicy Bypass -File install.ps1 -Version 0.1.0
 [CmdletBinding()]
 param(
-  [string]$Version = "0.0.83",
+  [string]$Version = "0.0.84",
   [string]$InstallDir = $(if ($env:GROK_INSTALL_DIR) { $env:GROK_INSTALL_DIR } else { "$env:LOCALAPPDATA\Programs\grok-setup-system" })
 )
 $ErrorActionPreference = "Stop"
