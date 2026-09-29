@@ -8,7 +8,7 @@
 [CmdletBinding()]
 param(
   [string]$Version = "0.0.81",
-  [string]$InstallDir = "$env:LOCALAPPDATA\Programs\grok-setup-system"
+  [string]$InstallDir = $(if ($env:GROK_INSTALL_DIR) { $env:GROK_INSTALL_DIR } else { "$env:LOCALAPPDATA\Programs\grok-setup-system" })
 )
 $ErrorActionPreference = "Stop"
 

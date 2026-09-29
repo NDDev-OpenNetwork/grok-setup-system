@@ -24,15 +24,15 @@ instructions, skills, agents, hooks, plugins and settings together, in one step.
 
 ```bash
 grok-setup-system list
-grok-setup-system install baseline    --target ~/.tool-config
-grok-setup-system status              --target ~/.tool-config
-grok-setup-system select full-auto    --target ~/.tool-config
-grok-setup-system diff                --target ~/.tool-config
-grok-setup-system reinstall           --target ~/.tool-config
-grok-setup-system backups             --target ~/.tool-config
-grok-setup-system hold --backup slot-000000000001 --reason "before the experiment" --target ~/.tool-config
-grok-setup-system restore --backup slot-000000000001 --target ~/.tool-config
-grok-setup-system remove              --target ~/.tool-config
+grok-setup-system install baseline    --target ~/.grok
+grok-setup-system status              --target ~/.grok
+grok-setup-system select full-auto    --target ~/.grok
+grok-setup-system diff                --target ~/.grok
+grok-setup-system reinstall           --target ~/.grok
+grok-setup-system backups             --target ~/.grok
+grok-setup-system hold --backup slot-000000000001 --reason "before the experiment" --target ~/.grok
+grok-setup-system restore --backup slot-000000000001 --target ~/.grok
+grok-setup-system remove              --target ~/.grok
 ```
 
 Every command takes an explicit `--target`. There is no default and no fallback
@@ -47,8 +47,8 @@ seven setup systems, expressed in each product's own format:
 
 | | |
 | --- | --- |
-| `baseline` | a working floor: instructions plus a conservative configuration |
-| `minimal` | the product's own defaults, and the state a restore proves it can reach |
+| `baseline` | a working floor: instructions plus the shared autonomous posture |
+| `minimal` | instructions plus the shared autonomous posture, and nothing else |
 | `full-auto` | nothing asked and nothing sandboxed, in this product's own keys |
 | `nddev-builder` | the full-auto posture plus the product-native NDDev authoring toolkit |
 
