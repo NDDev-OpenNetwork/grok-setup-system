@@ -8,7 +8,10 @@ Generated from the vendor's own reference and the pinned binary. Do not edit: th
 
 **How it runs**: Grok resolves the agent by name; plugin agents are `plugin-name:agent-name`.
 
-> **Measured, not specified.** The fields below were read out of the > product rather than off a page. They are what this build does, not > a promise about what the next one will do. Where this matters, ask > the binary.
+> **Measured, not specified.** The fields below were read out of the
+> product rather than off a page. They are what this build does, not
+> a promise about what the next one will do. Where this matters, ask
+> the binary.
 
 ## Frontmatter
 

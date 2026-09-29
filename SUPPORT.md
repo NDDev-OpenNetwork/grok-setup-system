@@ -174,8 +174,9 @@ Configuration home as the product documents it: `~/.grok`.
 | `personas` | -- | [source](https://docs.x.ai/build/features/subagents) -- measured in the 1.0.5 binary |
 | `roles` | -- | [source](https://docs.x.ai/build/features/subagents) -- measured in the 1.0.5 binary |
 
-A path routing no component kind is owned so a setup can carry it;
-nothing compiles a component to it.
+A custody row like `commands`, `personas`, `roles`, `rules`, `sandbox.toml`, `workflows` routes no component kind because no setup
+can ever fill it: it is owned so a backup captures it and `remove`
+withdraws it, and so a posture switch does not empty it.
 
 ### A second target: `target_scope: user_root`
 

@@ -31,8 +31,7 @@ TOML, `#` comments in the grammar. No JSON schema.
 
 **A comment is not a stylistic choice.** In a strict-JSON file a `//` is
 a parse error, and the product does not start rather than starting
-without your setting. Two of the seven take comments; the rest do not,
-and one of those takes them at two spellings of the same file.
+without your setting. Three of the seven take comments; the rest do not, and one of those takes them at two spellings of the same file.
 
 ## Before you write one
 
