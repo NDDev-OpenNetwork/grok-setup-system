@@ -304,8 +304,9 @@ pub const GROK: Harness = Harness {
     // writing -- the removal refuses rather than widening when it cannot read
     // the record, the capture takes ours and not a neighbour's, and a restore
     // leaves a neighbour's file as it was. Five of the seven products read
-    // this root and one declared it; the reason was simply not re-read when
-    // the thing it described changed.
+    // this root. This sentence used to say one declared it; all five do now --
+    // the reason had simply not been re-read when the thing it described
+    // changed, and the sentence kept its old answer.
     scoped_projections: &[Scoped {
         target_scope: TargetScope::UserRoot,
         // Distinct from the global identity, because the digest binds a

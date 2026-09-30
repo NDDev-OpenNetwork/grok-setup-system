@@ -319,7 +319,7 @@
         "product_platform": "macos",
         "system": "Darwin",
         "host_architecture": "arm64",
-        "vendor_installer_asset": "grok-1.0.42-macos-aarch64",
+        "vendor_installer_asset": "grok-1.0.45-macos-aarch64",
         "variants": [
           "desktop"
         ]
@@ -329,7 +329,7 @@
         "product_platform": "macos",
         "system": "Darwin",
         "host_architecture": "x64",
-        "vendor_installer_asset": "grok-1.0.42-macos-x86_64",
+        "vendor_installer_asset": "grok-1.0.45-macos-x86_64",
         "variants": [
           "desktop"
         ]
@@ -339,7 +339,7 @@
         "product_platform": "linux",
         "system": "Linux",
         "host_architecture": "arm64",
-        "vendor_installer_asset": "grok-1.0.42-linux-aarch64",
+        "vendor_installer_asset": "grok-1.0.45-linux-aarch64",
         "variants": [
           "desktop",
           "server"
@@ -350,7 +350,7 @@
         "product_platform": "linux",
         "system": "Linux",
         "host_architecture": "x64",
-        "vendor_installer_asset": "grok-1.0.42-linux-x86_64",
+        "vendor_installer_asset": "grok-1.0.45-linux-x86_64",
         "variants": [
           "desktop",
           "server"
@@ -361,7 +361,7 @@
         "product_platform": "windows",
         "system": "Windows",
         "host_architecture": "arm64",
-        "vendor_installer_asset": "grok-1.0.42-windows-aarch64.exe",
+        "vendor_installer_asset": "grok-1.0.45-windows-aarch64.exe",
         "variants": [
           "desktop",
           "server"
@@ -372,7 +372,7 @@
         "product_platform": "windows",
         "system": "Windows",
         "host_architecture": "x64",
-        "vendor_installer_asset": "grok-1.0.42-windows-x86_64.exe",
+        "vendor_installer_asset": "grok-1.0.45-windows-x86_64.exe",
         "variants": [
           "desktop",
           "server"
@@ -381,16 +381,16 @@
     ],
     "standard_unsupported_categories": [],
     "installer_asset_mapping": {
-      "macos-arm64": "grok-1.0.42-macos-aarch64",
-      "macos-x64": "grok-1.0.42-macos-x86_64",
-      "linux-arm64": "grok-1.0.42-linux-aarch64",
-      "linux-x64": "grok-1.0.42-linux-x86_64",
-      "windows-arm64": "grok-1.0.42-windows-aarch64.exe",
-      "windows-x64": "grok-1.0.42-windows-x86_64.exe"
+      "macos-arm64": "grok-1.0.45-macos-aarch64",
+      "macos-x64": "grok-1.0.45-macos-x86_64",
+      "linux-arm64": "grok-1.0.45-linux-aarch64",
+      "linux-x64": "grok-1.0.45-linux-x86_64",
+      "windows-arm64": "grok-1.0.45-windows-aarch64.exe",
+      "windows-x64": "grok-1.0.45-windows-x86_64.exe"
     },
     "musl_baseline_variant": null,
     "baseline_variant": null,
-    "note": "Rebuilt 2026-09-29 from the pinned artifact table: direct binary delivery ships six platforms, Windows included, and no crate carries the Ubuntu-only gate the retired block described. What this block previously said is kept under `retired_npm_channel` -- it measured the 1.0.0 npm wrapper, which published four native packages, and it recorded a distribution gate that was asserted but never implemented.",
+    "note": "Rebuilt 2026-09-29 from the pinned artifact table and re-pinned to 1.0.45 on 2026-09-30: direct binary delivery ships six platforms, Windows included, and no crate carries the Ubuntu-only gate the retired block described. The asset names carry the version they were measured against and go stale on every pin move -- they belong to the table this block was rebuilt from, not to a timeless naming rule. What this block previously said is kept under `retired_npm_channel` -- it measured the 1.0.0 npm wrapper, which published four native packages, and it recorded a distribution gate that was asserted but never implemented.",
     "retired_npm_channel": {
       "nddev_supported_hosts": [
         {
@@ -685,7 +685,7 @@
         "shape": "directory",
         "source": "https://docs.x.ai/build/features/skills-plugins-marketplaces; exercised against the 1.0.5 binary",
         "evidence": "ran",
-        "note": "a user-invocable skill also surfaces as /<skill-name>, which is why this product has no commands directory Exercised 2026-08-28 by running `grok inspect` against a temporary GROK_HOME holding a marker component here; the product reports it back by name.\n\n**Re-asked at 1.0.13 on 2026-08-31**, because the record rested on 1.0.5 and this product moved eight releases in a few hours. The pinned `grok-1.0.13-linux-x86_64` was fetched, its digest checked against the artifact table, and `grok inspect` run against a temporary home holding one marker here -- with a control root, `$HOME/.grok-not-a-root/skills/`, which the same run does not list. The product still reports this surface by name."
+        "note": "a user-invocable skill also surfaces as /<skill-name>, which is why this product has no commands directory. Exercised 2026-08-28 by running `grok inspect` against a temporary GROK_HOME holding a marker component here; the product reports it back by name.\n\n**Re-asked at 1.0.13 on 2026-08-31**, because the record rested on 1.0.5 and this product moved eight releases in a few hours. The pinned `grok-1.0.13-linux-x86_64` was fetched, its digest checked against the artifact table, and `grok inspect` run against a temporary home holding one marker here -- with a control root, `$HOME/.grok-not-a-root/skills/`, which the same run does not list. The product still reports this surface by name."
       },
       {
         "path": "agents",
@@ -723,7 +723,7 @@
         "shape": "directory",
         "source": "https://docs.x.ai/build/modes-and-commands; anchored literal measured in the pinned artifact by scripts/evidence.py",
         "evidence": "bytes",
-        "note": "$GROK_HOME/workflows/<name>.rhai -- a script the product runs, owned here so a setup can carry one; it is not a command component Confirmed 2026-08-29 by `scripts/evidence.py`, which installs the pinned artifact into a temporary prefix and searches the installed bytes for each declared namespace joined to the configuration home the binary itself documents -- 10 occurrence(s) of `.grok/workflows`. A namespace no product can own is searched alongside the real ones in the same pass and was absent, which is what separates a reading from a search that matches everything."
+        "note": "$GROK_HOME/workflows/<name>.rhai -- a script the product runs, owned here so a setup can carry one; it is not a command component. Confirmed 2026-08-29 by `scripts/evidence.py`, which installs the pinned artifact into a temporary prefix and searches the installed bytes for each declared namespace joined to the configuration home the binary itself documents -- 10 occurrence(s) of `.grok/workflows`. A namespace no product can own is searched alongside the real ones in the same pass and was absent, which is what separates a reading from a search that matches everything."
       },
       {
         "path": "rules",
@@ -1008,15 +1008,24 @@
     "verified_at": "2026-09-29T21:24:28+00:00"
   },
   "never_touch": [
+    "auth.json",
+    "plugins/known_marketplaces.json",
+    "installed-plugins",
+    "sessions",
     "active_sessions.json",
     "active_sessions.lock",
     "logs",
     "memory-v2",
     "auth.json.lock",
     "trusted_folders.toml",
-    "trusted-plugins"
+    "trusted-plugins",
+    "managed_config.toml",
+    "requirements.toml",
+    "managed_config.sig.json",
+    "managed_identity.sig.json",
+    "managed_config_cache.json"
   ],
-  "setup_catalogue_digest": "sha256:d6fe27003911c7fa66b2391ec0f745e167efab4fac62b56d435701f130ac767f",
+  "setup_catalogue_digest": "sha256:a9cbae31880576266e3830ca16573c9101219f8edeed451124c51d49ba681390",
   "previous_software_artifacts": {
     "command": "grok",
     "shape": "raw",
