@@ -20,6 +20,60 @@ use harness_runtime::{Artifact, Delivery, Previous, Shape, Software};
 pub(crate) const ARTIFACTS: &[Artifact] = &[
     Artifact {
         platform: "linux/arm64",
+        url: "https://x.ai/cli/grok-1.0.49-linux-aarch64",
+        bytes: 146_642_280,
+        sha256: "sha256:df7e60362b1934b6f09e1e64b6d75a8c94b1bd9bf68c2803da273e4c6ed9a451",
+        shape: Shape::Raw,
+        member: "",
+    },
+    Artifact {
+        platform: "linux/x86_64",
+        url: "https://x.ai/cli/grok-1.0.49-linux-x86_64",
+        bytes: 175_805_280,
+        sha256: "sha256:2cc2ef5dcaa0509b56cdfb9559e27fabe322a0d893810e5129f507110e9b9c6c",
+        shape: Shape::Raw,
+        member: "",
+    },
+    Artifact {
+        platform: "macos/arm64",
+        url: "https://x.ai/cli/grok-1.0.49-macos-aarch64",
+        bytes: 154_433_376,
+        sha256: "sha256:184f4cb1ba2a8eefaa2c2f267b9102bdb13c32dce53db7f7e3095b88f5fe0cce",
+        shape: Shape::Raw,
+        member: "",
+    },
+    Artifact {
+        platform: "macos/x86_64",
+        url: "https://x.ai/cli/grok-1.0.49-macos-x86_64",
+        bytes: 172_962_304,
+        sha256: "sha256:7efdfb4253a5f7a8a71a482ee34afdda106a28936842537c85dac2a8f2819826",
+        shape: Shape::Raw,
+        member: "",
+    },
+    Artifact {
+        platform: "windows/arm64",
+        url: "https://x.ai/cli/grok-1.0.49-windows-aarch64.exe",
+        bytes: 139_079_496,
+        sha256: "sha256:2e31ca89b0af1485cd23d724093bce2fd1a1c5641f16396572805b6ff0042c65",
+        shape: Shape::Raw,
+        member: "",
+    },
+    Artifact {
+        platform: "windows/x86_64",
+        url: "https://x.ai/cli/grok-1.0.49-windows-x86_64.exe",
+        bytes: 161_183_560,
+        sha256: "sha256:39fe9e61788fef98bd3c10c88e7d368f6a010080755a43417f77d7e5c8832b9b",
+        shape: Shape::Raw,
+        member: "",
+    },
+];
+
+/// The artifacts 1.0.45 was published as, kept so
+/// `software_update` has a version to move from and `rollback` a tree to
+/// return to. Measured from bytes when it was the current pin.
+pub(crate) const PREVIOUS_ARTIFACTS: &[Artifact] = &[
+    Artifact {
+        platform: "linux/arm64",
         url: "https://x.ai/cli/grok-1.0.45-linux-aarch64",
         bytes: 142_254_776,
         sha256: "sha256:c3b73519d6d3d5dfc6b8d22268f43f9095dd9fec9e368762c21d276dd478c15b",
@@ -68,68 +122,14 @@ pub(crate) const ARTIFACTS: &[Artifact] = &[
     },
 ];
 
-/// The artifacts 1.0.42 was published as, kept so
-/// `software_update` has a version to move from and `rollback` a tree to
-/// return to. Measured from bytes when it was the current pin.
-pub(crate) const PREVIOUS_ARTIFACTS: &[Artifact] = &[
-    Artifact {
-        platform: "linux/arm64",
-        url: "https://x.ai/cli/grok-1.0.42-linux-aarch64",
-        bytes: 139_960_328,
-        sha256: "sha256:3e30d9e36aeb38111c76794bcef87e7b8a81f0f3d1474c7c9df28d8452f06518",
-        shape: Shape::Raw,
-        member: "",
-    },
-    Artifact {
-        platform: "linux/x86_64",
-        url: "https://x.ai/cli/grok-1.0.42-linux-x86_64",
-        bytes: 167_665_184,
-        sha256: "sha256:779d4e5c03d321638ccef9656d0ee53a19e54758400590f6df22822f18cbc022",
-        shape: Shape::Raw,
-        member: "",
-    },
-    Artifact {
-        platform: "macos/arm64",
-        url: "https://x.ai/cli/grok-1.0.42-macos-aarch64",
-        bytes: 147_167_808,
-        sha256: "sha256:01ff85ca48e3805981dad9e548ca19412c0407d6d1c0b43b7d058c9fd6362853",
-        shape: Shape::Raw,
-        member: "",
-    },
-    Artifact {
-        platform: "macos/x86_64",
-        url: "https://x.ai/cli/grok-1.0.42-macos-x86_64",
-        bytes: 164_743_632,
-        sha256: "sha256:cda4651a1837492242e9c10b7d180c526e559155446941861e242e124f9dd0cd",
-        shape: Shape::Raw,
-        member: "",
-    },
-    Artifact {
-        platform: "windows/arm64",
-        url: "https://x.ai/cli/grok-1.0.42-windows-aarch64.exe",
-        bytes: 134_627_144,
-        sha256: "sha256:2b283d6dfb34fb3f29aac542c37f59469f8153bb5e8a8eda9cd704ced14acef1",
-        shape: Shape::Raw,
-        member: "",
-    },
-    Artifact {
-        platform: "windows/x86_64",
-        url: "https://x.ai/cli/grok-1.0.42-windows-x86_64.exe",
-        bytes: 155_754_312,
-        sha256: "sha256:4844f008f759d3f052dc15de9ba978d4a4e2bce3f5d1b22f60179d052de88acf",
-        shape: Shape::Raw,
-        member: "",
-    },
-];
-
 /// Grok Build's program, and where its bytes come from.
 pub(crate) const SOFTWARE: Software = Software {
-    version: "1.0.45",
+    version: "1.0.49",
     command: "grok",
     delivery: Delivery::Artifacts(ARTIFACTS),
     unsupported: &[],
     previous: Some(Previous {
-        version: "1.0.42",
+        version: "1.0.45",
         artifacts: PREVIOUS_ARTIFACTS,
     }),
 };
