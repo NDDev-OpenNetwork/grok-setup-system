@@ -7,12 +7,12 @@
 #   powershell -ExecutionPolicy Bypass -File install.ps1 -Version 0.1.0
 [CmdletBinding()]
 param(
-  [string]$Version = "0.0.93",
+  [string]$Version = "0.0.94",
   [string]$InstallDir = $(if ($env:GROK_INSTALL_DIR) { $env:GROK_INSTALL_DIR } else { "$env:LOCALAPPDATA\Programs\grok-setup-system" })
 )
 $ErrorActionPreference = "Stop"
 
-$repo   = "NDDev-OpenNetwork/grok-setup-system"
+$repo   = "NDDev-Technocracy-OpenNetwork/grok-setup-system"
 $binary = "grok-setup-system"
 $arch   = switch ($env:PROCESSOR_ARCHITECTURE) {
   "AMD64" { "x86_64" }
