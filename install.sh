@@ -12,9 +12,9 @@
 #   sh install.sh 0.1.0        # a specific release
 set -eu
 
-REPO="NDDev-OpenNetwork/grok-setup-system"
+REPO="NDDev-Technocracy-OpenNetwork/grok-setup-system"
 BINARY="grok-setup-system"
-VERSION="${1:-0.0.93}"
+VERSION="${1:-0.0.94}"
 PREFIX="${GROK_INSTALL_DIR:-$HOME/.local/bin}"
 
 case "$(uname -s)" in
